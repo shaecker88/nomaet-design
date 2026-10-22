@@ -1,7 +1,7 @@
 {%- comment -%}
   nomaet. Startseite (22.10.2026). Ersetzt gold-chain-home.
   Regeln: BRAND.md. Inter Tight / Inter, Logo nur als Vektor (nmt-logo).
-  Eine blaue Stelle: "No matter what." im Story-Block.
+  "No matter what." steht nur einmal: im Hero. Eine blaue Stelle: "Drei Worte." im Story-Block.
   Produktkarten zeigen Typo-Karten statt Fotos, bis "show_product_photos" im Theme-Editor aktiviert wird (nach dem Shooting).
   Sprache: locale de = Deutsch, sonst Englisch.
 {%- endcomment -%}
@@ -81,13 +81,13 @@
   {%- comment -%} 3. Der Schwur: der eine laute Moment der Seite {%- endcomment -%}
   <section class="nh-vow" aria-labelledby="NhVow">
     <div class="nh-wrap nh-vow__grid">
-      <h2 id="NhVow" class="nh-vow__title">No matter what.</h2>
+      <h2 id="NhVow" class="nh-vow__title">{% if de %}Drei Worte.{% else %}Three words.{% endif %}</h2>
       <div class="nh-vow__body">
         {%- if section.settings.story_image != blank -%}
           {{ section.settings.story_image | image_url: width: 900 | image_tag: loading: 'lazy', class: 'nh-vow__img', alt: section.settings.story_image.alt | default: 'Anahita & Sascha', sizes: '(min-width: 750px) 30vw, 70vw' }}
         {%- endif -%}
         <div class="nh-vow__text">
-          <p>{% if de %}Drei Worte, die wir beide auf der Haut tragen. Angefangen hat es mit zwei Ketten, jede mit einem kleinen Schloss, die wir uns gegenseitig geschenkt haben. Chapter 01 ist unsere Version davon, für dich.{% else %}Three words we both carry on our skin. It started with two necklaces, each with a small lock, that we gave each other. Chapter 01 is our version of them, made for you.{% endif %}</p>
+          <p>{% if de %}Wir tragen sie beide auf der Haut. Angefangen hat es mit zwei Ketten, jede mit einem kleinen Schloss, die wir uns gegenseitig geschenkt haben. Chapter 01 ist unsere Version davon, für dich.{% else %}We both carry them on our skin. It started with two necklaces, each with a small lock, that we gave each other. Chapter 01 is our version of them, made for you.{% endif %}</p>
           <p class="nh-sign">Anahita &amp; Sascha</p>
           <a class="nh-link" href="/pages/about">{% if de %}Die ganze Geschichte lesen{% else %}Read the whole story{% endif %}</a>
         </div>
