@@ -73,12 +73,7 @@ Momente der Verbindung: Hände, Umarmungen, zwei Ketten, Freundinnen, Mütter. N
 
 ## Zeichen (Kurzzeichen)
 
-Stand 22.10.2026: Die Wortmarke „nomaet.“ bleibt. Als Zeichen kommt ein **Herz aus zwei echten Fingerabdrücken** (einer von Anahita, einer von Sascha), vereinfacht, damit es nicht als biometrischer Abdruck taugt.
-
-- Einsatz 1: Zeichen neben oder statt der Wortmarke (Profilbild, Favicon als schlichte Herzform)
-- Einsatz 2: **Blindprägung auf der Leder-Box**, ohne Farbe
-- Offen: echte Abdrücke (Ringfinger, Stempelkissen, Foto/Scan), danach Vektor in `logo/`
-- Verworfen: „n.“, Buchstaben-Kurzzeichen, gezeichnete Symbole (Faden, Herz am Faden bleiben als Ideen im Moodboard)
+Noch nicht final. Die Wortmarke „nomaet.“ bleibt; ein zusätzliches Zeichen wird noch entwickelt. Entwürfe liegen bewusst nicht im Repo, erst die finale Version kommt nach `logo/`.
 
 ## Pflichten vor dem Launch
 
