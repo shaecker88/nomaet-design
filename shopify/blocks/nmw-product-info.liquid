@@ -7,6 +7,13 @@
 -%}
 {%- unless p == blank -%}
   {%- assign parts = p.description | split: '<p><strong>' -%}
+  {%- comment -%} Gold 585 auf Anfrage (22.10.2026): sichtbar und wählbar, statt Warenkorb gibt es eine Anfrage per Mail. Gesteuert per CSS :has() über die gewählte Option. {%- endcomment -%}
+  <div class="nmw-request" role="region" aria-label="{% if is_com %}Gold 585 on request{% else %}Gold 585 auf Anfrage{% endif %}">
+    <p class="nmw-request__title">{% if is_com %}Gold 585 is made on request.{% else %}Gold 585 fertigen wir auf Anfrage.{% endif %}</p>
+    <p class="nmw-request__text">{% if is_com %}Write to us with your {% if p.handle == 'the-ring' %}ring size{% else %}length{% endif %}. We&rsquo;ll get back to you within 1&ndash;2 business days with the exact price and lead time.{% else %}Schreib uns deine {% if p.handle == 'the-ring' %}Ringgr&ouml;&szlig;e{% else %}L&auml;nge{% endif %}. Wir melden uns innerhalb von 1&ndash;2 Werktagen mit genauem Preis und Lieferzeit.{% endif %}</p>
+    <a class="nmw-request__btn" href="mailto:info@nomaetstudios.com?subject={{ 'Gold 585 – ' | append: p.title | url_encode }}">{% if is_com %}Request Gold 585{% else %}Gold 585 anfragen{% endif %}</a>
+    <a class="nmw-request__alt" href="/pages/contact">{% if is_com %}or use the contact form{% else %}oder &uuml;ber das Kontaktformular{% endif %}</a>
+  </div>
   <div class="nmw-pi">
     <ul class="nmw-pi__trust" role="list">
       <li>{% if is_com %}Ships in 1&ndash;3 business days{% else %}Versand in 1&ndash;3 Werktagen{% endif %}</li>
@@ -39,7 +46,8 @@
     {%- endif -%}
   </div>
   <style>
-    .nmw-pi { --pi-ink: var(--nmw-ink, #16150F); --pi-blue: var(--nmw-blue, #2C3E8F); --pi-mute: var(--nmw-mute, #6B6A62); --pi-tight: var(--nmw-sans-tight, 'Inter Tight', sans-serif); width: 100%; }
+    .nmw-pi, .nmw-request, variant-picker { --pi-ink: var(--nmw-ink, #16150F); --pi-blue: var(--nmw-blue, #2C3E8F); --pi-mute: var(--nmw-mute, #6B6A62); --pi-tight: var(--nmw-sans-tight, 'Inter Tight', sans-serif); }
+    .nmw-pi { width: 100%; }
     .nmw-pi__trust { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0 0 1.6rem; padding: 0; list-style: none; border-block: 1px solid rgb(22 21 15 / .18); }
     .nmw-pi__trust li { padding: .8rem .6rem; font-family: var(--pi-tight); font-weight: 600; font-size: .62rem; line-height: 1.45; letter-spacing: .12em; text-transform: uppercase; color: var(--pi-ink); }
     .nmw-pi__trust li + li { border-inline-start: 1px solid rgb(22 21 15 / .18); }
@@ -64,6 +72,22 @@
     .nmw-pi__body li { margin-block: .25em; }
     .nmw-pi__body em { font-style: normal; color: var(--pi-mute); }
     .nmw-pi__body a { color: var(--pi-blue); text-underline-offset: .18em; }
+    /* Gold 585: nicht durchgestrichen, normal wählbar; bei Auswahl Anfrage statt Warenkorb */
+    .variant-option__button-label:has(input[value*="585"]) .variant-option__strikethrough { display: none !important; }
+    .variant-option__button-label:has(input[value*="585"]) { opacity: 1 !important; color: var(--pi-ink) !important; }
+    .variant-option__button-label:has(input[value*="585"]:checked) { background: var(--pi-ink) !important; color: var(--nmw-paper, #EFEDE6) !important; border-color: var(--pi-ink) !important; }
+    .variant-option__button-label:has(input[value*="585"]:checked) .variant-option__button-label__text { color: var(--nmw-paper, #EFEDE6) !important; }
+    main:has(variant-picker input[value*="585"]:checked) .add-to-cart-button,
+    main:has(variant-picker input[value*="585"]:checked) .accelerated-checkout-block,
+    body:has(variant-picker input[value*="585"]:checked) sticky-add-to-cart,
+    body:has(variant-picker input[value*="585"]:checked) .sticky-add-to-cart { display: none !important; }
+    .nmw-request { display: none; width: 100%; padding: 1.25rem; border: 1px solid var(--pi-ink); }
+    main:has(variant-picker input[value*="585"]:checked) .nmw-request { display: block; }
+    .nmw-request__title { margin: 0 0 .4rem; font: 700 1.0625rem/1.3 var(--pi-tight); letter-spacing: -.01em; }
+    .nmw-request__text { margin: 0 0 1rem; font-size: .9375rem; line-height: 1.55; color: var(--pi-mute); }
+    .nmw-request__btn { display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 1.5rem; background: var(--pi-ink); color: var(--nmw-paper, #EFEDE6); font: 600 .8125rem/1 var(--pi-tight); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: background .15s; }
+    .nmw-request__btn:hover, .nmw-request__btn:focus-visible { background: var(--pi-blue); color: #fff; }
+    .nmw-request__alt { display: inline-block; margin-top: .75rem; font-size: .875rem; color: var(--pi-ink); text-underline-offset: .25em; }
     @media screen and (max-width: 749px) { .nmw-pi__trust li { padding: .7rem .4rem; letter-spacing: .08em; } }
   </style>
 {%- endunless -%}
