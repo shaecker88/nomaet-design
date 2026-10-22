@@ -89,7 +89,7 @@ Alle Schriften liegen in `fonts/` (Open Font License, frei auch kommerziell).
 
 **Keine weiteren Schriften.**
 
-**Tattoo-Handschrift „no matter what“:** Eure echte Tattoo-Schrift, nachgezeichnet als Grafik (`logo/no-matter-what-handschrift-ink|paper|blue.svg`, im Shop `snippets/nmt-handschrift`). Nur als Grafik einsetzen, nie mit einer Schrift nachbauen, höchstens einmal pro Seite. Aktuell: Hero der Startseite unter „made to stay.“
+**Tattoo-Handschrift „no matter what“:** Eure echte Tattoo-Schrift, nachgezeichnet als Grafik (Zeile: `logo/no-matter-what-handschrift-zeile-ink|paper|blue.svg`, gestapelt wie im Tattoo: `logo/no-matter-what-handschrift-ink|paper|blue.svg`, im Shop `snippets/nmt-handschrift`). Nur als Grafik einsetzen, nie mit einer Schrift nachbauen, höchstens einmal pro Seite. Aktuell: Hero der Startseite unter „made to stay.“, in einer Zeile mit Punkt („NO MATTER WHAT.“).
 
 ---
 

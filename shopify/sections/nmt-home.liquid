@@ -219,9 +219,9 @@
   .nh-hero__scrim { position: absolute; inset: 0; background: linear-gradient(0deg, rgb(22 21 15 / .72) 0%, rgb(22 21 15 / .25) 40%, rgb(22 21 15 / 0) 65%); }
   .nh-hero__content { position: relative; width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 var(--nh-gutter) clamp(2rem, 7vh, 4.5rem); }
   .nh-hero__title { margin: 0 0 clamp(1rem, 2.5vw, 1.75rem); font: 800 clamp(2.6rem, 12vw, 9rem)/.92 var(--nh-display); letter-spacing: -.045em; color: var(--nh-paper); }
-  .nh-hero__hand { width: min(500px, 76vw); margin: 0 0 clamp(1.25rem, 3vw, 2rem); color: var(--nh-paper); filter: drop-shadow(0 1px 10px rgb(22 21 15 / .35)); }
+  .nh-hero__hand { width: min(720px, 100%); margin: 0 0 clamp(1.5rem, 3.5vw, 2.25rem); color: var(--nh-paper); filter: drop-shadow(0 1px 10px rgb(22 21 15 / .35)); }
   .nh-hero__hand svg { display: block; width: 100%; height: auto; overflow: visible; }
-  .nh-hero__hand path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: nhWrite .42s cubic-bezier(.45,.05,.3,1) forwards; animation-delay: calc(.6s + var(--i) * .07s); }
+  .nh-hero__hand path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: nhWrite .42s cubic-bezier(.45,.05,.3,1) forwards; animation-delay: calc(.5s + var(--i) * .06s); }
   @keyframes nhWrite { to { stroke-dashoffset: 0; } }
   @media (prefers-reduced-motion: reduce) { .nh-hero__hand path { animation: none; stroke-dashoffset: 0; } }
   .nh-hero__title span { display: block; white-space: nowrap; }
