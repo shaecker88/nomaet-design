@@ -36,6 +36,6 @@ Wie wir zum Status quo (`markenkern.md`) gekommen sind.
 
 - Die bisherigen Grafiken `logo/no-matter-what-handschrift-*.svg` sind von der Tattoo-Schrift nachgezeichnet. Wegen der Rechte der Tattoo-Künstlerin vor kommerzieller Nutzung prüfen bzw. durch NOMAET Hand ersetzen.
 - Content-Ideen mit Gründer-Fokus an „Marke steht für sich“ anpassen.
-- Website an Status quo anpassen (Polaroids/Klebeband/Stempel im Shop raus, Leder ergänzen).
+- ~~Website an Status quo anpassen (Polaroids/Klebeband/Stempel im Shop raus, Leder ergänzen).~~ Erledigt 22.10.2026 im Theme „NOMAET Markenkern“: ruhiger Shop mit N°-Labels, Leder-Footer, Positionierung im Hero, kein Sand mehr. Handschrift (Gaegu) bewusst noch nicht auf der Website.
 
 Live-Arbeitsstände: [Moodboard-Canvas](https://claude.ai/artifact/L4CM7dC6JL6nnm8EJCGFLs) · [Design-System](https://claude.ai/artifact/D6Wid5aDQUub1gjAThUBPm)

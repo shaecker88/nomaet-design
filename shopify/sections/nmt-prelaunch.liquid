@@ -1,7 +1,7 @@
 {%- comment -%}
   nomaet. Pre-Launch-Seite (Passwortseite), Stand 22.10.2026.
   Markenregeln: BRAND.md im Repo nomaet-design. Boldonse nur im Logo (als Vektor eingebettet, snippets/nmt-logo),
-  Inter Tight für Überschriften/Etiketten, Inter für Text. Ein Archiv-Element: die Kapitel-Nummern. Eine blaue Stelle: "No matter what."
+  Inter Tight für Überschriften/Etiketten, Inter für Text. Ein Archiv-Element: die Kapitel-Nummern. Eine blaue Stelle: "No matter what." Markenkern 22.10.2026: Positionierung im Lead, Story-Block in Leder (Text darauf nur Papier).
   Sprache: .com = Englisch, sonst Deutsch.
 {%- endcomment -%}
 {%- assign is_com = false -%}{%- if request.host contains '.com' -%}{%- assign is_com = true -%}{%- endif -%}
@@ -16,7 +16,7 @@
   <section class="pl-hero" aria-labelledby="PlHeading">
     <p class="pl-label pl-muted">{% if is_com %}chapter 01 · early 2027{% else %}chapter 01 · Anfang 2027{% endif %}</p>
     <h1 id="PlHeading" class="pl-statement"><span class="pl-statement__line">made to stay.</span><br><span class="pl-vow">no matter what.</span></h1>
-    <p class="pl-lead">{% if is_com %}A studio for things that stay. Jewelry is where we begin.{% else %}Ein Studio für Dinge, die bleiben. Schmuck ist unser Anfang.{% endif %}</p>
+    <p class="pl-lead">{% if is_com %}For the ones that were meant to be. Jewelry is where we begin.{% else %}Für Verbindungen, die kein Zufall sind. Schmuck ist unser Anfang.{% endif %}</p>
 
     {%- form 'customer', class: 'pl-form', id: 'PlSignupForm' -%}
       {%- if form.posted_successfully? -%}
@@ -68,7 +68,7 @@
   @font-face { font-family: 'Inter Tight'; font-style: normal; font-weight: 100 900; font-display: swap; src: url({{ 'nmw-inter-tight-variable.woff2' | asset_url }}) format('woff2'); }
 
   :root {
-    --pl-paper: #EFEDE6; --pl-ink: #16150F; --pl-blue: #2C3E8F; --pl-grey: #6B6A62;
+    --pl-paper: #EFEDE6; --pl-ink: #16150F; --pl-blue: #2C3E8F; --pl-grey: #6B6A62; --pl-leather: #6B4C3A;
     --pl-display: 'Inter Tight', 'Inter', system-ui, -apple-system, sans-serif;
     --pl-text: 'Inter', system-ui, -apple-system, sans-serif;
     --pl-gutter: clamp(1rem, 4vw, 2.5rem);
@@ -106,11 +106,11 @@
   .pl-form__error { margin: .625rem 0 0; font-size: .875rem; color: #9B1C1C; }
   .pl-form__success { margin: 0; padding: 1.25rem 0; border-top: 1px solid var(--pl-ink); border-bottom: 1px solid var(--pl-ink); font: 700 1.125rem/1.4 var(--pl-display); }
 
-  .pl-story { background: var(--pl-ink); color: var(--pl-paper); }
+  .pl-story { background: var(--pl-leather); color: var(--pl-paper); }
   .pl-story__inner { max-width: 1320px; margin: 0 auto; padding: clamp(4rem, 14vh, 9rem) var(--pl-gutter); }
-  .pl-story__label { color: #A9A79E; }
+  .pl-story__label { color: var(--pl-paper); }
   .pl-heading { margin: 1rem 0 1.5rem; font: 700 clamp(1.75rem, 1.1rem + 3vw, 3.5rem)/1.05 var(--pl-display); letter-spacing: -.02em; }
-  .pl-story__text { max-width: 40rem; margin: 0 0 2rem; font-size: 1.125rem; color: #D9D7CF; }
+  .pl-story__text { max-width: 40rem; margin: 0 0 2rem; font-size: 1.125rem; color: var(--pl-paper); }
   .pl-sign { margin: 0; font: 600 1rem var(--pl-display); }
 
   .pl-chapters { max-width: 1320px; margin: 0 auto; padding: clamp(4rem, 12vh, 7rem) var(--pl-gutter); }

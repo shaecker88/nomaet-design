@@ -3,6 +3,7 @@ Wortmarke "nomaet." (Boldonse) nur im Logo. Rest: Inter Tight (Überschriften, M
 22.10.2026: --nmw-mono und --nmw-hand zeigen jetzt auf Inter Tight. Damit gibt es shopweit keine Monospace- und keine Handschrift-Schrift mehr (Footer, Etiketten, mobile Shop-Leiste, Polaroid-Unterschriften), ohne jede Stelle einzeln anzufassen.
 22.10.2026 (Feinschliff): Footer-Reveal repariert (der Footer lag dauerhaft unter dem Inhalt, Impressum war unerreichbar).
 Aktiver Menüpunkt wird markiert (Produktseiten zählen zu "Shop"), damit man immer weiß, wo man ist.
+22.10.2026 (Markenkern): Footer in Leder #6B4C3A, Text darauf nur Papier. Sand ist veraltet und kommt nicht mehr vor (ersetzt durch Papier bzw. Post-it nur auf Social/Karten).
 Alle Schriften self-hosted (assets/nmw-*.woff2). {%- endcomment -%}
 <style>
 @font-face {
@@ -29,7 +30,7 @@ Alle Schriften self-hosted (assets/nmw-*.woff2). {%- endcomment -%}
 }
 
 :root {
-  --nmw-paper: #EFEDE6; --nmw-ink: #16150F; --nmw-mute: #6B6A62; --nmw-sand: #D8C9A0; --nmw-blue: #2C3E8F;
+  --nmw-paper: #EFEDE6; --nmw-ink: #16150F; --nmw-mute: #6B6A62; --nmw-leather: #6B4C3A; --nmw-postit: #E6D9B2; --nmw-blue: #2C3E8F;
   --nmw-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
   --nmw-sans-tight: 'Inter Tight', 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
   --nmw-mono: var(--nmw-sans-tight);
@@ -77,14 +78,14 @@ Alle Schriften self-hosted (assets/nmw-*.woff2). {%- endcomment -%}
 .cx.cx { --cx-ink: var(--nmw-ink); --cx-gold: var(--nmw-blue); --cx-serif: var(--nmw-sans); --cx-hand: var(--nmw-hand); background-color: var(--nmw-paper); }
 .trust-strip { background: var(--nmw-paper); }
 .mobile-shop-bar { background: var(--nmw-ink); color: var(--nmw-paper); font-family: var(--nmw-sans-tight); font-weight: 600; }
-.gold-home.gold-home--v2 .gold-home__hero .gold-home__eyebrow { color: var(--nmw-sand); }
-.chapters__card--live { background: #E3DBC0; }
-.gold-home__hero, .about-story__hero, .about-story__story-media, .about-story__tattoo-media, .about-story__first-piece-media, .cx__media { background-color: #E3DBC0; }
-.cx__card--soon { background: #E3DBC0; }
+.gold-home.gold-home--v2 .gold-home__hero .gold-home__eyebrow { color: var(--nmw-paper); }
+.chapters__card--live { background: var(--nmw-paper); }
+.gold-home__hero, .about-story__hero, .about-story__story-media, .about-story__tattoo-media, .about-story__first-piece-media, .cx__media { background-color: var(--nmw-paper); }
+.cx__card--soon { background: var(--nmw-paper); }
 
 .gold-home__eyebrow, .chapters__num, .about-story__eyebrow, .cx__badge, .cx__soon-text, .cx__cta, .gold-home__label { font-family: var(--nmw-sans-tight); font-weight: 600; }
 .gold-home__eyebrow, .chapters__num, .about-story__eyebrow { letter-spacing: .12em; }
-.cx__eyebrow span { background: rgb(216 201 160 / .9); }
+.cx__eyebrow span { background: var(--nmw-paper); }
 
 .gold-home.gold-home--v2 .gold-home__hero h1,
 .gold-home.gold-home--v2 .gold-home__statement p, .gold-home.gold-home--v2 .gold-home__story h2, .gold-home.gold-home--v2 .chapters__head h2,
@@ -116,6 +117,22 @@ main[data-template^="page"] .text-block h1 { font-family: var(--nmw-sans-tight);
 .page-wrapper > footer, .page-wrapper > footer * {
   font-family: var(--nmw-sans) !important;
 }
+
+/* Leder-Footer (Markenkern): die eine große Lederfläche der Seite. Text, Links, Icons und Linien nur in Papier. */
+.page-wrapper > footer,
+.page-wrapper > footer .shopify-section,
+.page-wrapper > footer .section-background,
+.page-wrapper > footer .trust-strip {
+  background: var(--nmw-leather) !important;
+  --color-background: var(--nmw-leather); --color-foreground: var(--nmw-paper);
+}
+.page-wrapper > footer, .page-wrapper > footer :is(p, a, span, li, h2, h3, h4, h5, h6, small, div, button, summary) { color: var(--nmw-paper) !important; }
+.page-wrapper > footer svg { color: var(--nmw-paper) !important; }
+.page-wrapper > footer :is(hr, .divider, [class*="divider"]) { border-color: rgb(239 237 230 / .3) !important; background-color: rgb(239 237 230 / .3) !important; }
+.page-wrapper > footer * { border-color: rgb(239 237 230 / .3) !important; }
+.page-wrapper > footer a { text-decoration: none !important; }
+.page-wrapper > footer a:hover, .page-wrapper > footer a:focus-visible { text-decoration: underline !important; text-underline-offset: .3em; }
+.page-wrapper > footer :focus-visible { outline-color: var(--nmw-paper) !important; }
 
 /* Footer-Reveal: Der Inhalt liegt über dem Footer und gibt ihn beim Scrollen am Ende frei.
    Früher saß der Footer mit negativem Margin dauerhaft unter dem Inhalt und war nie sichtbar. */

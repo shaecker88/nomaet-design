@@ -3,6 +3,8 @@
   Regeln: BRAND.md. Inter Tight / Inter, Logo nur als Vektor (nmt-logo).
   "No matter what." steht nur einmal: im Hero. Eine blaue Stelle: "Drei Worte." im Story-Block.
   Produktkarten zeigen Typo-Karten statt Fotos, bis "show_product_photos" im Theme-Editor aktiviert wird (nach dem Shooting).
+  Markenkern 22.10.2026: Positionierung im Hero-Lead ("for the ones that were meant to be."), N°-Labels, Typo-Karten auf Weiß statt Sand,
+  Newsletter auf Papier, damit der Leder-Footer die Seite schließt.
   Sprache: locale de = Deutsch, sonst Englisch.
 {%- endcomment -%}
 {%- liquid
@@ -28,7 +30,7 @@
     <div class="nh-hero__content">
       <h1 id="NhHeading" class="nh-hero__title"><span>made to stay.</span><span>no matter what.</span></h1>
       <p class="nh-hero__chapter">Chapter 01</p>
-      <p class="nh-hero__lead">{% if de %}<span>Die „Schloss“-Kette und der Pinky Promise Ring.</span> <span>Schmuck für jeden Tag, von Anahita &amp; Sascha.</span>{% else %}<span>The “Lock” Chain and the Pinky Promise Ring.</span> <span>Everyday jewelry by Anahita &amp; Sascha.</span>{% endif %}</p>
+      <p class="nh-hero__lead">{% if de %}<span>Die „Schloss“-Kette und der Pinky Promise Ring.</span> <span>Schmuck für jeden Tag, für Verbindungen, die kein Zufall sind.</span>{% else %}<span>The “Lock” Chain and the Pinky Promise Ring.</span> <span>Everyday jewelry for the ones that were meant to be.</span>{% endif %}</p>
       <div class="nh-hero__actions">
         <a class="nh-btn nh-btn--light" href="#chapter-01">{% if de %}Chapter 01 ansehen{% else %}Shop Chapter 01{% endif %}</a>
         <a class="nh-link nh-link--light" href="/pages/about">{% if de %}Unsere Geschichte{% else %}Our story{% endif %}</a>
@@ -46,13 +48,13 @@
   <section class="nh-wrap nh-ch1" id="chapter-01" aria-labelledby="NhCh1">
     <header class="nh-head">
       <h2 id="NhCh1" class="nh-h2">Chapter 01</h2>
-      <p class="nh-head__text">{% if de %}Zwei Stücke aus unserer eigenen Geschichte, gemacht für jeden Tag. In Sterlingsilber oder vergoldet, Gold 585 auf Anfrage.{% else %}Two pieces from our own story, made to be worn every day. In sterling silver or gold-plated, with gold 585 on request.{% endif %}</p>
+      <p class="nh-head__text">{% if de %}Zwei Stücke für die Menschen, die bleiben: deine Liebe, deine beste Freundin, deine Familie oder du selbst. In Sterlingsilber oder vergoldet, Gold 585 auf Anfrage.{% else %}Two pieces for the people who stay: your love, your best friend, your family or yourself. In sterling silver or gold-plated, with gold 585 on request.{% endif %}</p>
     </header>
     <ul class="nh-pieces" role="list">
       {%- for h in handles -%}
         {%- assign piece = all_products[h] -%}
         {%- if piece != blank -%}
-          {%- if h == 'die-goldkette' -%}{%- assign no = '001' -%}{%- else -%}{%- assign no = '002' -%}{%- endif -%}
+          {%- if h == 'die-goldkette' -%}{%- assign no = '0001' -%}{%- else -%}{%- assign no = '0002' -%}{%- endif -%}
           <li>
             <a class="nh-piece" href="{{ piece.url }}">
               <span class="nh-piece__media">
@@ -61,12 +63,11 @@
                 {%- else -%}
                   <span class="nh-piece__card" aria-hidden="true">
                     <span class="nh-piece__cardname">{% if h == 'die-goldkette' %}{% if de %}Schloss{% else %}Lock{% endif %}{% else %}Pinky Promise{% endif %}</span>
-                    <span class="nh-piece__cardmeta">chapter 01</span>
                   </span>
                 {%- endif -%}
               </span>
               <span class="nh-piece__info">
-                <span class="nh-piece__no">no {{ no }}</span>
+                <span class="nh-piece__no">N° {{ no }} · CHAPTER 01</span>
                 <span class="nh-piece__name">{{ piece.title }}</span>
                 <span class="nh-piece__price">{% if de %}ab{% else %}from{% endif %} {{ piece.price_min | money }}</span>
                 <span class="nh-piece__desc">{% if h == 'die-goldkette' %}{% if de %}Der kleine Schloss-Anhänger, mit dem alles angefangen hat. 36/38 bis 60 cm.{% else %}The small lock pendant where it all started. 36/38 to 60 cm.{% endif %}{% else %}{% if de %}Von Anahita entworfen, als Geburtstagsversprechen an Sascha. Innen ein kleiner Schlüssel. Größen 42 bis 60.{% else %}Designed by Anahita as a birthday promise to Sascha. A tiny key inside. Sizes 42 to 60.{% endif %}{% endif %}</span>
@@ -192,7 +193,7 @@
 </script>
 
 {% stylesheet %}
-  .nh { --nh-paper: var(--nmw-paper, #EFEDE6); --nh-ink: var(--nmw-ink, #16150F); --nh-blue: var(--nmw-blue, #2C3E8F); --nh-grey: var(--nmw-mute, #6B6A62); --nh-sand: var(--nmw-sand, #D8C9A0);
+  .nh { --nh-paper: var(--nmw-paper, #EFEDE6); --nh-ink: var(--nmw-ink, #16150F); --nh-blue: var(--nmw-blue, #2C3E8F); --nh-grey: var(--nmw-mute, #6B6A62); --nh-white: #FFFFFF;
         --nh-display: var(--nmw-sans-tight, 'Inter Tight', 'Inter', sans-serif); --nh-text: var(--nmw-sans, 'Inter', sans-serif);
         --nh-gutter: clamp(1rem, 4vw, 2.5rem);
         background: var(--nh-paper); color: var(--nh-ink); font: 400 1rem/1.6 var(--nh-text); }
@@ -235,15 +236,14 @@
   .nh-head__text { margin: 0; max-width: 32rem; color: var(--nh-grey); font-size: 1.0625rem; }
   .nh-pieces { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); margin: 0; padding: 0; list-style: none; }
   .nh-piece { display: block; text-decoration: none; }
-  .nh-piece__media { position: relative; display: block; aspect-ratio: 4 / 5; overflow: hidden; background: var(--nh-sand); }
+  .nh-piece__media { position: relative; display: block; aspect-ratio: 4 / 5; overflow: hidden; background: var(--nh-white); }
   .nh-piece__img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
   .nh-piece:hover .nh-piece__img { transform: scale(1.03); }
-  .nh-piece__card { position: absolute; inset: 0; display: grid; grid-template-rows: 1fr auto; padding: clamp(1rem, 2.5vw, 1.75rem); background: var(--nh-sand); color: var(--nh-ink); transition: background .3s ease; }
-  .nh-piece:hover .nh-piece__card { background: #CFBE91; }
-  .nh-piece__cardmeta { font: 600 .75rem/1 var(--nh-display); letter-spacing: .12em; text-transform: uppercase; }
-  .nh-piece__cardname { align-self: center; font: 800 clamp(2.4rem, 1.2rem + 5vw, 5.5rem)/.9 var(--nh-display); letter-spacing: -.04em; }
+  .nh-piece__card { position: absolute; inset: 0; display: grid; place-items: center; padding: clamp(1rem, 2.5vw, 1.75rem); background: var(--nh-white); color: var(--nh-ink); transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .nh-piece:hover .nh-piece__card { transform: scale(1.03); }
+  .nh-piece__cardname { text-align: center; font: 800 clamp(2.4rem, 1.2rem + 5vw, 5.5rem)/.9 var(--nh-display); letter-spacing: -.04em; }
   .nh-piece__info { display: grid; gap: .2rem; padding-top: 1rem; }
-  .nh-piece__no { font: 600 .75rem/1.3 var(--nh-display); letter-spacing: .12em; text-transform: uppercase; color: var(--nh-grey); }
+  .nh-piece__no { font: 600 .7rem/1.3 var(--nh-display); letter-spacing: .12em; color: var(--nh-grey); }
   .nh-piece__name { font: 700 clamp(1.15rem, 1rem + .6vw, 1.5rem)/1.2 var(--nh-display); letter-spacing: -.015em; }
   .nh-piece:hover .nh-piece__name { text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 1px; }
   .nh-piece__price { font-size: 1rem; }
@@ -285,18 +285,15 @@
   .nh-faq details p { margin: 0 0 1.25rem; max-width: 44rem; color: var(--nh-grey); }
 
   /* 7. Newsletter */
-  .nh-news { padding-block: clamp(3.5rem, 9vw, 6.5rem); background: var(--nh-ink); color: var(--nh-paper); }
+  .nh-news { padding-block: clamp(3.5rem, 9vw, 6.5rem); border-top: 1px solid var(--nh-ink); background: var(--nh-paper); color: var(--nh-ink); }
   .nh-news__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem clamp(2rem, 6vw, 5rem); align-items: end; }
-  .nh-news__text { margin: 1rem 0 0; max-width: 28rem; color: #C9C7BF; }
+  .nh-news__text { margin: 1rem 0 0; max-width: 28rem; color: var(--nh-grey); }
   .nh-form__row { display: flex; }
-  .nh .nh-form__input { flex: 1 1 auto; min-width: 0; min-height: 52px; margin: 0; padding: 0 1rem; border: 1px solid var(--nh-paper) !important; border-right: 0 !important; border-radius: 0 !important; background: transparent !important; color: var(--nh-paper) !important; box-shadow: none !important; font: 400 1rem var(--nh-text); -webkit-appearance: none; }
-  .nh-form__input::placeholder { color: #A9A79E; }
-  .nh-news .nh-btn { background: var(--nh-paper); border-color: var(--nh-paper); color: var(--nh-ink); }
-  .nh-news .nh-btn:hover, .nh-news .nh-btn:focus-visible { background: var(--nh-blue); border-color: var(--nh-blue); color: #fff; }
-  .nh-news :focus-visible { outline-color: var(--nh-paper); }
-  .nh-form__legal { margin: .875rem 0 0; font-size: .8125rem; color: #A9A79E; }
-  .nh-form__err { margin: .625rem 0 0; font-size: .875rem; color: #F2B8B5; }
-  .nh-form__ok { margin: 0; padding: 1.25rem 0; border-block: 1px solid var(--nh-paper); font: 700 1.125rem/1.4 var(--nh-display); }
+  .nh .nh-form__input { flex: 1 1 auto; min-width: 0; min-height: 52px; margin: 0; padding: 0 1rem; border: 1px solid var(--nh-ink) !important; border-right: 0 !important; border-radius: 0 !important; background: transparent !important; color: var(--nh-ink) !important; box-shadow: none !important; font: 400 1rem var(--nh-text); -webkit-appearance: none; }
+  .nh-form__input::placeholder { color: var(--nh-grey); }
+  .nh-form__legal { margin: .875rem 0 0; font-size: .8125rem; color: var(--nh-grey); }
+  .nh-form__err { margin: .625rem 0 0; font-size: .875rem; color: var(--nh-ink); font-weight: 600; }
+  .nh-form__ok { margin: 0; padding: 1.25rem 0; border-block: 1px solid var(--nh-ink); font: 700 1.125rem/1.4 var(--nh-display); }
 
   @media screen and (max-width: 749px) {
     .nh-head, .nh-news__grid { grid-template-columns: 1fr; }
@@ -309,7 +306,7 @@
     .nh-chapters__text { grid-column: 2; }
     .nh-facts__list { grid-template-columns: 1fr; }
     .nh-form__row { flex-direction: column; }
-    .nh .nh-form__input { border-right: 1px solid var(--nh-paper) !important; border-bottom: 0 !important; }
+    .nh .nh-form__input { border-right: 1px solid var(--nh-ink) !important; border-bottom: 0 !important; }
     .nh-hero__toggle { bottom: 1rem; width: 36px; height: 36px; }
   }
   @media (prefers-reduced-motion: reduce) { .nh-piece__img, .nh-piece__card, .nh-btn { transition: none; } }

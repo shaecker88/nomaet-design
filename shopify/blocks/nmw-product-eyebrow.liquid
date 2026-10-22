@@ -1,5 +1,5 @@
 {%- comment -%}
-  Etikett über dem Produkttitel: Zurück-Link zum Shop + "nomaet. · chapter 01 · no 00X" + "First edition".
+  Etikett über dem Produkttitel: Zurück-Link zum Shop + "N° 000X · CHAPTER 01" (Markenkern 22.10.2026) + "First edition".
   22.10.2026: interne Artikelnummer (SKU) nicht mehr sichtbar, Schrift Inter Tight statt Monospace, Farbe Grau statt Blau (BRAND.md: eine blaue Stelle pro Seite).
   Feinschliff: Brotkrumen "← Shop / Chapter 01", damit man auf der Produktseite immer weiß, wo man ist und wie man zurückkommt.
 {%- endcomment -%}
@@ -8,9 +8,9 @@
   {%- assign de = false -%}{%- if request.locale.iso_code == 'de' -%}{%- assign de = true -%}{%- endif -%}
   {%- assign product_no = '' -%}
   {%- if p.handle == 'die-goldkette' -%}
-    {%- assign product_no = '001' -%}
+    {%- assign product_no = '0001' -%}
   {%- elsif p.handle == 'the-ring' -%}
-    {%- assign product_no = '002' -%}
+    {%- assign product_no = '0002' -%}
   {%- endif -%}
   <nav class="nmw-crumb" aria-label="{% if de %}Brotkrumen{% else %}Breadcrumb{% endif %}">
     <a href="{{ routes.all_products_collection_url }}"><span aria-hidden="true">&larr;</span> Shop</a>
@@ -19,7 +19,7 @@
   </nav>
   {%- if p.tags contains 'Chapter 01' -%}
     <p class="nmw-eyebrow">
-      <span>nomaet. &middot; chapter 01{% unless product_no == '' %} &middot; no {{ product_no }}{% endunless %}</span>
+      <span>{% unless product_no == '' %}N° {{ product_no }} &middot; {% endunless %}CHAPTER 01</span>
       <span>{% if de %}Erste Auflage{% else %}First edition{% endif %}</span>
     </p>
   {%- endif -%}

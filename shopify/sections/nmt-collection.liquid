@@ -1,9 +1,9 @@
 {%- comment -%}
-  nomaet. Shop-Seite (22.10.2026). Ersetzt main-collection (Filter/Sortierung raus) und die alte collection-editorial.
-  Archiv-Look wie vorher: Polaroid-Karten mit Klebeband, Nummern-Sticker, runder Stempel. Aber nach BRAND.md:
-  keine Stückzahl (Auflage offen), keine Handschrift, kein Monospace, Inter Tight / Inter.
-  Bilder: bis zum Shooting Typo-Karten statt Stockfotos; "Echte Produktfotos zeigen" im Theme-Editor aktivieren, sobald es echte gibt.
-  Reihenfolge: Kette (no 001) zuerst, dann Ring (no 002), dann alle weiteren Produkte.
+  nomaet. Shop-Seite. Stand 22.10.2026 nach Markenkern (docs/markenkern.md): der Shop ist ruhig.
+  Gerades Bild (bis zum Shooting Typo-Karte auf Weiß), N°-Label, Name, Preis, Button. Keine Polaroids, kein Klebeband, kein Stempel,
+  keine Handschrift, kein Post-it. Keine Filter, keine Sortierung.
+  "Echte Produktfotos zeigen" im Theme-Editor aktivieren, sobald es echte Fotos gibt.
+  Reihenfolge: Kette (N° 0001) zuerst, dann Ring (N° 0002), dann alle weiteren Produkte.
 {%- endcomment -%}
 {%- liquid
   assign de = false
@@ -14,9 +14,9 @@
 
 <div class="nc">
   <header class="nc__head">
-    <p class="nc__label"><span>{% if de %}Der Shop{% else %}The shop{% endif %}</span></p>
+    <p class="nc__label">{% if de %}Der Shop{% else %}The shop{% endif %}</p>
     <h1 class="nc__title">Chapter 01.</h1>
-    <p class="nc__intro">{% if de %}Zwei Stücke aus unserer eigenen Geschichte, gemacht für jeden Tag. Jedes hat seine Nummer.{% else %}Two pieces from our own story, made to be worn every day. Each one has its number.{% endif %}</p>
+    <p class="nc__intro">{% if de %}Zwei Stücke für Verbindungen, die kein Zufall sind. Gemacht, um jeden Tag getragen zu werden.{% else %}Two pieces for the ones that were meant to be. Made to be worn every day.{% endif %}</p>
     <p class="nc__meta">
       <span>{% if de %}Erste Auflage{% else %}First edition{% endif %}</span>
       <span>{% if de %}Design aus Stuttgart{% else %}Designed in Stuttgart{% endif %}</span>
@@ -32,50 +32,39 @@
         {%- if pass == 1 and product.handle != 'die-goldkette' -%}{%- continue -%}{%- endif -%}
         {%- if pass == 2 and product.handle == 'die-goldkette' -%}{%- continue -%}{%- endif -%}
         {%- assign n = n | plus: 1 -%}
-        {%- if product.handle == 'die-goldkette' -%}{%- assign no = '001' -%}
-        {%- elsif product.handle == 'the-ring' -%}{%- assign no = '002' -%}
-        {%- else -%}{%- assign no = n | prepend: '00' | slice: -3, 3 -%}{%- endif -%}
+        {%- if product.handle == 'die-goldkette' -%}{%- assign no = '0001' -%}
+        {%- elsif product.handle == 'the-ring' -%}{%- assign no = '0002' -%}
+        {%- else -%}{%- assign no = n | prepend: '000' | slice: -4, 4 -%}{%- endif -%}
         {%- assign imgs = product.images | slice: 0, 5 -%}
         <li class="nc__item">
           <a class="nc__card" href="{{ product.url }}">
-            <span class="nc__tape" aria-hidden="true"></span>
             <span class="nc__media">
               {%- if section.settings.show_product_photos and imgs.size > 0 -%}
                 {%- for img in imgs -%}
-                  {{ img | image_url: width: 1400 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 30vw, (min-width: 750px) 45vw, 88vw', class: 'nc__img', data-active: forloop.first, alt: img.alt | default: product.title }}
+                  {{ img | image_url: width: 1400 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 30vw, (min-width: 750px) 45vw, 92vw', class: 'nc__img', data-active: forloop.first, alt: img.alt | default: product.title }}
                 {%- endfor -%}
                 {%- if imgs.size > 1 -%}
                   <button type="button" class="nc__arrow nc__arrow--prev" data-dir="-1" aria-label="{% if de %}Vorheriges Bild{% else %}Previous image{% endif %}">&lsaquo;</button>
                   <button type="button" class="nc__arrow nc__arrow--next" data-dir="1" aria-label="{% if de %}Nächstes Bild{% else %}Next image{% endif %}">&rsaquo;</button>
                 {%- endif -%}
               {%- else -%}
-                <span class="nc__typo" aria-hidden="true">
-                  <span class="nc__typo-name">{% if product.handle == 'die-goldkette' %}{% if de %}Schloss{% else %}Lock{% endif %}{% elsif product.handle == 'the-ring' %}Pinky<br>Promise{% else %}{{ product.title }}{% endif %}</span>
-                  <span class="nc__typo-meta">chapter 01</span>
-                </span>
+                <span class="nc__typo" aria-hidden="true">{% if product.handle == 'die-goldkette' %}{% if de %}Schloss{% else %}Lock{% endif %}{% elsif product.handle == 'the-ring' %}Pinky<br>Promise{% else %}{{ product.title }}{% endif %}</span>
               {%- endif -%}
-              <span class="nc__sticker">no {{ no }}</span>
-              <span class="nc__stamp" aria-hidden="true"><span>Chapter 01</span><strong>1st</strong><span>Edition</span></span>
               {%- unless product.available -%}<span class="nc__badge">{% if de %}Ausverkauft{% else %}Sold out{% endif %}</span>{%- endunless -%}
             </span>
             <span class="nc__caption">
-              <span class="nc__ref">nomaet. · chapter 01 · no {{ no }}</span>
+              <span class="nc__no">N° {{ no }} · CHAPTER 01</span>
               <span class="nc__info">
                 <span class="nc__name">{{ product.title }}</span>
                 <span class="nc__price">{% if product.price_varies %}{% if de %}ab{% else %}from{% endif %} {% endif %}{{ product.price_min | money }}</span>
               </span>
               <span class="nc__tax">{% if de %}Inkl. MwSt., zzgl. Versand{% else %}Taxes included, plus shipping{% endif %}</span>
-              <span class="nc__spec">
-                {%- if product.handle == 'die-goldkette' -%}36/38 · 50 · 55 · 60 cm
-                {%- elsif product.handle == 'the-ring' -%}{% if de %}Größen 42–60{% else %}Sizes 42–60{% endif %}
-                {%- endif -%}
-              </span>
               <span class="nc__line">
-                {%- if product.handle == 'die-goldkette' -%}{% if de %}Der kleine Schloss-Anhänger, mit dem alles angefangen hat.{% else %}The small lock pendant where it all started.{% endif %}
-                {%- elsif product.handle == 'the-ring' -%}{% if de %}Von Anahita entworfen, als Geburtstagsversprechen an Sascha.{% else %}Designed by Anahita as a birthday promise to Sascha.{% endif %}
+                {%- if product.handle == 'die-goldkette' -%}{% if de %}Der kleine Schloss-Anhänger. 36/38 bis 60 cm.{% else %}The small lock pendant. 36/38 to 60 cm.{% endif %}
+                {%- elsif product.handle == 'the-ring' -%}{% if de %}Schmaler Ring, innen ein kleiner Schlüssel. Größen 42 bis 60.{% else %}A slim band with a tiny key inside. Sizes 42 to 60.{% endif %}
                 {%- endif -%}
               </span>
-              <span class="nc__cta">{% if de %}Ansehen{% else %}View piece{% endif %}<i aria-hidden="true">→</i></span>
+              <span class="nc__cta">{% if de %}Ansehen{% else %}View piece{% endif %} <i aria-hidden="true">→</i></span>
             </span>
           </a>
         </li>
@@ -85,17 +74,14 @@
     {%- if section.settings.show_next -%}
       <li class="nc__item nc__item--next">
         <a class="nc__card nc__card--next" href="/#newsletter">
-          <span class="nc__tape" aria-hidden="true"></span>
-          <span class="nc__note">
-            <span class="nc__note-label">{% if de %}Chapter 02 · in Arbeit{% else %}Chapter 02 · in progress{% endif %}</span>
-            <span class="nc__note-num">02</span>
-            <span class="nc__redact" aria-hidden="true"><i></i><i></i></span>
-            <span class="nc__note-hint">{% if de %}Psst. Wir arbeiten dran.{% else %}Psst. We’re working on it.{% endif %}</span>
+          <span class="nc__media nc__media--next">
+            <span class="nc__next-num" aria-hidden="true">02</span>
           </span>
           <span class="nc__caption">
-            <span class="nc__ref">nomaet. · chapter 02</span>
-            <span class="nc__info"><span class="nc__name">{% if de %}Als Erstes erfahren{% else %}Be the first to know{% endif %}</span></span>
-            <span class="nc__cta">{% if de %}Auf die Liste{% else %}Join the list{% endif %}<i aria-hidden="true">→</i></span>
+            <span class="nc__no">CHAPTER 02</span>
+            <span class="nc__info"><span class="nc__name">{% if de %}In Arbeit.{% else %}In the works.{% endif %}</span></span>
+            <span class="nc__line">{% if de %}Trag dich ein, dann erfährst du es zuerst.{% else %}Join the list to hear first.{% endif %}</span>
+            <span class="nc__cta">{% if de %}Auf die Liste{% else %}Join the list{% endif %} <i aria-hidden="true">→</i></span>
           </span>
         </a>
       </li>
@@ -138,118 +124,86 @@
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
-    root.querySelectorAll('.nc__item, .nc__head').forEach(function (el, i) { el.style.setProperty('--d', (i % 3) * 0.12 + 's'); io.observe(el); });
+    root.querySelectorAll('.nc__item').forEach(function (el, i) { el.style.setProperty('--d', (i % 3) * 0.1 + 's'); io.observe(el); });
   })();
 </script>
 
 {% stylesheet %}
-  .nc { --nc-paper: var(--nmw-paper, #EFEDE6); --nc-ink: var(--nmw-ink, #16150F); --nc-blue: var(--nmw-blue, #2C3E8F); --nc-grey: var(--nmw-mute, #6B6A62); --nc-sand: var(--nmw-sand, #D8C9A0); --nc-card: #FBFAF6;
+  .nc { --nc-paper: var(--nmw-paper, #EFEDE6); --nc-ink: var(--nmw-ink, #16150F); --nc-blue: var(--nmw-blue, #2C3E8F); --nc-grey: var(--nmw-mute, #6B6A62); --nc-white: #FFFFFF;
         --nc-display: var(--nmw-sans-tight, 'Inter Tight', 'Inter', sans-serif); --nc-text: var(--nmw-sans, 'Inter', sans-serif);
-        position: relative; overflow-x: clip; padding: clamp(2.5rem, 7vw, 5.5rem) 0 clamp(3.5rem, 8vw, 7rem);
-        background-color: var(--nc-paper); background-image: radial-gradient(rgb(22 21 15 / .07) 1px, transparent 1px); background-size: 22px 22px;
-        color: var(--nc-ink); font: 400 1rem/1.6 var(--nc-text); }
+        padding: clamp(2.5rem, 7vw, 5rem) 0 clamp(3.5rem, 8vw, 6.5rem); background: var(--nc-paper); color: var(--nc-ink); font: 400 1rem/1.6 var(--nc-text); }
   .nc *, .nc *::before, .nc *::after { box-sizing: border-box; }
   .nc :where(a) { color: inherit; text-decoration: none; }
   .nc :focus-visible { outline: 2px solid var(--nc-blue); outline-offset: 4px; }
 
   /* Kopf */
-  .nc__head { width: min(100% - 2.5rem, 1200px); margin: 0 auto clamp(3rem, 7vw, 5rem); text-align: center; }
-  .nc__label { margin: 0 0 1.4rem; }
-  .nc__label span { display: inline-block; padding: .5rem 1.3rem; background: rgb(216 201 160 / .9); box-shadow: 0 1px 3px rgb(0 0 0 / .14); font: 600 .75rem/1 var(--nc-display); letter-spacing: .14em; text-transform: uppercase; transform: rotate(-2.5deg); }
-  .nc__title { margin: 0; font: 800 clamp(3.4rem, 1.4rem + 10vw, 9.5rem)/.9 var(--nc-display); letter-spacing: -.045em; }
-  .nc__intro { max-width: 31rem; margin: 1.5rem auto 0; color: var(--nc-grey); font-size: clamp(1rem, .95rem + .3vw, 1.15rem); }
-  .nc__meta { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 0; margin: 1.5rem 0 0; font: 600 .7rem/1.4 var(--nc-display); letter-spacing: .14em; text-transform: uppercase; color: var(--nc-ink); }
-  .nc__meta span + span::before { content: "/"; margin-inline: .9rem; color: var(--nc-grey); }
+  .nc__head { width: min(100% - 2.5rem, 1200px); margin: 0 auto clamp(2.5rem, 6vw, 4rem); }
+  .nc__label { margin: 0 0 1rem; font: 600 .75rem/1 var(--nc-display); letter-spacing: .14em; text-transform: uppercase; color: var(--nc-grey); }
+  .nc__title { margin: 0; font: 800 clamp(3rem, 1.4rem + 8vw, 7.5rem)/.9 var(--nc-display); letter-spacing: -.045em; }
+  .nc__intro { max-width: 32rem; margin: 1.25rem 0 0; color: var(--nc-grey); font-size: clamp(1rem, .95rem + .3vw, 1.15rem); }
+  .nc__meta { display: flex; flex-wrap: wrap; gap: .4rem 0; margin: 1.25rem 0 0; font: 600 .7rem/1.4 var(--nc-display); letter-spacing: .14em; text-transform: uppercase; }
+  .nc__meta span + span::before { content: "/"; margin-inline: .8rem; color: var(--nc-grey); }
 
   /* Raster */
-  .nc__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(2rem, 4vw, 3.5rem); width: min(100% - 2.5rem, 1200px); margin: 0 auto; padding: 0; list-style: none; align-items: start; }
-  .nc__item { --r: -1.8deg; }
-  .nc__item:nth-child(3n+2) { --r: 1.6deg; margin-top: 3rem; }
-  .nc__item:nth-child(3n) { --r: -1deg; margin-top: 1rem; }
-
-  /* Polaroid */
-  .nc__card { position: relative; display: block; padding: .9rem .9rem 1.4rem; background: var(--nc-card); box-shadow: 0 1px 2px rgb(0 0 0 / .1), 0 14px 32px rgb(22 21 15 / .16); transform: rotate(var(--r)); transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s ease; }
-  .nc__card:hover, .nc__card:focus-visible { transform: rotate(0deg) translateY(-8px); box-shadow: 0 4px 8px rgb(0 0 0 / .1), 0 28px 48px rgb(22 21 15 / .22); }
-  .nc__tape { position: absolute; top: -.9rem; left: 50%; z-index: 3; width: 6rem; height: 1.7rem; background: rgb(216 201 160 / .78); box-shadow: 0 1px 2px rgb(0 0 0 / .14); transform: translateX(-50%) rotate(calc(var(--r) * -1.5)); }
-  .nc__media { position: relative; display: block; overflow: hidden; aspect-ratio: 4 / 5; background: var(--nc-sand); }
-  .nc__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .35s ease, transform 1.2s cubic-bezier(.2,.7,.2,1); }
+  .nc__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(2rem, 3vw, 2.5rem) clamp(1rem, 2.5vw, 2rem); width: min(100% - 2.5rem, 1200px); margin: 0 auto; padding: 0; list-style: none; }
+  .nc__card { display: block; }
+  .nc__media { position: relative; display: block; aspect-ratio: 4 / 5; overflow: hidden; background: var(--nc-white); }
+  .nc__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .35s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
   .nc__img[data-active="true"] { opacity: 1; }
-  .nc__card:hover .nc__img[data-active="true"] { transform: scale(1.04); }
-  .nc__typo { position: absolute; inset: 0; display: grid; grid-template-rows: 1fr auto; padding: clamp(1rem, 2.5vw, 1.5rem); transition: background .3s ease; }
-  .nc__card:hover .nc__typo { background: #CFBE91; }
-  .nc__typo-name { align-self: center; font: 800 clamp(2.4rem, 1rem + 4vw, 4.6rem)/.88 var(--nc-display); letter-spacing: -.045em; }
-  .nc__typo-meta { font: 600 .7rem/1 var(--nc-display); letter-spacing: .14em; text-transform: uppercase; }
-  .nc__arrow { position: absolute; top: 50%; z-index: 2; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; margin-top: -1.125rem; padding: 0; border: 0; border-radius: 50%; background: rgb(251 250 246 / .85); color: var(--nc-ink); font-size: 1.3rem; line-height: 1; cursor: pointer; }
+  .nc__card:hover .nc__img[data-active="true"] { transform: scale(1.03); }
+  .nc__typo { position: absolute; inset: 0; display: grid; place-items: center; padding: 1.5rem; font: 800 clamp(2.2rem, 1rem + 3.6vw, 4.2rem)/.9 var(--nc-display); letter-spacing: -.045em; text-align: center; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .nc__card:hover .nc__typo { transform: scale(1.03); }
+  .nc__arrow { position: absolute; top: 50%; z-index: 2; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; margin-top: -1.125rem; padding: 0; border: 0; border-radius: 50%; background: rgb(255 255 255 / .9); color: var(--nc-ink); font-size: 1.3rem; line-height: 1; cursor: pointer; }
   .nc__arrow--prev { left: .6rem; }
   .nc__arrow--next { right: .6rem; }
+  .nc__badge { position: absolute; top: .75rem; left: .75rem; padding: .35rem .6rem; background: var(--nc-paper); font: 600 .66rem/1 var(--nc-display); letter-spacing: .14em; text-transform: uppercase; }
 
-  /* Sticker + Stempel */
-  .nc__sticker { position: absolute; top: .8rem; left: .8rem; z-index: 2; display: inline-flex; align-items: center; height: 2.1rem; padding: 0 .8rem; border-radius: 1.05rem; background: var(--nc-ink); color: var(--nc-paper); font: 700 .7rem/1 var(--nc-display); letter-spacing: .06em; white-space: nowrap; transform: rotate(-10deg); box-shadow: 0 2px 6px rgb(0 0 0 / .25); }
-  .nc__stamp { position: absolute; right: .9rem; bottom: .9rem; z-index: 2; display: grid; place-items: center; align-content: center; gap: .1rem; width: 5.6rem; height: 5.6rem; border: 2px solid var(--nc-blue); border-radius: 50%; background: rgb(251 250 246 / .82); color: var(--nc-blue); text-align: center; text-transform: uppercase; transform: rotate(12deg); box-shadow: inset 0 0 0 3px rgb(251 250 246 / .82), inset 0 0 0 4px var(--nc-blue); font-family: var(--nc-display); transition: transform .5s cubic-bezier(.2,.7,.2,1); }
-  .nc__card:hover .nc__stamp { transform: rotate(4deg) scale(1.06); }
-  .nc__stamp span { font-size: .5rem; font-weight: 700; letter-spacing: .16em; line-height: 1.2; }
-  .nc__stamp strong { font-size: 1.6rem; font-weight: 800; line-height: 1; letter-spacing: -.03em; text-transform: none; }
-  .nc__badge { position: absolute; top: .8rem; right: .8rem; z-index: 2; padding: .35rem .6rem; background: var(--nc-card); font: 700 .66rem/1 var(--nc-display); letter-spacing: .14em; text-transform: uppercase; }
-
-  /* Bildunterschrift */
-  .nc__caption { display: block; padding: 1rem .25rem 0; }
-  .nc__ref { display: block; font: 600 .66rem/1.3 var(--nc-display); letter-spacing: .12em; text-transform: uppercase; color: var(--nc-grey); }
-  .nc__info { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-top: .5rem; }
-  .nc__name { font: 700 clamp(1.15rem, 1rem + .6vw, 1.45rem)/1.2 var(--nc-display); letter-spacing: -.02em; }
+  .nc__caption { display: block; padding-top: 1rem; }
+  .nc__no { display: block; font: 600 .7rem/1.3 var(--nc-display); letter-spacing: .12em; color: var(--nc-grey); }
+  .nc__info { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-top: .4rem; }
+  .nc__name { font: 700 clamp(1.1rem, 1rem + .5vw, 1.35rem)/1.2 var(--nc-display); letter-spacing: -.02em; }
+  .nc__card:hover .nc__name { text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 1px; }
   .nc__price { font: 600 1rem/1.2 var(--nc-display); white-space: nowrap; }
-  .nc__tax { display: block; margin-top: .25rem; font-size: .75rem; color: var(--nc-grey); }
-  .nc__spec { display: block; margin-top: .6rem; font: 600 .7rem/1.4 var(--nc-display); letter-spacing: .14em; text-transform: uppercase; }
-  .nc__spec:empty { display: none; }
-  .nc__line { display: block; margin-top: .45rem; color: var(--nc-grey); font-size: .9375rem; line-height: 1.5; }
+  .nc__tax { display: block; margin-top: .2rem; font-size: .75rem; color: var(--nc-grey); }
+  .nc__line { display: block; margin-top: .5rem; color: var(--nc-grey); font-size: .9375rem; line-height: 1.5; }
   .nc__line:empty { display: none; }
-  .nc__cta { display: inline-flex; align-items: center; gap: .6rem; margin-top: 1rem; padding-bottom: .25rem; border-bottom: 1px solid var(--nc-ink); font: 700 .72rem/1 var(--nc-display); letter-spacing: .16em; text-transform: uppercase; }
+  .nc__cta { display: inline-flex; align-items: center; gap: .5rem; margin-top: .9rem; font: 700 .72rem/1 var(--nc-display); letter-spacing: .14em; text-transform: uppercase; }
   .nc__cta i { font-style: normal; transition: transform .3s ease; }
-  .nc__card:hover .nc__cta i { transform: translateX(.35rem); }
+  .nc__card:hover .nc__cta i { transform: translateX(.3rem); }
 
   /* Chapter 02 */
-  .nc .nc__card--next { background: #E9E1C8; padding: 1.1rem 1.1rem 1.5rem; }
-  .nc__card--next .nc__tape { background: rgb(255 255 255 / .55); }
-  .nc__note { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .9rem; aspect-ratio: 4 / 5; padding: 1rem; border: 1px dashed rgb(22 21 15 / .4); text-align: center; }
-  .nc__note-label { font: 600 .66rem/1.3 var(--nc-display); letter-spacing: .16em; text-transform: uppercase; color: var(--nc-grey); }
-  .nc__note-num { font: 800 clamp(4.5rem, 2rem + 6vw, 7rem)/.85 var(--nc-display); letter-spacing: -.05em; color: transparent; -webkit-text-stroke: 2px var(--nc-ink); }
-  .nc__redact { display: grid; gap: .4rem; width: 58%; }
-  .nc__redact i { display: block; height: .7rem; background: var(--nc-ink); }
-  .nc__redact i:last-child { width: 62%; }
-  .nc__note-hint { font: 600 .95rem/1.3 var(--nc-display); }
+  .nc__media--next { display: grid; place-items: center; background: transparent; border: 1px solid rgb(22 21 15 / .2); }
+  .nc__next-num { font: 800 clamp(4rem, 2rem + 6vw, 7rem)/.85 var(--nc-display); letter-spacing: -.05em; color: rgb(22 21 15 / .18); }
 
   /* Danach */
-  .nc__after { display: grid; grid-template-columns: 1fr 1fr; gap: 0; width: min(100% - 2.5rem, 1200px); margin: clamp(4rem, 9vw, 7rem) auto 0; border-top: 1px solid var(--nc-ink); }
+  .nc__after { display: grid; grid-template-columns: 1fr 1fr; width: min(100% - 2.5rem, 1200px); margin: clamp(3.5rem, 8vw, 6rem) auto 0; border-top: 1px solid var(--nc-ink); }
   .nc__after-link { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 1.5rem 0; border-bottom: 1px solid rgb(22 21 15 / .15); }
   .nc__after-link + .nc__after-link { padding-left: clamp(1.5rem, 4vw, 3rem); border-left: 1px solid rgb(22 21 15 / .15); }
   .nc__after-link:first-child { padding-right: clamp(1.5rem, 4vw, 3rem); }
   .nc__after-k { font: 700 clamp(1.1rem, 1rem + .6vw, 1.5rem)/1.2 var(--nc-display); letter-spacing: -.02em; }
-  .nc__after-v { font: 700 .72rem/1 var(--nc-display); letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; }
+  .nc__after-v { font: 700 .72rem/1 var(--nc-display); letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
   .nc__after-v i { font-style: normal; display: inline-block; transition: transform .3s ease; }
-  .nc__after-link:hover .nc__after-v { color: var(--nc-blue); }
-  .nc__after-link:hover .nc__after-v i { transform: translateX(.35rem); }
+  .nc__after-link:hover .nc__after-v i { transform: translateX(.3rem); }
   .nc__pages { width: min(100% - 2.5rem, 1200px); margin: 3rem auto 0; text-align: center; }
 
-  /* Einblenden */
-  .nc--js .nc__item, .nc--js .nc__head { opacity: 0; translate: 0 26px; transition: opacity .7s ease var(--d, 0s), translate .7s cubic-bezier(.2,.7,.2,1) var(--d, 0s); }
-  .nc--js .nc__item.is-in, .nc--js .nc__head.is-in { opacity: 1; translate: 0 0; }
+  /* Ruhiges Einblenden */
+  .nc--js .nc__item { opacity: 0; translate: 0 18px; transition: opacity .7s ease var(--d, 0s), translate .7s cubic-bezier(.2,.7,.2,1) var(--d, 0s); }
+  .nc--js .nc__item.is-in { opacity: 1; translate: 0 0; }
 
   @media screen and (max-width: 989px) {
     .nc__grid { grid-template-columns: repeat(2, 1fr); }
-    .nc__item:nth-child(n) { margin-top: 0; }
-    .nc__item:nth-child(even) { margin-top: 2.5rem; }
   }
   @media screen and (max-width: 749px) {
-    .nc__grid { grid-template-columns: 1fr; gap: 3rem; width: min(100% - 3.5rem, 24rem); }
-    .nc__item:nth-child(even) { margin-top: 0; }
-    .nc__item--next { width: 84%; margin-left: auto; }
-    .nc__card:hover { transform: rotate(var(--r)); }
+    .nc__grid { grid-template-columns: 1fr; gap: 2.5rem; width: min(100% - 2rem, 30rem); }
+    .nc__head { width: min(100% - 2rem, 30rem); }
+    .nc__item--next .nc__media--next { aspect-ratio: 16 / 7; }
     .nc__meta { font-size: .64rem; }
-    .nc__meta span + span::before { margin-inline: .55rem; }
-    .nc__after { grid-template-columns: 1fr; }
+    .nc__meta span + span::before { margin-inline: .5rem; }
+    .nc__after { grid-template-columns: 1fr; width: min(100% - 2rem, 30rem); }
     .nc__after-link + .nc__after-link { padding-left: 0; border-left: 0; }
     .nc__after-link:first-child { padding-right: 0; }
   }
-  @media (prefers-reduced-motion: reduce) { .nc__card, .nc__img, .nc__stamp, .nc__cta i, .nc__after-v i { transition: none; } }
+  @media (prefers-reduced-motion: reduce) { .nc__img, .nc__typo, .nc__cta i, .nc__after-v i { transition: none; } }
 {% endstylesheet %}
 
 {% schema %}
@@ -257,7 +211,7 @@
   "name": "nomaet. Shop-Seite",
   "settings": [
     { "type": "checkbox", "id": "show_product_photos", "label": "Echte Produktfotos zeigen (nach dem Shooting aktivieren)", "default": false },
-    { "type": "checkbox", "id": "show_next", "label": "Chapter-02-Teaser-Karte zeigen", "default": true }
+    { "type": "checkbox", "id": "show_next", "label": "Chapter-02-Karte zeigen", "default": true }
   ],
   "presets": [{ "name": "nomaet. Shop-Seite" }]
 }
