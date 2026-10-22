@@ -1,6 +1,6 @@
 # Product Marketing Context: NOMAETstudios
 
-Document version: 1.0
+Document version: 1.1
 Last updated: 2026-10-22
 Note: Shared context for the marketing skills in `marketing/skills/` (coreyhaines31/marketingskills). Facts marked **[open]** are not decided yet; do not invent them. Visual rules live in `BRAND.md`.
 
@@ -9,12 +9,13 @@ Note: Shared context for the marketing skills in `marketing/skills/` (coreyhaine
 - **What it is:** NOMAETstudios is a jewelry label (later also apparel) founded by Anahita Rehbein and Sascha Häcker. Each collection is a "chapter"; each piece is numbered. Chapter 01 tells their own story: two necklaces, two locks, one story.
 - **Category / shelf:** Gold and silver everyday jewelry, small independent DTC label, Germany/EU.
 - **Products (Chapter 01):**
-  - **The "Lock"** chain: 299 €, first edition limited to 60 pieces (20 each in 50/55/60 cm).
-  - **The "Key" Ring:** sizes 50–60; sterling silver / gold-plated / gold 585 on request. Prices are placeholders **[open]**.
+  - **The "Lock"** chain: currently 259–399 € in the shop (sterling silver / gold-plated / gold 585 on request; lengths 36/38, 50, 55, 60 cm). Shop copy still says "limited to 60 pieces, 20 per length 50/55/60 cm", which contradicts the data **[open: decide the real limit]**.
+  - **Pinky Promise Ring** (formerly "Key" Ring): 129–229 €, sizes 42–60, same three materials. Prices are placeholders **[open]**.
   - Materials, finish, clasp, weights: **[open, waiting on jeweler]**.
 - **Pricing model:** one-time purchase. No free shipping, no free returns. No welcome discount at launch.
 - **Shipping:** DE 5.99 € (express 9.99 €), EU 13.99 €, international 19.99 €. Delivery DE 2–4, EU 4–8, intl 7–14 working days.
-- **Launch:** shop live end of Nov / early Dec 2026 (Christmas focus); start in early 2027 is still being considered **[open]**.
+- **Launch:** shop goes live around January 2027, tied to the GmbH registration (exact date **[open]**). Instagram @nomaetstudios exists, no posts yet. No product photos yet.
+- **Range:** jewelry is Chapter 01 only; further product categories (e.g. apparel) follow in later chapters. Never position the brand as a pure jewelry brand.
 - **Channels:** shop nomaetstudios.com (Shopify), Instagram @nomaetstudios. About 80 % of buyers expected on mobile.
 
 ## Target Audience
@@ -65,4 +66,5 @@ B2C, not applicable.
 - Customers will mostly buy on mobile: mobile first for every page and creative.
 
 ## Changelog
+- 2026-10-22 · v1.1 · Launch moved to ~January 2027, current product data, brand beyond jewelry.
 - 2026-10-22 · v1.0 · Initial draft from existing shop, brand decisions and story.
