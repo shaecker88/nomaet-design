@@ -14,8 +14,9 @@
       {%- comment -%}
         "Our story" liegt hier im Theme (Styling: snippets/nmw-story-effects.liquid + Overrides unten).
         22.10.2026: gestrafft, Stockfotos entfernt (Hero = echtes Foto von Anahita & Sascha), deutsche Fassung ergänzt,
-        Shop-Button am Ende, Schrift durchgehend Inter Tight, nur eine blaue Stelle ("No matter what." im Finale).
+        Shop-Button am Ende, Schrift durchgehend Inter Tight, nur eine blaue Stelle.
         Ring-Story ergänzt: Anahita hat den Ring selbst entworfen und Sascha zum Geburtstag geschenkt.
+        Markenkern: "No matter what." nur noch einmal; am Ende das Abdruck-Herz als Unterschrift (Shopify-Datei nomaet-herz-ink.png).
         Nach dem Shooting: echtes Tattoo-Foto und Foto der zwei Schloss-Ketten ergänzen.
       {%- endcomment -%}
       {%- assign de = false -%}{%- if request.locale.iso_code == 'de' -%}{%- assign de = true -%}{%- endif -%}
@@ -78,7 +79,13 @@
 
       <div class="story-finale">
         <p class="story-line story-finale__line">{% if de %}Das ist Chapter 01.<br>Der Rest ist noch ungeschrieben.{% else %}This is Chapter 01.<br>The rest is still unwritten.{% endif %}</p>
-        <p class="story-line story-vow story-finale__vow"><em>No matter what.</em></p>
+        {%- assign herz = images['nomaet-herz-ink.png'] -%}
+        {%- if herz != blank -%}
+          <figure class="story-herz">
+            {{ herz | image_url: width: 480 | image_tag: loading: 'lazy', width: 160, height: 133, class: 'story-herz__img', alt: '' }}
+            <figcaption>{% if de %}Unser Zeichen: zwei Daumenabdrücke, selbst gestempelt.<br>Einer über dem anderen.{% else %}Our mark: two thumbprints, stamped by hand.<br>One over the other.{% endif %}<span>Anahita &amp; Sascha</span></figcaption>
+          </figure>
+        {%- endif -%}
         <p class="story-finale__cta"><a class="story-cta" href="{{ routes.all_products_collection_url }}">{% if de %}Chapter 01 ansehen{% else %}Shop Chapter 01{% endif %}</a></p>
       </div>
     {%- elsif page.handle == 'faq' -%}
@@ -135,6 +142,11 @@
   .page-content .story-years__title { color: var(--nmw-mute, #6B6A62) !important; }
   .page-content .story-finale__vow, .page-content .story-finale__vow em { text-decoration: none !important; }
   .page-content .story-finale__cta { margin-top: 2.5rem; text-align: center; }
+  /* Markenkern 22.10.2026: Abdruck-Herz als Unterschrift. "No matter what." steht nur noch einmal (oben), das Herz schließt die Geschichte. */
+  .page-content .story-herz { margin: clamp(2.5rem, 6vw, 4rem) auto 0; text-align: center; }
+  .page-content .story-herz__img { display: block; width: clamp(120px, 22vw, 160px); height: auto; margin: 0 auto; }
+  .page-content .story-herz figcaption { margin-top: 1.25rem; font: 400 .9375rem/1.55 var(--nmw-sans, 'Inter', sans-serif); color: var(--nmw-mute, #6B6A62); }
+  .page-content .story-herz figcaption span { display: block; margin-top: .6rem; font: 600 .75rem/1.3 var(--nmw-sans-tight, 'Inter Tight', sans-serif); letter-spacing: .12em; text-transform: uppercase; color: var(--nmw-ink, #16150F); }
   .page-content a.story-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 1.75rem; background: var(--nmw-ink, #16150F); color: var(--nmw-paper, #EFEDE6); border: 1px solid var(--nmw-ink, #16150F); font: 600 .8125rem/1 var(--nmw-sans-tight, 'Inter Tight', sans-serif); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: background .15s, border-color .15s; }
   .page-content a.story-cta:hover, .page-content a.story-cta:focus-visible { background: var(--nmw-blue, #2C3E8F); border-color: var(--nmw-blue, #2C3E8F); color: #fff; }
   .page-content .story-prose--necklaces { margin-top: clamp(3rem, 8vw, 6rem); }

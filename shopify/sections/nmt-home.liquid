@@ -4,7 +4,7 @@
   "No matter what." steht nur einmal: im Hero. Eine blaue Stelle: "Drei Worte." im Story-Block.
   Produktkarten zeigen Typo-Karten statt Fotos, bis "show_product_photos" im Theme-Editor aktiviert wird (nach dem Shooting).
   Markenkern 22.10.2026: Positionierung im Hero-Lead ("for the ones that were meant to be."), N°-Labels, Typo-Karten auf Weiß statt Sand,
-  Newsletter auf Papier, damit der Leder-Footer die Seite schließt.
+  Newsletter auf Papier, damit der Leder-Footer die Seite schließt. Abdruck-Herz als Unterschrift im Story-Block (Shopify-Datei nomaet-herz-ink.png).
   Sprache: locale de = Deutsch, sonst Englisch.
 {%- endcomment -%}
 {%- liquid
@@ -89,7 +89,12 @@
         {%- endif -%}
         <div class="nh-vow__text">
           <p>{% if de %}Wir tragen sie beide auf der Haut. Angefangen hat es mit zwei Ketten, jede mit einem kleinen Schloss, die wir uns gegenseitig geschenkt haben. Chapter 01 ist unsere Version davon, für dich.{% else %}We both carry them on our skin. It started with two necklaces, each with a small lock, that we gave each other. Chapter 01 is our version of them, made for you.{% endif %}</p>
-          <p class="nh-sign">Anahita &amp; Sascha</p>
+          {%- assign herz = images['nomaet-herz-ink.png'] -%}
+          {%- if herz != blank -%}
+            <p class="nh-sign nh-sign--herz">{{ herz | image_url: width: 360 | image_tag: loading: 'lazy', width: 120, height: 100, class: 'nh-sign__herz', alt: '' }}<span>Anahita &amp; Sascha</span></p>
+          {%- else -%}
+            <p class="nh-sign">Anahita &amp; Sascha</p>
+          {%- endif -%}
           <a class="nh-link" href="/pages/about">{% if de %}Die ganze Geschichte lesen{% else %}Read the whole story{% endif %}</a>
         </div>
       </div>
@@ -103,7 +108,7 @@
       <li>
         <span class="nh-chapters__num">01</span>
         <span class="nh-chapters__name">{% if de %}Schmuck{% else %}Jewelry{% endif %}</span>
-        <span class="nh-chapters__text">{% if de %}Die „Schloss“-Kette und der Pinky Promise Ring.{% else %}The “Lock” Chain and the Pinky Promise Ring.{% endif %}</span>
+        <span class="nh-chapters__text">{% if de %}Begegnet, lange bevor es gefunkt hat. Die „Schloss“-Kette und der Pinky Promise Ring.{% else %}Met long before the spark. The “Lock” Chain and the Pinky Promise Ring.{% endif %}</span>
       </li>
       <li class="is-next">
         <span class="nh-chapters__num">02</span>
@@ -257,6 +262,9 @@
   .nh-vow__text { max-width: 34rem; }
   .nh-vow__text p { margin: 0 0 1.25rem; font-size: clamp(1.125rem, 1rem + .5vw, 1.375rem); line-height: 1.5; }
   .nh-vow__text .nh-sign { font: 600 1rem var(--nh-display); }
+  .nh-vow__text .nh-sign--herz { display: flex; align-items: center; gap: 1rem; margin: .25rem 0 1.5rem; }
+  .nh-sign__herz { display: block; width: clamp(88px, 18vw, 120px); height: auto; }
+  .nh-sign--herz span { font: 600 .75rem/1.3 var(--nh-display); letter-spacing: .12em; text-transform: uppercase; color: var(--nh-grey); }
 
   /* 4. Kapitel */
   .nh-chapters { padding-block: clamp(3rem, 8vw, 6rem); }
