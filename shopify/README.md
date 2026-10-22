@@ -7,6 +7,7 @@ Quelle der Wahrheit für die Optik bleibt `BRAND.md` und `tokens/`.
 |---|---|
 | `snippets/nmt-logo.liquid` | Logo „nomaet.“ als Vektor, Farbe über `currentColor` |
 | `sections/nmt-prelaunch.liquid` | Pre-Launch-Seite (Passwortseite): Statement, Warteliste, Story, Kapitel |
+| `snippets/nmt-impressum.liquid` | Impressum (vorübergehend SA Creative Hub, nach GmbH-Gründung ersetzen) |
 | `templates/password.json` | Passwortseite nutzt nur `nmt-prelaunch` |
 
 Neue Kunden aus der Warteliste bekommen die Tags `newsletter, prelaunch`.

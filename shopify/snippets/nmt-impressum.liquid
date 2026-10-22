@@ -1,0 +1,25 @@
+{%- comment -%}
+  Impressum für die Pre-Launch-Seite. VORÜBERGEHEND: Angaben von SA Creative Hub (Einzelunternehmen Sascha Häcker), Stand 22.10.2026.
+  Nach GmbH-Gründung durch das Impressum der NOMAETstudios GmbH ersetzen (Registergericht, HRB, Geschäftsführer, USt-ID).
+{%- endcomment -%}
+<details class="pl-legal" id="impressum">
+  <summary>{% if is_com %}Legal notice (Impressum){% else %}Impressum{% endif %}</summary>
+  <div class="pl-legal__body" lang="de">
+    <p><strong>Angaben gemäß § 5 DDG</strong><br>SA Creative Hub<br>Inhaber: Sascha Häcker<br>Oberkochener Weg 23<br>71229 Leonberg<br>Deutschland</p>
+    <p><strong>Kontakt</strong><br>E-Mail: <a href="mailto:info@nomaetstudios.com">info@nomaetstudios.com</a></p>
+    <p><strong>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</strong><br>Sascha Häcker<br>Oberkochener Weg 23<br>71229 Leonberg</p>
+    <p><strong>Haftung für Inhalte</strong><br>Die Inhalte dieser Seite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+    <p><strong>Haftung für Links</strong><br>Diese Seite enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte übernehmen wir keine Gewähr.</p>
+    <p><strong>Urheberrecht</strong><br>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf dieser Seite unterliegen dem deutschen Urheberrecht.</p>
+  </div>
+</details>
+<style>
+  .pl-legal { flex-basis: 100%; font-size: .875rem; color: var(--pl-grey, #6B6A62); }
+  .pl-legal summary { cursor: pointer; list-style: none; display: inline-block; }
+  .pl-legal summary::-webkit-details-marker { display: none; }
+  .pl-legal summary:hover, .pl-legal[open] summary { color: var(--pl-ink, #16150F); text-decoration: underline; }
+  .pl-legal__body { max-width: 40rem; margin-top: 1rem; line-height: 1.55; }
+  .pl-legal__body p { margin: 0 0 1rem; }
+  .pl-legal__body strong { color: var(--pl-ink, #16150F); font-weight: 600; }
+  .pl-legal__body a { color: inherit; }
+</style>

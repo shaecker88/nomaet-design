@@ -58,8 +58,8 @@
       <a href="https://www.instagram.com/nomaetstudios/" target="_blank" rel="noopener">Instagram</a>
       <a href="mailto:info@nomaetstudios.com">info@nomaetstudios.com</a>
       {%- if shop.privacy_policy.url != blank -%}<a href="{{ shop.privacy_policy.url }}">{% if is_com %}Privacy{% else %}Datenschutz{% endif %}</a>{%- endif -%}
-      {%- if shop.legal_notice.url != blank -%}<a href="{{ shop.legal_notice.url }}">{% if is_com %}Legal notice{% else %}Impressum{% endif %}</a>{%- endif -%}
     </nav>
+    {% render 'nmt-impressum', is_com: is_com %}
   </footer>
 </div>
 
