@@ -87,7 +87,9 @@ Tinte auf Papier 15,6:1 ✓ · Blau auf Papier 8,2:1 ✓ · Papier auf Blau 8,2:
 
 Alle Schriften liegen in `fonts/` (Open Font License, frei auch kommerziell).
 
-**Keine weiteren Schriften.** Die bisherige Handschrift bleibt nur noch für **eine** Stelle: die Unterschrift „Anahita & Sascha“ (Karte im Paket, Ende von „Our Story“). Nirgends sonst.
+**Keine weiteren Schriften.**
+
+**Tattoo-Handschrift „no matter what“:** Eure echte Tattoo-Schrift, nachgezeichnet als Grafik (`logo/no-matter-what-handschrift-ink|paper|blue.svg`, im Shop `snippets/nmt-handschrift`). Nur als Grafik einsetzen, nie mit einer Schrift nachbauen, höchstens einmal pro Seite. Aktuell: Hero der Startseite unter „made to stay.“
 
 ---
 
