@@ -1,0 +1,146 @@
+{%- comment -%}
+  nomaet. Pre-Launch-Seite (Passwortseite), Stand 22.10.2026.
+  Markenregeln: BRAND.md im Repo nomaet-design. Boldonse nur im Logo (als Vektor eingebettet),
+  Inter Tight für Überschriften/Etiketten, Inter für Text. Ein Archiv-Element: die Kapitel-Nummern.
+  Sprache: .com = Englisch, sonst Deutsch.
+{%- endcomment -%}
+{%- assign is_com = false -%}{%- if request.host contains '.com' -%}{%- assign is_com = true -%}{%- endif -%}
+
+
+<div class="pl">
+  <header class="pl-top">
+    <a class="pl-top__logo" href="{{ routes.root_url }}" aria-label="nomaet.">{% render 'nmt-logo' %}</a>
+    <a class="pl-label pl-top__ig" href="https://www.instagram.com/nomaetstudios/" target="_blank" rel="noopener">@nomaetstudios</a>
+  </header>
+
+  <section class="pl-hero" aria-labelledby="PlHeading">
+    <p class="pl-label pl-muted">{% if is_com %}chapter 01 · early 2027{% else %}chapter 01 · Anfang 2027{% endif %}</p>
+    <h1 id="PlHeading" class="pl-statement"><span class="pl-statement__line">Made to stay.</span><br><span class="pl-vow">No matter what.</span></h1>
+    <p class="pl-lead">{% if is_com %}A studio for things that stay. Jewelry is where we begin.{% else %}Ein Studio für Dinge, die bleiben. Schmuck ist unser Anfang.{% endif %}</p>
+
+    {%- form 'customer', class: 'pl-form', id: 'PlSignupForm' -%}
+      {%- if form.posted_successfully? -%}
+        <p class="pl-form__success" role="status">{% if is_com %}You're on the list. We'll write to you when chapter 01 opens.{% else %}Du bist auf der Liste. Wir schreiben dir, sobald chapter 01 öffnet.{% endif %}</p>
+      {%- else -%}
+        <input type="hidden" name="contact[tags]" value="newsletter, prelaunch">
+        <label class="pl-label pl-form__label" for="PlEmail">{% if is_com %}Be first when chapter 01 opens{% else %}Als Erste:r dabei, wenn chapter 01 öffnet{% endif %}</label>
+        <div class="pl-form__row">
+          <input id="PlEmail" class="pl-form__input" type="email" name="contact[email]" autocomplete="email" required placeholder="{% if is_com %}Your email address{% else %}Deine E-Mail-Adresse{% endif %}"{% if form.errors %} aria-invalid="true" aria-describedby="PlError"{% endif %}>
+          <button class="pl-button" type="submit">{% if is_com %}Join the list{% else %}Eintragen{% endif %}</button>
+        </div>
+        {%- if form.errors -%}<p id="PlError" class="pl-form__error" role="alert">{% if is_com %}Please enter a valid email address.{% else %}Bitte gib eine gültige E-Mail-Adresse ein.{% endif %}</p>{%- endif -%}
+        <p class="pl-form__legal">{% if is_com %}One note when it's time, plus the occasional look behind the scenes. Unsubscribe anytime.{% else %}Eine Nachricht, wenn es so weit ist, und ab und zu ein Blick hinter die Kulissen. Abmeldung jederzeit.{% endif %}{% if shop.privacy_policy.url != blank %} <a href="{{ shop.privacy_policy.url }}">{% if is_com %}Privacy policy{% else %}Datenschutzerklärung{% endif %}</a>{% endif %}</p>
+      {%- endif -%}
+    {%- endform -%}
+  </section>
+
+  <section class="pl-story" aria-labelledby="PlStoryHeading">
+    <div class="pl-story__inner">
+      <p class="pl-label pl-story__label">{% if is_com %}behind nomaet.{% else %}hinter nomaet.{% endif %}</p>
+      <h2 id="PlStoryHeading" class="pl-heading">{% if is_com %}We're Anahita and Sascha.{% else %}Wir sind Anahita und Sascha.{% endif %}</h2>
+      <p class="pl-story__text">{% if is_com %}We met by chance in 2017. Years later, our paths crossed again. Today we carry three words on our skin and two necklaces, each with a little lock. NOMAETstudios is where we turn that into things you can keep, one chapter at a time.{% else %}Wir haben uns 2017 durch Zufall kennengelernt. Jahre später haben sich unsere Wege wieder gekreuzt. Heute tragen wir drei Worte auf der Haut und zwei Ketten mit je einem kleinen Schloss. NOMAETstudios ist der Ort, an dem daraus Dinge werden, die bleiben, Kapitel für Kapitel.{% endif %}</p>
+      <p class="pl-sign">Anahita &amp; Sascha</p>
+    </div>
+  </section>
+
+  <section class="pl-chapters" aria-labelledby="PlChaptersHeading">
+    <h2 id="PlChaptersHeading" class="pl-label pl-muted">{% if is_com %}the chapters{% else %}die kapitel{% endif %}</h2>
+    <ol class="pl-chapters__list">
+      <li><span class="pl-chapters__num">01</span><span class="pl-chapters__name">{% if is_com %}Jewelry{% else %}Schmuck{% endif %}</span><span class="pl-label pl-chapters__state pl-chapters__state--next">{% if is_com %}early 2027{% else %}Anfang 2027{% endif %}</span></li>
+      <li><span class="pl-chapters__num">02</span><span class="pl-chapters__name pl-muted">{% if is_com %}In the works{% else %}In Arbeit{% endif %}</span></li>
+      <li><span class="pl-chapters__num">03</span><span class="pl-chapters__name pl-muted">{% if is_com %}Still unwritten{% else %}Noch ungeschrieben{% endif %}</span></li>
+    </ol>
+  </section>
+
+  <footer class="pl-foot">
+    <a class="pl-foot__logo" href="{{ routes.root_url }}" aria-label="nomaet.">{% render 'nmt-logo' %}</a>
+    <nav class="pl-foot__links" aria-label="{% if is_com %}Contact{% else %}Kontakt{% endif %}">
+      <a href="https://www.instagram.com/nomaetstudios/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:info@nomaetstudios.com">info@nomaetstudios.com</a>
+      {%- if shop.privacy_policy.url != blank -%}<a href="{{ shop.privacy_policy.url }}">{% if is_com %}Privacy{% else %}Datenschutz{% endif %}</a>{%- endif -%}
+      {%- if shop.legal_notice.url != blank -%}<a href="{{ shop.legal_notice.url }}">{% if is_com %}Legal notice{% else %}Impressum{% endif %}</a>{%- endif -%}
+    </nav>
+  </footer>
+</div>
+
+<style>
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900; font-display: swap; src: url({{ 'nmw-inter-variable.woff2' | asset_url }}) format('woff2'); }
+  @font-face { font-family: 'Inter Tight'; font-style: normal; font-weight: 100 900; font-display: swap; src: url({{ 'nmw-inter-tight-variable.woff2' | asset_url }}) format('woff2'); }
+
+  :root {
+    --pl-paper: #EFEDE6; --pl-ink: #16150F; --pl-blue: #2C3E8F; --pl-grey: #6B6A62;
+    --pl-display: 'Inter Tight', 'Inter', system-ui, -apple-system, sans-serif;
+    --pl-text: 'Inter', system-ui, -apple-system, sans-serif;
+    --pl-gutter: clamp(1rem, 4vw, 2.5rem);
+  }
+  body { background: var(--pl-paper) !important; color: var(--pl-ink); margin: 0; }
+  .password-main-content { padding: 0 !important; }
+  .pl { font: 400 1rem/1.6 var(--pl-text); color: var(--pl-ink); background: var(--pl-paper); -webkit-font-smoothing: antialiased; }
+  .pl *, .pl *::before, .pl *::after { box-sizing: border-box; }
+  .pl a { color: inherit; }
+
+  .pl-label { font: 600 .75rem/1.3 var(--pl-display); letter-spacing: .12em; text-transform: uppercase; margin: 0; }
+  .pl-muted { color: var(--pl-grey); }
+  .pl-logo { display: block; height: 100%; width: auto; }
+
+  .pl-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem var(--pl-gutter); max-width: 1320px; margin: 0 auto; }
+  .pl-top__logo { display: block; height: 22px; }
+  .pl-top__ig { text-decoration: none; }
+  .pl-top__ig:hover { color: var(--pl-blue); }
+
+  .pl-hero { max-width: 1320px; margin: 0 auto; padding: clamp(3rem, 12vh, 8rem) var(--pl-gutter) clamp(3rem, 10vh, 6rem); }
+  .pl-statement { margin: 1.25rem 0 1.5rem; font: 800 clamp(2rem, 10.4vw, 9rem)/.95 var(--pl-display); letter-spacing: -.035em; }
+  .pl-statement span, .pl-statement__line { white-space: nowrap; }
+  .pl-vow { color: var(--pl-blue); }
+  .pl-lead { margin: 0 0 2.5rem; max-width: 30rem; font-size: 1.125rem; }
+
+  .pl-form { max-width: 34rem; }
+  .pl-form__label { display: block; margin-bottom: .75rem; }
+  .pl-form__row { display: flex; }
+  .pl-form__input { flex: 1 1 auto; min-width: 0; min-height: 52px; padding: 0 1rem; border: 1px solid var(--pl-ink); border-right: 0; border-radius: 0; background: transparent; color: var(--pl-ink); font: 400 1rem var(--pl-text); -webkit-appearance: none; }
+  .pl-form__input::placeholder { color: var(--pl-grey); }
+  .pl-form__input:focus { outline: 2px solid var(--pl-blue); outline-offset: -2px; }
+  .pl-button { flex: 0 0 auto; min-height: 52px; padding: 0 1.5rem; border: 1px solid var(--pl-ink); border-radius: 0; background: var(--pl-ink); color: var(--pl-paper); font: 600 .8125rem/1 var(--pl-display); letter-spacing: .12em; text-transform: uppercase; cursor: pointer; transition: background .15s, border-color .15s; }
+  .pl-button:hover, .pl-button:focus-visible { background: var(--pl-blue); border-color: var(--pl-blue); }
+  .pl-form__legal { margin: .875rem 0 0; font-size: .8125rem; line-height: 1.5; color: var(--pl-grey); }
+  .pl-form__error { margin: .625rem 0 0; font-size: .875rem; color: #9B1C1C; }
+  .pl-form__success { margin: 0; padding: 1.25rem 0; border-top: 1px solid var(--pl-ink); border-bottom: 1px solid var(--pl-ink); font: 700 1.125rem/1.4 var(--pl-display); }
+
+  .pl-story { background: var(--pl-ink); color: var(--pl-paper); }
+  .pl-story__inner { max-width: 1320px; margin: 0 auto; padding: clamp(4rem, 14vh, 9rem) var(--pl-gutter); }
+  .pl-story__label { color: #A9A79E; }
+  .pl-heading { margin: 1rem 0 1.5rem; font: 700 clamp(1.75rem, 1.1rem + 3vw, 3.5rem)/1.05 var(--pl-display); letter-spacing: -.02em; }
+  .pl-story__text { max-width: 40rem; margin: 0 0 2rem; font-size: 1.125rem; color: #D9D7CF; }
+  .pl-sign { margin: 0; font: 600 1rem var(--pl-display); }
+
+  .pl-chapters { max-width: 1320px; margin: 0 auto; padding: clamp(4rem, 12vh, 7rem) var(--pl-gutter); }
+  .pl-chapters__list { list-style: none; margin: 1.5rem 0 0; padding: 0; border-top: 1px solid var(--pl-ink); }
+  .pl-chapters__list li { display: grid; grid-template-columns: 4.5rem 1fr auto; align-items: baseline; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid rgba(22, 21, 15, .15); }
+  .pl-chapters__num { font: 800 clamp(1.75rem, 1.2rem + 2vw, 2.75rem)/1 var(--pl-display); letter-spacing: -.03em; }
+  .pl-chapters__name { font: 700 clamp(1.25rem, 1rem + 1vw, 1.75rem)/1.1 var(--pl-display); letter-spacing: -.02em; }
+
+  .pl-foot { max-width: 1320px; margin: 0 auto; padding: 2.5rem var(--pl-gutter) 1.5rem; border-top: 1px solid var(--pl-ink); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.25rem; }
+  .pl-foot__logo { display: block; height: 18px; }
+  .pl-foot__links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; font-size: .875rem; }
+  .pl-foot__links a { color: var(--pl-grey); text-decoration: none; }
+  .pl-foot__links a:hover { color: var(--pl-ink); text-decoration: underline; }
+
+  /* Standard-Footer der Passwortseite: nur noch dezenter Passwort-Zugang */
+  .password-footer { padding: 0 var(--pl-gutter) 1.5rem !important; background: var(--pl-paper) !important; color: var(--pl-grey) !important; font: 400 .8125rem var(--pl-text) !important; }
+  .password-footer__powered-by, .password-footer__admin-link { display: none !important; }
+  .password-footer__button { color: var(--pl-grey) !important; font: inherit !important; }
+
+  @media (max-width: 600px) {
+    .pl-form__row { flex-direction: column; }
+    .pl-form__input { border-right: 1px solid var(--pl-ink); border-bottom: 0; }
+    .pl-button { width: 100%; }
+    .pl-chapters__list li { grid-template-columns: 3.25rem 1fr; }
+    .pl-chapters__state { grid-column: 2; }
+    .pl-foot { flex-direction: column; align-items: flex-start; }
+  }
+
+</style>
+
+{% schema %}
+{ "name": "nomaet. Pre-Launch", "settings": [] }
+{% endschema %}
