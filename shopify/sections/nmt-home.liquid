@@ -1,0 +1,324 @@
+{%- comment -%}
+  nomaet. Startseite (22.10.2026). Ersetzt gold-chain-home.
+  Regeln: BRAND.md. Inter Tight / Inter, Logo nur als Vektor (nmt-logo).
+  Eine blaue Stelle: "No matter what." im Story-Block.
+  Produktkarten zeigen Typo-Karten statt Fotos, bis "show_product_photos" im Theme-Editor aktiviert wird (nach dem Shooting).
+  Sprache: locale de = Deutsch, sonst Englisch.
+{%- endcomment -%}
+{%- liquid
+  assign de = false
+  if request.locale.iso_code == 'de'
+    assign de = true
+  endif
+  assign handles = 'die-goldkette,the-ring' | split: ','
+-%}
+
+<div class="nh">
+
+  {%- comment -%} 1. Hero {%- endcomment -%}
+  <section class="nh-hero" aria-labelledby="NhHeading">
+    <div class="nh-hero__media">
+      {%- if section.settings.video != blank -%}
+        {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'metadata', class: 'nh-hero__video', image_size: '1600x' }}
+      {%- elsif section.settings.image != blank -%}
+        {{ section.settings.image | image_url: width: 2000, format: 'jpg' | image_tag: class: 'nh-hero__img', loading: 'eager', sizes: '100vw', alt: '' }}
+      {%- endif -%}
+      <div class="nh-hero__scrim"></div>
+    </div>
+    <div class="nh-hero__content">
+      <h1 id="NhHeading" class="nh-hero__title">Made to stay.</h1>
+      <p class="nh-hero__lead">{% if de %}Schmuck für jeden Tag, von Anahita &amp; Sascha. Chapter 01: die „Schloss“ Kette und der Pinky Promise Ring.{% else %}Everyday jewelry by Anahita &amp; Sascha. Chapter 01: the “Lock” chain and the Pinky Promise ring.{% endif %}</p>
+      <div class="nh-hero__actions">
+        <a class="nh-btn nh-btn--light" href="#chapter-01">{% if de %}Chapter 01 ansehen{% else %}Shop chapter 01{% endif %}</a>
+        <a class="nh-link nh-link--light" href="/pages/about">{% if de %}Unsere Geschichte{% else %}Our story{% endif %}</a>
+      </div>
+    </div>
+    {%- if section.settings.video != blank -%}
+      <button class="nh-hero__toggle" type="button" aria-pressed="false" data-label-pause="{% if de %}Video pausieren{% else %}Pause video{% endif %}" data-label-play="{% if de %}Video abspielen{% else %}Play video{% endif %}" aria-label="{% if de %}Video pausieren{% else %}Pause video{% endif %}">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" class="nh-ico-pause"><rect x="3" y="2" width="3.5" height="12" fill="currentColor"/><rect x="9.5" y="2" width="3.5" height="12" fill="currentColor"/></svg>
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" class="nh-ico-play"><path d="M4 2l10 6-10 6z" fill="currentColor"/></svg>
+      </button>
+    {%- endif -%}
+  </section>
+
+  {%- comment -%} 2. Chapter 01: beide Stücke gleichwertig {%- endcomment -%}
+  <section class="nh-wrap nh-ch1" id="chapter-01" aria-labelledby="NhCh1">
+    <header class="nh-head">
+      <h2 id="NhCh1" class="nh-h2">Chapter 01</h2>
+      <p class="nh-head__text">{% if de %}Zwei Stücke aus unserer eigenen Geschichte, gemacht für jeden Tag. In Sterling Silber oder vergoldet, Gold 585 auf Anfrage.{% else %}Two pieces from our own story, made to be worn every day. In sterling silver or gold-plated, with gold 585 on request.{% endif %}</p>
+    </header>
+    <ul class="nh-pieces" role="list">
+      {%- for h in handles -%}
+        {%- assign piece = all_products[h] -%}
+        {%- if piece != blank -%}
+          {%- if h == 'die-goldkette' -%}{%- assign no = '001' -%}{%- else -%}{%- assign no = '002' -%}{%- endif -%}
+          <li>
+            <a class="nh-piece" href="{{ piece.url }}">
+              <span class="nh-piece__media">
+                {%- if section.settings.show_product_photos and piece.featured_image -%}
+                  {{ piece.featured_image | image_url: width: 1200 | image_tag: loading: 'lazy', sizes: '(min-width: 750px) 45vw, 100vw', alt: piece.title, class: 'nh-piece__img' }}
+                {%- else -%}
+                  <span class="nh-piece__card" aria-hidden="true">
+                    <span class="nh-piece__cardname">{% if h == 'die-goldkette' %}{% if de %}Schloss{% else %}Lock{% endif %}{% else %}Pinky Promise{% endif %}</span>
+                    <span class="nh-piece__cardmeta">chapter 01</span>
+                  </span>
+                {%- endif -%}
+              </span>
+              <span class="nh-piece__info">
+                <span class="nh-piece__no">no {{ no }}</span>
+                <span class="nh-piece__name">{{ piece.title }}</span>
+                <span class="nh-piece__price">{% if de %}ab{% else %}from{% endif %} {{ piece.price_min | money }}</span>
+                <span class="nh-piece__desc">{% if h == 'die-goldkette' %}{% if de %}Der kleine Schloss-Anhänger, mit dem alles angefangen hat. 36/38 bis 60 cm.{% else %}The small lock pendant where it all started. 36/38 to 60 cm.{% endif %}{% else %}{% if de %}Schmaler Ring mit einem kleinen Schlüssel innen graviert. Größen 42 bis 60.{% else %}A slim band with a tiny key engraved inside. Sizes 42 to 60.{% endif %}{% endif %}</span>
+              </span>
+            </a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </section>
+
+  {%- comment -%} 3. Der Schwur: der eine laute Moment der Seite {%- endcomment -%}
+  <section class="nh-vow" aria-labelledby="NhVow">
+    <div class="nh-wrap nh-vow__grid">
+      <h2 id="NhVow" class="nh-vow__title">No matter what.</h2>
+      <div class="nh-vow__body">
+        {%- if section.settings.story_image != blank -%}
+          {{ section.settings.story_image | image_url: width: 900 | image_tag: loading: 'lazy', class: 'nh-vow__img', alt: section.settings.story_image.alt | default: 'Anahita & Sascha', sizes: '(min-width: 750px) 30vw, 70vw' }}
+        {%- endif -%}
+        <div class="nh-vow__text">
+          <p>{% if de %}Drei Worte, die wir beide auf der Haut tragen. Angefangen hat es mit zwei Ketten mit je einem kleinen Schloss, die wir uns geschenkt haben. Chapter 01 ist unsere Version davon, für euch.{% else %}Three words we both carry on our skin. It started with two necklaces, each with a small lock, that we gave each other. Chapter 01 is our version of them, made for you.{% endif %}</p>
+          <p class="nh-sign">Anahita &amp; Sascha</p>
+          <a class="nh-link" href="/pages/about">{% if de %}Die ganze Geschichte lesen{% else %}Read the whole story{% endif %}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} 4. Die Kapitel: echte Reihenfolge, deshalb nummeriert {%- endcomment -%}
+  <section class="nh-wrap nh-chapters" aria-labelledby="NhChapters">
+    <h2 id="NhChapters" class="nh-h2">{% if de %}Kapitel für Kapitel.{% else %}One chapter at a time.{% endif %}</h2>
+    <ol class="nh-chapters__list">
+      <li>
+        <span class="nh-chapters__num">01</span>
+        <span class="nh-chapters__name">{% if de %}Schmuck{% else %}Jewelry{% endif %}</span>
+        <span class="nh-chapters__text">{% if de %}Die „Schloss“ Kette und der Pinky Promise Ring.{% else %}The “Lock” chain and the Pinky Promise ring.{% endif %}</span>
+      </li>
+      <li class="is-next">
+        <span class="nh-chapters__num">02</span>
+        <span class="nh-chapters__name">{% if de %}In Arbeit{% else %}In the works{% endif %}</span>
+        <span class="nh-chapters__text"><a href="#newsletter">{% if de %}Trag dich ein, dann erfährst du es zuerst.{% else %}Join the list to hear first.{% endif %}</a></span>
+      </li>
+      <li class="is-next">
+        <span class="nh-chapters__num">03</span>
+        <span class="nh-chapters__name">{% if de %}Noch ungeschrieben{% else %}Still unwritten{% endif %}</span>
+        <span class="nh-chapters__text"></span>
+      </li>
+    </ol>
+  </section>
+
+  {%- comment -%} 5. Fakten statt Werbeblock {%- endcomment -%}
+  <section class="nh-wrap nh-facts" aria-label="{% if de %}Gut zu wissen{% else %}Good to know{% endif %}">
+    <dl class="nh-facts__list">
+      <div><dt>{% if de %}Versand{% else %}Shipping{% endif %}</dt><dd>{% if de %}Aus Deutschland, innerhalb von 1–3 Werktagen.{% else %}From Germany, within 1–3 business days.{% endif %}</dd></div>
+      <div><dt>{% if de %}Rückgabe{% else %}Returns{% endif %}</dt><dd>{% if de %}30 Tage. Ungetragen und in der Originalverpackung.{% else %}30 days. Unworn and in the original packaging.{% endif %}</dd></div>
+      <div><dt>{% if de %}Material{% else %}Material{% endif %}</dt><dd>{% if de %}Sterling Silber oder vergoldet. Gold 585 auf Anfrage.{% else %}Sterling silver or gold-plated. Gold 585 on request.{% endif %}</dd></div>
+    </dl>
+  </section>
+
+  {%- comment -%} 6. FAQ {%- endcomment -%}
+  <section class="nh-wrap nh-faq" aria-labelledby="NhFaq">
+    <h2 id="NhFaq" class="nh-h2">{% if de %}Fragen{% else %}Questions{% endif %}</h2>
+    <div class="nh-faq__list">
+      <details>
+        <summary>{% if de %}Was bedeutet Chapter 01?{% else %}What does Chapter 01 mean?{% endif %}</summary>
+        <p>{% if de %}Jede Kollektion ist bei uns ein Kapitel. Chapter 01 ist Schmuck: die „Schloss“ Kette und der Pinky Promise Ring. Die nächsten Kapitel müssen kein Schmuck sein.{% else %}Every collection is a chapter. Chapter 01 is jewelry: the “Lock” chain and the Pinky Promise ring. The next chapters don’t have to be jewelry.{% endif %}</p>
+      </details>
+      <details>
+        <summary>{% if de %}Welche Größe brauche ich?{% else %}Which size do I need?{% endif %}</summary>
+        <p>{% if de %}Die Kette gibt es in 36/38, 50, 55 und 60 cm, den Ring in den Größen 42 bis 60. In der <a href="/pages/size-guide">Größentabelle</a> steht, wie du zu Hause misst.{% else %}The chain comes in 36/38, 50, 55 and 60 cm, the ring in sizes 42 to 60. The <a href="/pages/size-guide">size guide</a> shows how to measure at home.{% endif %}</p>
+      </details>
+      <details>
+        <summary>{% if de %}Wie lange dauert der Versand?{% else %}How long does shipping take?{% endif %}</summary>
+        <p>{% if de %}Wir versenden innerhalb von 1–3 Werktagen. Lieferung: Deutschland 2–4 Werktage, EU 4–8, international 7–14.{% else %}We ship within 1–3 business days. Delivery: Germany 2–4 business days, EU 4–8, international 7–14.{% endif %}</p>
+      </details>
+      <details>
+        <summary>{% if de %}Kann ich zurückgeben?{% else %}Can I return my order?{% endif %}</summary>
+        <p>{% if de %}Ja, innerhalb von 30 Tagen nach Erhalt, ungetragen und in der Originalverpackung. Die Rücksendung zahlst du. Alles Weitere unter <a href="/pages/shipping-returns">Versand &amp; Rückgabe</a>.{% else %}Yes, within 30 days of delivery, unworn and in the original packaging. Return shipping is on you. Details under <a href="/pages/shipping-returns">Shipping &amp; Returns</a>.{% endif %}</p>
+      </details>
+    </div>
+    <a class="nh-link" href="/pages/faq">{% if de %}Alle Fragen{% else %}All questions{% endif %}</a>
+  </section>
+
+  {%- comment -%} 7. Newsletter {%- endcomment -%}
+  <section class="nh-news" id="newsletter" aria-labelledby="NhNews">
+    <div class="nh-wrap nh-news__grid">
+      <div>
+        <h2 id="NhNews" class="nh-h2">{% if de %}Kein Kapitel verpassen.{% else %}Follow the chapters.{% endif %}</h2>
+        <p class="nh-news__text">{% if de %}Neue Stücke und die Geschichte dahinter, direkt von uns. Nur wenn es etwas Neues gibt.{% else %}New pieces and the story behind them, straight from us. Only when there’s something new.{% endif %}</p>
+      </div>
+      {%- form 'customer', class: 'nh-form', id: 'NhNewsletter' -%}
+        {%- if form.posted_successfully? -%}
+          <p class="nh-form__ok" role="status">{% if de %}Danke, du bist auf der Liste.{% else %}Thank you, you’re on the list.{% endif %}</p>
+        {%- else -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <label class="nh-visually-hidden" for="NhEmail">{% if de %}E-Mail-Adresse{% else %}Email address{% endif %}</label>
+          <div class="nh-form__row">
+            <input id="NhEmail" class="nh-form__input" type="email" name="contact[email]" autocomplete="email" required placeholder="{% if de %}Deine E-Mail-Adresse{% else %}Your email address{% endif %}"{% if form.errors %} aria-invalid="true" aria-describedby="NhEmailError"{% endif %}>
+            <button class="nh-btn" type="submit">{% if de %}Eintragen{% else %}Join the list{% endif %}</button>
+          </div>
+          {%- if form.errors -%}<p id="NhEmailError" class="nh-form__err" role="alert">{% if de %}Bitte gib eine gültige E-Mail-Adresse ein.{% else %}Please enter a valid email address.{% endif %}</p>{%- endif -%}
+          <p class="nh-form__legal">{% if de %}Abmeldung jederzeit.{% else %}Unsubscribe anytime.{% endif %}{% if shop.privacy_policy.url != blank %} <a href="{{ shop.privacy_policy.url }}">{% if de %}Datenschutz{% else %}Privacy policy{% endif %}</a>{% endif %}</p>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </section>
+</div>
+
+<script>
+  (function () {
+    var btn = document.querySelector('.nh-hero__toggle');
+    var video = document.querySelector('.nh-hero__video');
+    if (!btn || !video) return;
+    video.muted = true;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { video.removeAttribute('autoplay'); video.pause(); btn.setAttribute('aria-pressed', 'true'); btn.setAttribute('aria-label', btn.dataset.labelPlay); }
+    btn.addEventListener('click', function () {
+      var paused = video.paused;
+      if (paused) { video.play(); } else { video.pause(); }
+      btn.setAttribute('aria-pressed', paused ? 'false' : 'true');
+      btn.setAttribute('aria-label', paused ? btn.dataset.labelPause : btn.dataset.labelPlay);
+    });
+  })();
+</script>
+
+{% stylesheet %}
+  .nh { --nh-paper: var(--nmw-paper, #EFEDE6); --nh-ink: var(--nmw-ink, #16150F); --nh-blue: var(--nmw-blue, #2C3E8F); --nh-grey: var(--nmw-mute, #6B6A62); --nh-sand: var(--nmw-sand, #D8C9A0);
+        --nh-display: var(--nmw-sans-tight, 'Inter Tight', 'Inter', sans-serif); --nh-text: var(--nmw-sans, 'Inter', sans-serif);
+        --nh-gutter: clamp(1rem, 4vw, 2.5rem);
+        background: var(--nh-paper); color: var(--nh-ink); font: 400 1rem/1.6 var(--nh-text); }
+  .nh *, .nh *::before, .nh *::after { box-sizing: border-box; }
+  .nh :where(a) { color: inherit; }
+  .nh-wrap { width: 100%; max-width: 1320px; margin: 0 auto; padding-inline: var(--nh-gutter); }
+  .nh-h2 { margin: 0; font: 700 clamp(1.9rem, 1.2rem + 3vw, 3.5rem)/1.02 var(--nh-display); letter-spacing: -.025em; }
+  .nh-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  .nh-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 1.75rem; border: 1px solid var(--nh-ink); border-radius: 0; background: var(--nh-ink); color: var(--nh-paper); font: 600 .8125rem/1 var(--nh-display); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background .15s, border-color .15s, color .15s; }
+  .nh-btn:hover, .nh-btn:focus-visible { background: var(--nh-blue); border-color: var(--nh-blue); color: #fff; }
+  .nh-btn--light { background: var(--nh-paper); border-color: var(--nh-paper); color: var(--nh-ink); }
+  .nh-link { display: inline-block; font: 600 .9375rem/1.4 var(--nh-display); text-decoration: underline; text-underline-offset: .3em; text-decoration-thickness: 1px; }
+  .nh-link:hover { color: var(--nh-blue); }
+  .nh-link--light { color: var(--nh-paper) !important; }
+  .nh-link--light:hover { opacity: .8; }
+  .nh :focus-visible { outline: 2px solid var(--nh-blue); outline-offset: 3px; }
+
+  /* 1. Hero */
+  .nh-hero { position: relative; display: grid; align-items: end; min-height: min(88svh, 900px); overflow: hidden; background: var(--nh-ink); color: var(--nh-paper); }
+  .nh-hero__media { position: absolute; inset: 0; }
+  .nh-hero__media video, .nh-hero__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .nh-hero__scrim { position: absolute; inset: 0; background: linear-gradient(0deg, rgb(22 21 15 / .72) 0%, rgb(22 21 15 / .25) 40%, rgb(22 21 15 / 0) 65%); }
+  .nh-hero__content { position: relative; width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 var(--nh-gutter) clamp(2rem, 7vh, 4.5rem); }
+  .nh-hero__title { margin: 0 0 1rem; font: 800 clamp(3.25rem, 1.5rem + 9vw, 9rem)/.92 var(--nh-display); letter-spacing: -.04em; color: var(--nh-paper); }
+  .nh-hero__lead { max-width: 32rem; margin: 0 0 1.75rem; font-size: clamp(1rem, .95rem + .3vw, 1.2rem); line-height: 1.5; color: var(--nh-paper); }
+  .nh-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; }
+  .nh-hero__toggle { position: absolute; right: var(--nh-gutter); bottom: clamp(2rem, 7vh, 4.5rem); display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 1px solid rgb(239 237 230 / .6); border-radius: 50%; background: rgb(22 21 15 / .35); color: var(--nh-paper); cursor: pointer; }
+  .nh-hero__toggle .nh-ico-play { display: none; }
+  .nh-hero__toggle[aria-pressed="true"] .nh-ico-play { display: block; }
+  .nh-hero__toggle[aria-pressed="true"] .nh-ico-pause { display: none; }
+
+  /* 2. Chapter 01 */
+  .nh-ch1 { padding-block: clamp(4rem, 10vw, 8rem) clamp(3rem, 8vw, 6rem); }
+  .nh-head { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2.5rem; align-items: end; margin-bottom: clamp(2rem, 4vw, 3rem); }
+  .nh-head__text { margin: 0; max-width: 32rem; color: var(--nh-grey); font-size: 1.0625rem; }
+  .nh-pieces { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); margin: 0; padding: 0; list-style: none; }
+  .nh-piece { display: block; text-decoration: none; }
+  .nh-piece__media { position: relative; display: block; aspect-ratio: 4 / 5; overflow: hidden; background: var(--nh-sand); }
+  .nh-piece__img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .nh-piece:hover .nh-piece__img { transform: scale(1.03); }
+  .nh-piece__card { position: absolute; inset: 0; display: grid; grid-template-rows: 1fr auto; padding: clamp(1rem, 2.5vw, 1.75rem); background: var(--nh-sand); color: var(--nh-ink); transition: background .3s ease; }
+  .nh-piece:hover .nh-piece__card { background: #CFBE91; }
+  .nh-piece__cardmeta { font: 600 .75rem/1 var(--nh-display); letter-spacing: .12em; text-transform: uppercase; }
+  .nh-piece__cardname { align-self: center; font: 800 clamp(2.4rem, 1.2rem + 5vw, 5.5rem)/.9 var(--nh-display); letter-spacing: -.04em; }
+  .nh-piece__info { display: grid; gap: .2rem; padding-top: 1rem; }
+  .nh-piece__no { font: 600 .75rem/1.3 var(--nh-display); letter-spacing: .12em; text-transform: uppercase; color: var(--nh-grey); }
+  .nh-piece__name { font: 700 clamp(1.15rem, 1rem + .6vw, 1.5rem)/1.2 var(--nh-display); letter-spacing: -.015em; }
+  .nh-piece:hover .nh-piece__name { text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 1px; }
+  .nh-piece__price { font-size: 1rem; }
+  .nh-piece__desc { margin-top: .35rem; max-width: 30rem; color: var(--nh-grey); font-size: .9375rem; }
+
+  /* 3. Der Schwur */
+  .nh-vow { padding-block: clamp(4rem, 10vw, 8rem); border-top: 1px solid var(--nh-ink); }
+  .nh-vow__title { margin: 0 0 clamp(2rem, 5vw, 3.5rem); white-space: nowrap; font: 800 clamp(2rem, 11.2vw, 11rem)/.9 var(--nh-display); letter-spacing: -.045em; color: var(--nh-blue); }
+  .nh-vow__body { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(1.5rem, 5vw, 5rem); align-items: end; }
+  .nh-vow__img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; display: block; }
+  .nh-vow__text { max-width: 34rem; }
+  .nh-vow__text p { margin: 0 0 1.25rem; font-size: clamp(1.125rem, 1rem + .5vw, 1.375rem); line-height: 1.5; }
+  .nh-vow__text .nh-sign { font: 600 1rem var(--nh-display); }
+
+  /* 4. Kapitel */
+  .nh-chapters { padding-block: clamp(3rem, 8vw, 6rem); }
+  .nh-chapters__list { margin: clamp(1.5rem, 3vw, 2.5rem) 0 0; padding: 0; list-style: none; border-top: 1px solid var(--nh-ink); }
+  .nh-chapters__list li { display: grid; grid-template-columns: 5rem minmax(0, 1fr) minmax(0, 1.4fr); align-items: baseline; gap: 1rem; padding: 1.4rem 0; border-bottom: 1px solid rgb(22 21 15 / .15); }
+  .nh-chapters__num { font: 800 clamp(1.75rem, 1.2rem + 2vw, 3rem)/1 var(--nh-display); letter-spacing: -.03em; }
+  .nh-chapters__name { font: 700 clamp(1.2rem, 1rem + 1vw, 1.75rem)/1.15 var(--nh-display); letter-spacing: -.02em; }
+  .nh-chapters__text { color: var(--nh-grey); }
+  .nh-chapters__list li.is-next .nh-chapters__num, .nh-chapters__list li.is-next .nh-chapters__name { color: var(--nh-grey); }
+
+  /* 5. Fakten */
+  .nh-facts { padding-block: 0 clamp(3rem, 8vw, 6rem); }
+  .nh-facts__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem clamp(1.5rem, 4vw, 3rem); margin: 0; padding-top: 1.5rem; border-top: 1px solid rgb(22 21 15 / .15); }
+  .nh-facts__list dt { margin-bottom: .35rem; font: 700 1rem/1.3 var(--nh-display); }
+  .nh-facts__list dd { margin: 0; color: var(--nh-grey); font-size: .9375rem; }
+
+  /* 6. FAQ */
+  .nh-faq { padding-block: clamp(3rem, 8vw, 6rem); border-top: 1px solid var(--nh-ink); }
+  .nh-faq__list { margin: clamp(1.5rem, 3vw, 2.5rem) 0 1.75rem; max-width: 56rem; }
+  .nh-faq details { border-bottom: 1px solid rgb(22 21 15 / .15); }
+  .nh-faq details:first-child { border-top: 1px solid rgb(22 21 15 / .15); }
+  .nh-faq summary { position: relative; padding: 1.15rem 2.5rem 1.15rem 0; font: 700 clamp(1.05rem, 1rem + .3vw, 1.2rem)/1.35 var(--nh-display); list-style: none; cursor: pointer; }
+  .nh-faq summary::-webkit-details-marker { display: none; }
+  .nh-faq summary::after { content: "+"; position: absolute; right: .25rem; top: 50%; transform: translateY(-50%); font: 400 1.5rem/1 var(--nh-display); }
+  .nh-faq details[open] summary::after { content: "–"; }
+  .nh-faq details p { margin: 0 0 1.25rem; max-width: 44rem; color: var(--nh-grey); }
+
+  /* 7. Newsletter */
+  .nh-news { padding-block: clamp(3.5rem, 9vw, 6.5rem); background: var(--nh-ink); color: var(--nh-paper); }
+  .nh-news__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem clamp(2rem, 6vw, 5rem); align-items: end; }
+  .nh-news__text { margin: 1rem 0 0; max-width: 28rem; color: #C9C7BF; }
+  .nh-form__row { display: flex; }
+  .nh .nh-form__input { flex: 1 1 auto; min-width: 0; min-height: 52px; margin: 0; padding: 0 1rem; border: 1px solid var(--nh-paper) !important; border-right: 0 !important; border-radius: 0 !important; background: transparent !important; color: var(--nh-paper) !important; box-shadow: none !important; font: 400 1rem var(--nh-text); -webkit-appearance: none; }
+  .nh-form__input::placeholder { color: #A9A79E; }
+  .nh-news .nh-btn { background: var(--nh-paper); border-color: var(--nh-paper); color: var(--nh-ink); }
+  .nh-news .nh-btn:hover, .nh-news .nh-btn:focus-visible { background: var(--nh-blue); border-color: var(--nh-blue); color: #fff; }
+  .nh-news :focus-visible { outline-color: var(--nh-paper); }
+  .nh-form__legal { margin: .875rem 0 0; font-size: .8125rem; color: #A9A79E; }
+  .nh-form__err { margin: .625rem 0 0; font-size: .875rem; color: #F2B8B5; }
+  .nh-form__ok { margin: 0; padding: 1.25rem 0; border-block: 1px solid var(--nh-paper); font: 700 1.125rem/1.4 var(--nh-display); }
+
+  @media screen and (max-width: 749px) {
+    .nh-head, .nh-news__grid { grid-template-columns: 1fr; }
+    .nh-pieces { gap: 1.5rem .75rem; }
+    .nh-piece__cardname { font-size: clamp(1.4rem, 7.5vw, 2.4rem); }
+    .nh-piece__desc { font-size: .875rem; }
+    .nh-vow__body { grid-template-columns: 1fr; }
+    .nh-vow__img { width: 72%; }
+    .nh-chapters__list li { grid-template-columns: 3.25rem minmax(0, 1fr); }
+    .nh-chapters__text { grid-column: 2; }
+    .nh-facts__list { grid-template-columns: 1fr; }
+    .nh-form__row { flex-direction: column; }
+    .nh .nh-form__input { border-right: 1px solid var(--nh-paper) !important; border-bottom: 0 !important; }
+    .nh-hero__toggle { bottom: 1rem; width: 36px; height: 36px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .nh-piece__img, .nh-piece__card, .nh-btn { transition: none; } }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "nomaet. Startseite",
+  "settings": [
+    { "type": "video", "id": "video", "label": "Hero-Video" },
+    { "type": "image_picker", "id": "image", "label": "Hero-Bild (falls kein Video)" },
+    { "type": "image_picker", "id": "story_image", "label": "Foto im Story-Block" },
+    { "type": "checkbox", "id": "show_product_photos", "label": "Echte Produktfotos zeigen (nach dem Shooting aktivieren)", "default": false }
+  ],
+  "presets": [{ "name": "nomaet. Startseite" }]
+}
+{% endschema %}
