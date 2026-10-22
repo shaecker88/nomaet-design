@@ -11,7 +11,7 @@ Die eine Quelle für alles, was nach nomaet. aussehen und klingen soll: Logo, Fa
 | [`BRAND.md`](BRAND.md) | Markenhandbuch: Logo, Farbe, Schrift, Archiv-Elemente, Bildsprache, Sprache, Schnellcheck |
 | [`docs/`](docs) | Markenkern & Status quo, Font-Anleitung NOMAET Hand, Shooting-Briefing Chapter 01, Markenanmeldung, Protokoll der Design-Challenge |
 | [`brand.html`](brand.html) | Visuelle Übersicht zum Durchklicken (im Browser öffnen) |
-| [`logo/`](logo) | Wortmarke **nomaet.** und Zeichen **n.** als SVG (Vektor) und PNG |
+| [`logo/`](logo) | Wortmarke **nomaet.**, Bildlogo **Abdruck-Herz** und Zeichen **n.** als SVG (Vektor) und PNG |
 | [`tokens/`](tokens) | Design-Tokens als JSON und CSS (für Shop, Landingpages, Mails) |
 | [`fonts/`](fonts) | Boldonse, Inter Tight, Inter (Open Font License) |
 | [`.agents/product-marketing.md`](.agents/product-marketing.md) | Marken-Kontext, den die Marketing-Skills lesen |

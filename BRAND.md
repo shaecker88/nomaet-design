@@ -49,15 +49,16 @@ Zielgruppe: Anahitas Community, Frauen 25–45, modeaffin, oft Mütter; kaufen f
 
 ## 3. Logo
 
-Es gibt genau **ein** Logo: die Wortmarke **nomaet.** in Boldonse. Dazu ein Kurzzeichen **n.** für kleine Flächen.
+Hauptlogo ist die Wortmarke **nomaet.** in Boldonse. Dazu das Bildlogo **Abdruck-Herz** (seit 22.10.2026, Details in `docs/markenkern.md`) und das Kurzzeichen **n.** für sehr kleine Flächen.
 
 | Datei | Wofür |
 |---|---|
 | `logo/nomaet-wordmark-ink.svg` | Standard auf hellen Flächen |
 | `logo/nomaet-wordmark-paper.svg` | Auf Tinte/dunklen Fotos |
 | `logo/nomaet-wordmark-blue.svg` | Sonderfälle: Stempel, Verpackungsdetail |
-| `logo/nomaet-mark-n-*.svg` | Favicon, Profilbild, Siegel, Gravur |
-| `logo/png/` | Fertige PNGs (Avatar 1080 px, Favicon 32/180 px, Wortmarke 2400 px) |
+| `logo/nomaet-herz-ink.svg` / `-paper.svg` | Bildlogo Abdruck-Herz: Karte, Website, Social, Gravur, Prägung (ab 64 px / 15 mm) |
+| `logo/nomaet-mark-n-*.svg` | Favicon und sehr kleine Flächen |
+| `logo/png/` | Fertige PNGs (Avatar 1080 px, Favicon 32/180 px, Wortmarke und Herz 2400 px) |
 
 **Regeln**
 - **Schutzraum:** rundherum mindestens die Höhe des Punkts. Nichts ragt hinein.

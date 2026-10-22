@@ -19,7 +19,8 @@ Wie wir zum Status quo (`markenkern.md`) gekommen sind.
 | Post-it | aus A übernommen, nur Social und Karten |
 | Stempelblau | nur Highlight, max. eine Stelle |
 | Braun | **Leder `#6B4C3A`** aufgenommen (Box, Verpackung, Footer) |
-| Wortmarke | „nomaet.“ in Boldonse steht; Zeichen noch offen |
+| Wortmarke | „nomaet.“ in Boldonse steht |
+| Bildlogo | Abdruck-Herz aus beiden Daumenabdrücken, selbst gestempelt (final) |
 | Haltungssatz | „for the ones that were meant to be.“ |
 | Zielgruppe | Anahitas Community, Frauen 25–45 |
 

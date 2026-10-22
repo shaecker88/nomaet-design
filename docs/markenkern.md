@@ -71,9 +71,14 @@ Kontraste: Papier auf Leder 6,6:1 · Tinte auf Leder 2,4:1 (nicht nutzen) · Bla
 
 Momente der Verbindung: Hände, Umarmungen, zwei Ketten, Freundinnen, Mütter. Natürlich, nah, s/w oder warm, Fotos groß und gerade. Gründer erzählen die Story (Our Story, Chapter-Start), sie sind nicht das Gesicht jeder Kampagne. Max nie im Bild, keine erkennbaren Kinder. Keine Esoterik-Symbole.
 
-## Zeichen (Kurzzeichen)
+## Bildlogo: das Abdruck-Herz
 
-Noch nicht final. Die Wortmarke „nomaet.“ bleibt; ein zusätzliches Zeichen wird noch entwickelt. Entwürfe liegen bewusst nicht im Repo, erst die finale Version kommt nach `logo/`.
+Final seit 22.10.2026. Ein Herz aus zwei überlappenden Daumenabdrücken von Anahita und Sascha, selbst gestempelt und vektorisiert (`logo/nomaet-herz-*.svg`). Einer liegt über dem anderen, wie bei Menschen, die zusammengehören. Es ist „meant to be“ ohne Worte.
+
+- Einsatz: Karte in der Box, Website, Social, Gravur im Anhänger, Prägung.
+- Mindestgröße ca. 64 px / 15 mm, darunter „n.“ verwenden.
+- Farben: Tinte auf Papier, Papier auf Tinte oder Leder.
+- Nicht nachzeichnen, glätten oder umfärben. Das Original-Foto der Abdrücke wird nicht veröffentlicht.
 
 ## Pflichten vor dem Launch
 

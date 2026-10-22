@@ -8,7 +8,7 @@ Stand: 22.10.2026 · keine Rechtsberatung, verbindlich klärt das Stefanie Brum 
 |---|---|---|
 | Wortmarke | den Namen, egal in welcher Schrift | „NOMAET“ – Pflicht, kommt zuerst (läuft) |
 | Wort-/Bildmarke | Name in genau dieser Gestaltung | „nomaet.“ in Boldonse – optional |
-| Bildmarke | ein Zeichen ohne Text | erst, wenn ein Zeichen final ist |
+| Bildmarke | ein Zeichen ohne Text | Abdruck-Herz: vorerst nicht, siehe unten |
 
 - Eine Marke schützt nur genau die angemeldete Form. Jede spätere Änderung heißt neue Anmeldung und neue Gebühr. Deshalb nichts anmelden, was noch nicht final ist.
 - Verbreitete Motive (z. B. Herzen bei Schmuck) können als reine Verzierung gelten und schwerer eintragbar sein. Geschützt ist dann nur die konkrete Gestaltung, nicht die Idee.
@@ -24,15 +24,16 @@ Stand: 22.10.2026 · keine Rechtsberatung, verbindlich klärt das Stefanie Brum 
 
 Passende Klassen: 14 (Schmuck), 25 (Kleidung), 35 (Einzelhandel/Shop), später ggf. 4 (Kerzen) und 21 (Haushalt).
 
-## Reihenfolge
+## Unser Plan (Stand 22.10.2026, mit Stefanie abstimmen)
 
-1. Wortmarke NOMAET (läuft mit Stefanie Brum)
-2. Zeichen final entwickeln
-3. Dann Bild- bzw. Wort-/Bildmarke
+1. Jetzt nur die Wortmarke NOMAET. Sie schützt den Namen in jeder Schrift und deckt das Schriftlogo „nomaet.“ mit ab.
+2. Schriftlogo „nomaet.“ nicht extra anmelden, das bringt kaum zusätzlichen Schutz.
+3. Abdruck-Herz später als Bildmarke, wenn es auch ohne den Namen als NOMAET erkannt wird. Fingerabdruck-Herzen sind bei Schmuck verbreitet, geschützt wäre nur die konkrete Zeichnung, und als Verzierung kann die Eintragung schwierig sein.
+
+Unterlagen für Stefanie: `markenunterlagen-2026-10-22.pdf` (Schriftlogo und Herz).
 
 ## Fragen an Stefanie Brum
 
 - Ist die laufende Anmeldung eine reine Wortmarke oder schon eine Wort-/Bildmarke?
 - Welche Klassen sind enthalten, reichen sie für Kleidung und Home?
-- Lohnt sich später eine Bildmarke für das Zeichen, und wann?
-- Kann sie eine Ähnlichkeitsrecherche für das Zeichen machen?
+- Sieht sie das auch so, nur Wortmarke jetzt und das Herz später?
