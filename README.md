@@ -1,6 +1,6 @@
 <p align="center"><img src="logo/nomaet-wordmark-ink-on-paper.svg" width="420" alt="nomaet."></p>
 
-<p align="center"><b>Made to stay. No matter what.</b></p>
+<p align="center"><b>for the ones that were meant to be.</b></p>
 
 # NOMAETstudios Design
 
@@ -9,6 +9,7 @@ Die eine Quelle für alles, was nach nomaet. aussehen und klingen soll: Logo, Fa
 | Ordner / Datei | Inhalt |
 |---|---|
 | [`BRAND.md`](BRAND.md) | Markenhandbuch: Logo, Farbe, Schrift, Archiv-Elemente, Bildsprache, Sprache, Schnellcheck |
+| [`docs/`](docs) | Markenkern & Status quo, Font-Anleitung NOMAET Hand, Shooting-Briefing Chapter 01, Protokoll der Design-Challenge |
 | [`brand.html`](brand.html) | Visuelle Übersicht zum Durchklicken (im Browser öffnen) |
 | [`logo/`](logo) | Wortmarke **nomaet.** und Zeichen **n.** als SVG (Vektor) und PNG |
 | [`tokens/`](tokens) | Design-Tokens als JSON und CSS (für Shop, Landingpages, Mails) |
@@ -19,10 +20,12 @@ Die eine Quelle für alles, was nach nomaet. aussehen und klingen soll: Logo, Fa
 
 ## Kurz und knapp
 
+- **Haltung:** for the ones that were meant to be. · made to stay. · no matter what.
 - **Logo:** nur `nomaet.` in Boldonse. Boldonse nirgends sonst.
-- **Farben:** Papier `#EFEDE6` · Tinte `#16150F` · Stempelblau `#2C3E8F` (max. 10 %) · Grau `#6B6A62` · Sand `#D8C9A0`
-- **Schrift:** Inter Tight für Überschriften und Etiketten, Inter für Text.
-- **Archiv:** höchstens ein Archiv-Element pro Screen. Nummern immer: `chapter 01 · no 001`.
+- **Farben:** Papier `#EFEDE6` · Tinte `#16150F` · Grau `#6B6A62` · Post-it `#E6D9B2` · Leder `#6B4C3A` · Stempelblau `#2C3E8F` (nur ein Highlight)
+- **Schrift:** NOMAET-Handschrift (Hauptelement), Inter Tight für Überschriften, Inter für Text.
+- **Elemente:** Handschrift, N°-Label, Post-it. Kein Klebeband, keine Stempel, keine schrägen Polaroids. Shop ruhig.
+- **Status quo im Detail:** [`docs/markenkern.md`](docs/markenkern.md)
 
 ## Klonen
 

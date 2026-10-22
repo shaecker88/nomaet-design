@@ -1,23 +1,34 @@
 # nomaet. Markenhandbuch
 
-Stand: 22.10.2026 · Version 1.0
+Stand: 22.10.2026 · Version 2.0 (Status quo nach Design-Challenge, Details: `docs/markenkern.md`)
 Gilt für Shop, Instagram/TikTok, Verpackung, Ads, Mails, Präsentationen. Bei Zweifel gilt dieses Dokument.
 
-> **made to stay. no matter what.**
+> **for the ones that were meant to be.**
+> made to stay. no matter what.
 
 ---
 
 ## 1. Die Marke in einem Satz
 
-Schmuck, der bleibt: entstanden aus der Geschichte von Anahita & Sascha, getragen jeden Tag, nicht nur zu besonderen Anlässen. Jede Kollektion ist ein Kapitel (Chapter 01, Chapter 02 …), jedes Stück ist nummeriert.
+**for the ones that were meant to be.** Für Verbindungen, die kein Zufall sind.
+
+NOMAETstudios macht Dinge, die Verbindungen festhalten, an Momente erinnern und für immer sind. Schmuck ist das erste Kapitel, nicht das einzige. Jede Kollektion ist ein Kapitel (Chapter 01, Chapter 02 …) mit eigener Geschichte, jedes Stück ist nummeriert. Das Gefühl dahinter: Zusammenhalt. Bindung allgemein: Liebe, Freundschaft, Familie, man selbst.
+
+Zielgruppe: Anahitas Community, Frauen 25–45, modeaffin, oft Mütter; kaufen für sich und zum Verschenken. Die Marke steht für sich, Anahita & Sascha sind die Gründer dahinter.
+
+| Satz | Aufgabe |
+|---|---|
+| meant to be. | Haltung |
+| made to stay. | Produkt |
+| no matter what. | Ursprung, höchstens einmal pro Seite |
 
 **Drei Werte, an denen sich jede Entscheidung messen lässt**
 
 | Wert | Heißt konkret | Heißt nicht |
 |---|---|---|
 | **Bleiben** | Wenige Stücke, lange getragen. Ruhige, zeitlose Gestaltung. | Trends hinterherlaufen, Sale-Druck, laute Rabatte. |
-| **Echt** | Unsere echte Geschichte, echte Fotos, nur Zahlen, die stimmen. | Gestellte Glamour-Welt, erfundene Knappheit, Stock-Fotos im Live-Shop. |
-| **Gesammelt** | Kapitel, Nummern, Archiv: Jedes Stück hat einen Platz in der Geschichte. | Beliebiges Sortiment ohne Zusammenhang. |
+| **Echt** | Echte Geschichten, echte Fotos, nur Zahlen, die stimmen. | Gestellte Glamour-Welt, erfundene Knappheit, Stock-Fotos im Live-Shop. |
+| **Verbunden** | Momente der Verbindung, Kapitel mit Geschichte, nummerierte Stücke. | Beliebiges Sortiment ohne Zusammenhang. |
 
 ---
 
@@ -51,7 +62,7 @@ Es gibt genau **ein** Logo: die Wortmarke **nomaet.** in Boldonse. Dazu ein Kurz
 **Regeln**
 - **Schutzraum:** rundherum mindestens die Höhe des Punkts. Nichts ragt hinein.
 - **Mindestgröße:** Wortmarke 80 px / 20 mm breit. Darunter das Zeichen **n.** verwenden.
-- **Farben:** Tinte auf Papier (Standard), Papier auf Tinte, Blau nur als Akzent. Nie Sand, nie Grau, nie Verläufe.
+- **Farben:** Tinte auf Papier (Standard), Papier auf Tinte oder Leder, Blau nur als Akzent. Nie Post-it, nie Grau, nie Verläufe.
 - **Auf Fotos:** nur auf ruhigen Bildstellen, in Papier oder Tinte. Kein Schatten, kein Glow.
 - **Nie:** verzerren, drehen, nachtippen, Buchstabenabstand ändern, Konturen, eine zweite Zeile („studios“) darunter setzen, den Punkt weglassen.
 - **Boldonse ist exklusiv fürs Logo.** Keine Überschriften, keine Preise, keine Social-Texte in Boldonse. Genau das macht das Logo wiedererkennbar.
@@ -60,18 +71,20 @@ Es gibt genau **ein** Logo: die Wortmarke **nomaet.** in Boldonse. Dazu ein Kurz
 
 ## 4. Farbe
 
-| Name | HEX | Anteil | Einsatz |
-|---|---|---|---|
-| Papier | `#EFEDE6` | ~60 % | Hintergrund von allem |
-| Tinte | `#16150F` | ~30 % | Text, Logo, dunkle Sektionen, Buttons |
-| Stempelblau | `#2C3E8F` | max. 10 % | Der eine Akzent: „No matter what.“, Links, Stempel, Hover |
-| Grau | `#6B6A62` | klein | Sekundärtext, Bildunterschriften (nur auf Papier) |
-| Sand | `#D8C9A0` | klein | Etiketten-Flächen, Verpackungsdetails |
+| Name | HEX | Einsatz |
+|---|---|---|
+| Papier | `#EFEDE6` | Grund für fast alles |
+| Tinte | `#16150F` | Text, Handschrift, Logo, Buttons |
+| Grau | `#6B6A62` | Meta: N°-Labels, Bildunterschriften (nur auf Papier, nie Fließtext) |
+| Post-it | `#E6D9B2` | nur die Fläche des Post-its |
+| **Leder** | `#6B4C3A` | Markenbraun: Box, Verpackung, Footer, max. eine große Fläche pro Seite |
+| Stempelblau | `#2C3E8F` | Highlight: höchstens eine Stelle pro Seite/Post |
+| Weiß | `#FFFFFF` | ruhige Shop-Flächen, Produktfotos |
+
+**Braun ist der warme Grund, Gold das Einzige, was glänzt.** Kein Rot. Sand `#D8C9A0` ist seit 22.10.2026 durch Post-it ersetzt.
 
 **Geprüfte Kontraste (WCAG)**
-Tinte auf Papier 15,6:1 ✓ · Blau auf Papier 8,2:1 ✓ · Papier auf Blau 8,2:1 ✓ · Grau auf Papier 4,6:1 ✓ (nur ab 14 px) · Tinte auf Sand 11,1:1 ✓ · **Sand auf Papier 1,4:1 ✗** · **Grau auf Sand 3,3:1 ✗**
-
-**Regel:** Pro Screen, Post oder Seite gibt es **eine** blaue Stelle, die zählt. Blau ist das Siegel, nicht die Deko.
+Tinte auf Papier 15,6:1 ✓ · Blau auf Papier 8,2:1 ✓ · Papier auf Leder 6,6:1 ✓ · Grau auf Papier 4,6:1 ✓ (nur ab 14 px) · Tinte auf Post-it ✓ · **Tinte auf Leder 2,4:1 ✗** · **Blau auf Leder 1,2:1 ✗** (nur mit Papier-Rand) · **Sand/Post-it auf Papier als Text ✗**
 
 ---
 
@@ -87,29 +100,25 @@ Tinte auf Papier 15,6:1 ✓ · Blau auf Papier 8,2:1 ✓ · Papier auf Blau 8,2:
 
 Alle Schriften liegen in `fonts/` (Open Font License, frei auch kommerziell).
 
-**Keine weiteren Schriften.**
+**Keine weiteren Schriften** (außer NOMAET Hand).
 
-**Tattoo-Handschrift „no matter what“:** Eure echte Tattoo-Schrift, nachgezeichnet als Grafik (Zeile: `logo/no-matter-what-handschrift-zeile-ink|paper|blue.svg`, gestapelt wie im Tattoo: `logo/no-matter-what-handschrift-ink|paper|blue.svg`, im Shop `snippets/nmt-handschrift`). Nur als Grafik einsetzen, nie mit einer Schrift nachbauen, höchstens einmal pro Seite. Auf der Website aktuell nicht im Einsatz (im Hero getestet und wieder entfernt, 22.10.2026); gedacht für Verpackung, Karte im Paket, Social.
+**NOMAET-Handschrift (Hauptelement der Marke):** Versalien, weit gesperrt (0,45 em), feine Linie, Tinte, ein Satz pro Motiv, zentriert oder gestaffelt wie das Tattoo „NO / MATTER / WHAT“. Überall erlaubt außer im Shop-Kaufbereich. Wird als eigener Font **NOMAET Hand** gebaut, geschrieben von Anahita oder Sascha im Stil ihrer Tattoos (`docs/nomaet-hand-font.md`). Bis dahin Platzhalter Gaegu Light (`--nmt-font-hand`).
+
+Die alten Grafiken `logo/no-matter-what-handschrift-*.svg` sind von der Tattoo-Schrift nachgezeichnet. Wegen der Rechte der Tattoo-Künstlerin nicht kommerziell einsetzen, bis das geklärt ist; sie werden durch NOMAET Hand ersetzt.
 
 ---
 
-## 6. Archiv-Elemente: weniger, dafür gezielt
+## 6. Elemente: drei Signaturen, mehr nicht
 
-Der Archiv-Look (Papier, Stempel, Nummern, Polaroids, Klebeband) ist unser Wiedererkennungsmerkmal. Bisher wurde er zu oft gleichzeitig eingesetzt. Ab jetzt gilt:
-
-**Höchstens ein Archiv-Element pro Screen / Post.**
-
-| Element | Wann | Beispiel |
+| Element | Wann | Regel |
 |---|---|---|
-| **Nummer** (immer) | Jedes Produkt, jede Kollektion, jeder Drop | `nomaet. · chapter 01 · no 001` |
-| **Stempel** (blau) | Ein Moment mit Gewicht: Launch, Ausverkauft, echte Limitierung (erst wenn die Zahl feststeht) | `FIRST EDITION` |
-| **Polaroid** | Nur echte Momente von Anahita & Sascha | Story-Seite, Instagram-Story |
-| **Etikett** (Sand) | Produktdaten, Größen, Material | Produktseite, Verpackung |
-| **Klebeband** | Selten: max. einmal pro Seite | — |
+| **Handschrift** | überall außer Shop-Kaufbereich | ein Satz, Versalien, Tinte |
+| **N°-Label** | jedes Produkt, jede Kollektion | `N° 0001 · CHAPTER 01`, klein, Grau |
+| **Post-it** | nur Social und Karten | max. eins pro Motiv, Post-it-Farbe, Handschrift darauf, −6° bis +6° gedreht |
 
-**Ausnahme Shop-Seite:** Die Produktkarten im Shop sind Polaroids mit Klebeband, Nummern-Sticker (`no 001`, Tinte) und blauem Stempel (`1st Edition`). Das ist dort gewollt, weil es das Archiv als Erlebnis zeigt. Keine Filter, keine Sortierung.
+**Raus seit 22.10.2026:** Klebeband, schräge Polaroids, Stempel, Fotostreifen-Deko. Auch die Shop-Ausnahme (Polaroid-Karten mit Klebeband und Stempel) entfällt: **der Shop ist ruhig**, Produktfoto gerade, Name, Preis, N°-Label, Button.
 
-Das **Nummernsystem** ist die stärkste Idee der Marke und wird überall genutzt: Shop, Verpackung, Zertifikat, Posts („no 014 / 060 ist unterwegs zu …“).
+Instagram-Raster: ungefähr 6 Fotos auf 3 Papier-Kacheln, Post-it höchstens jede dritte Reihe.
 
 ---
 
@@ -121,9 +130,11 @@ Das **Nummernsystem** ist die stärkste Idee der Marke und wird überall genutzt
 - Gleicher Bildausschnitt für alle Produkte (4:5 hochkant), damit das Shop-Raster wie ein Archiv wirkt.
 
 **Menschen / Story**
-- Anahita & Sascha im Alltag, nicht gestellt: Hände, Nacken, Schlüsselbein, Lachen. Gesichter dürfen angeschnitten sein.
-- Leicht warm, kein Hochglanz, gern mit Korn. Polaroid/Film als Stilmittel nur für Story-Momente.
-- **Keine Kinder und kein Familienleben im Bild.**
+- Momente der Verbindung: Hände, Umarmungen, zwei Ketten, Freundinnen, Mütter mit erwachsenen Töchtern, Paare. Natürlich, nah, s/w oder warm.
+- Fotos groß und gerade, eckig, auf Papier oder randlos. Nie als schräges Polaroid.
+- Anahita & Sascha erzählen die Story (Our Story, Chapter-Start), sie sind nicht das Gesicht jeder Kampagne.
+- **Keine Kinder und kein Familienleben im Bild. Max nie.**
+- Keine Esoterik-Symbole (Sterne, Mond, Tarot).
 
 **Nie:** Stock-Fotos im Live-Shop, Weißraum-Freisteller mit Spiegelung, Filter-Looks, Diamant-Glitzer-Effekte.
 
@@ -131,7 +142,7 @@ Das **Nummernsystem** ist die stärkste Idee der Marke und wird überall genutzt
 
 ## 8. Sprache
 
-**Ton:** persönlich („wir“), ruhig, kurz. Wie eine Notiz, nicht wie eine Werbung.
+**Ton:** warm, liebevoll, nahbar, echt, frei, weich, verträumt. Persönlich („wir“), ruhig, kurz. Wie eine Notiz, nicht wie eine Werbung. Nie negativ, nie belehrend, nie hektisch.
 
 - Kurze Sätze. Punkt am Ende, auch bei Headlines: „Made to stay.“
 - Konkrete Zahlen statt Adjektive, aber nur Zahlen, die stimmen. Keine Auflagengröße nennen, solange sie nicht feststeht.
@@ -144,7 +155,7 @@ Das **Nummernsystem** ist die stärkste Idee der Marke und wird überall genutzt
 |---|---|
 | chapter, no, made to stay, every day, kept | luxury, premium, must-have, exklusiv, Schnapper |
 | first edition | only today!, last chance!!!, limited to … (solange nicht belegt) |
-| we, us, Anahita & Sascha | the brand, our team |
+| we, us, meant to be, kept, together | the brand, our team, destiny-Kitsch (stars, moon, soulmate) |
 
 ---
 
@@ -161,8 +172,9 @@ Das **Nummernsystem** ist die stärkste Idee der Marke und wird überall genutzt
 
 - [ ] Logo ist die Datei aus `logo/`, nicht nachgebaut
 - [ ] Boldonse nur im Logo
-- [ ] Genau eine blaue Stelle
-- [ ] Höchstens ein Archiv-Element
+- [ ] Höchstens eine blaue Stelle
+- [ ] Nur die drei Signaturen (Handschrift, N°, Post-it), kein Klebeband/Stempel/Polaroid
+- [ ] Auf Leder nur Papier-Schrift
 - [ ] Nummer/Chapter angegeben, wo es ein Produkt betrifft
 - [ ] Echte Fotos, keine Kinder im Bild
 - [ ] Kurze Sätze, keine Superlative

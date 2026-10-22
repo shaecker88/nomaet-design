@@ -5,18 +5,22 @@
 @font-face { font-family: "Inter"; src: url("../fonts/Inter-Variable.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
 
 :root {
-  /* Farbe: 60 Papier / 30 Tinte / max. 10 Blau */
+  /* Farbe: Papier als Grund, Tinte, Leder als warme Fläche, Blau nur als ein Highlight */
   --nmt-paper: #EFEDE6;
   --nmt-ink:   #16150F;
   --nmt-blue:  #2C3E8F;
   --nmt-grey:  #6B6A62;   /* nur auf Papier */
-  --nmt-sand:  #D8C9A0;   /* nur Flächen, nie Text */
+  --nmt-leather: #6B4C3A; /* Markenbraun: Box, Footer; Text darauf nur Papier */
+  --nmt-postit:  #E6D9B2; /* nur Post-it-Fläche */
+  --nmt-sand:  #D8C9A0;   /* veraltet seit 22.10.2026, ersetzt durch --nmt-postit */
   --nmt-white: #FFFFFF;   /* nur Produktfotos */
 
   /* Schrift */
   --nmt-font-logo:    "Boldonse", system-ui, sans-serif;     /* nur Logo */
   --nmt-font-display: "Inter Tight", "Inter", system-ui, sans-serif;
   --nmt-font-text:    "Inter", system-ui, sans-serif;
+  --nmt-font-hand:    "NOMAET Hand", "Gaegu", "Inter", sans-serif; /* Gaegu Light nur Platzhalter */
+  --nmt-ls-hand: 0.45em;
 
   --nmt-fs-label: 0.75rem;
   --nmt-fs-small: 0.875rem;

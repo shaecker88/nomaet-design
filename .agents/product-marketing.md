@@ -1,6 +1,6 @@
 # Product Marketing Context: NOMAETstudios
 
-Document version: 1.3
+Document version: 1.4
 Last updated: 2026-10-22
 Note: Shared context for the marketing skills in `marketing/skills/` (coreyhaines31/marketingskills). Facts marked **[open]** are not decided yet; do not invent them. Visual rules live in `BRAND.md`.
 
@@ -19,8 +19,9 @@ Note: Shared context for the marketing skills in `marketing/skills/` (coreyhaine
 - **Channels:** shop nomaetstudios.com (Shopify), Instagram @nomaetstudios. About 80 % of buyers expected on mobile.
 
 ## Target Audience
-- **[open]** Not researched yet. Working assumption to validate: people who follow Anahita, and couples/friends looking for a meaningful piece to wear every day rather than occasion jewelry.
-- Run `customer-research` before relying on this section.
+- Anahita's community: women 25–45, into fashion, often mothers (confirmed by founders 2026-10-22). They buy for themselves and as gifts (partner, best friend, mother, daughter).
+- Bond in general, not couples only: love, friendship, family, oneself.
+- Run `customer-research` to deepen this with real voices.
 
 ## Personas
 B2C, not applicable.
@@ -32,10 +33,12 @@ B2C, not applicable.
 - **[open]** Run `competitor-profiling` (suggested set: small DTC jewelry labels in DACH with founder-led story and limited drops).
 
 ## Differentiation
-- A real story behind the pieces (met 2017, new chapter Oct 2024, matching "No matter what." tattoos 2025, brand 2026).
-- Chapters and numbering: every piece has a place in the archive ("chapter 01 · no 001").
-- Honest scarcity only: no edition size or "limited" claim until the number is real. Never claim "handmade" until the jeweler confirms it in writing.
-- Designed in Stuttgart, Germany (registered seat: Leonberg).
+- Positioning line: **"for the ones that were meant to be."** (DE: "Für Verbindungen, die kein Zufall sind."). Belief: fate, meeting at the right time, a bit of magic. Feeling: togetherness.
+- A real origin: a promise the founders made to themselves, "no matter what" (met 2017, matching tattoos 2025, brand 2026). The brand stands on its own; the founders are behind it, not the face of every campaign.
+- Chapters and numbering: every drop is a chapter with its own story; every piece numbered.
+- Value from real materials (sterling silver, gold-plated, gold 585).
+- Honest scarcity only. Never claim "handmade" until the jeweler confirms it in writing.
+- Not like: Primark, Luamaya, Amazon (throwaway, interchangeable, anonymous). Aesthetic benchmark: Joseph Atelier (founder couple, drops).
 
 ## Objections
 - **[open]** Collect after launch (price vs. unknown brand, material quality, sizing online).
@@ -47,10 +50,10 @@ B2C, not applicable.
 - **[open]** Collect verbatim phrases from DMs, comments and reviews. No invented quotes.
 
 ## Brand Voice
-- Personal ("we", Anahita & Sascha, always Anahita first), calm, short sentences, full stops even in headlines.
-- Concrete numbers over adjectives ("60 pieces. 20 per length.").
+- Warm, loving, approachable, real, free, soft, dreamy; never negative. Personal ("we"; when naming founders, Anahita first), calm, short sentences, full stops even in headlines.
+- Concrete numbers over adjectives, but only numbers that are true.
 - Brand language English; German for .de, service and legal.
-- Signature lines: "made to stay." / "no matter what." (lowercase like the logo; the vow appears once per page; never used as a discount claim).
+- Signature lines: "meant to be." (stance) / "made to stay." (product) / "no matter what." (origin) (lowercase like the logo; the vow appears once per page; never used as a discount claim).
 - Avoid: luxury, premium, must-have, exclusive, fake urgency.
 
 ## Proof Points
@@ -67,6 +70,7 @@ B2C, not applicable.
 - Customers will mostly buy on mobile: mobile first for every page and creative.
 
 ## Changelog
+- 2026-10-22 · v1.4 · Positioning "for the ones that were meant to be.", target audience 25–45, brand stands on its own, tone words, competitors to avoid.
 - 2026-10-22 · v1.3 · 36/38 = extender confirmed, ring story added, "designed in Stuttgart" confirmed.
 - 2026-10-22 · v1.2 · Removed 60-piece claim, no handmade claim, product names, design location.
 - 2026-10-22 · v1.1 · Launch moved to ~January 2027, current product data, brand beyond jewelry.
