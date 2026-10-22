@@ -71,6 +71,15 @@ Kontraste: Papier auf Leder 6,6:1 · Tinte auf Leder 2,4:1 (nicht nutzen) · Bla
 
 Momente der Verbindung: Hände, Umarmungen, zwei Ketten, Freundinnen, Mütter. Natürlich, nah, s/w oder warm, Fotos groß und gerade. Gründer erzählen die Story (Our Story, Chapter-Start), sie sind nicht das Gesicht jeder Kampagne. Max nie im Bild, keine erkennbaren Kinder. Keine Esoterik-Symbole.
 
+## Zeichen (Kurzzeichen)
+
+Stand 22.10.2026: Die Wortmarke „nomaet.“ bleibt. Als Zeichen kommt ein **Herz aus zwei echten Fingerabdrücken** (einer von Anahita, einer von Sascha), vereinfacht, damit es nicht als biometrischer Abdruck taugt.
+
+- Einsatz 1: Zeichen neben oder statt der Wortmarke (Profilbild, Favicon als schlichte Herzform)
+- Einsatz 2: **Blindprägung auf der Leder-Box**, ohne Farbe
+- Offen: echte Abdrücke (Ringfinger, Stempelkissen, Foto/Scan), danach Vektor in `logo/`
+- Verworfen: „n.“, Buchstaben-Kurzzeichen, gezeichnete Symbole (Faden, Herz am Faden bleiben als Ideen im Moodboard)
+
 ## Pflichten vor dem Launch
 
 1. Eigener Font „NOMAET Hand“ (`nomaet-hand-font.md`)
