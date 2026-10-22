@@ -1,0 +1,78 @@
+/* NOMAETstudios Design-Tokens (CSS). Quelle: tokens.json */
+
+@font-face { font-family: "Boldonse"; src: url("../fonts/Boldonse-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Inter Tight"; src: url("../fonts/InterTight-Variable.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("../fonts/Inter-Variable.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+
+:root {
+  /* Farbe: 60 Papier / 30 Tinte / max. 10 Blau */
+  --nmt-paper: #EFEDE6;
+  --nmt-ink:   #16150F;
+  --nmt-blue:  #2C3E8F;
+  --nmt-grey:  #6B6A62;   /* nur auf Papier */
+  --nmt-sand:  #D8C9A0;   /* nur Flächen, nie Text */
+  --nmt-white: #FFFFFF;   /* nur Produktfotos */
+
+  /* Schrift */
+  --nmt-font-logo:    "Boldonse", system-ui, sans-serif;     /* nur Logo */
+  --nmt-font-display: "Inter Tight", "Inter", system-ui, sans-serif;
+  --nmt-font-text:    "Inter", system-ui, sans-serif;
+
+  --nmt-fs-label: 0.75rem;
+  --nmt-fs-small: 0.875rem;
+  --nmt-fs-body: 1rem;
+  --nmt-fs-lead: 1.25rem;
+  --nmt-fs-h3: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  --nmt-fs-h2: clamp(1.75rem, 1.2rem + 2.4vw, 3rem);
+  --nmt-fs-h1: clamp(2.5rem, 1.5rem + 4.5vw, 5.5rem);
+  --nmt-fs-statement: clamp(3rem, 1.5rem + 7vw, 9rem);
+
+  --nmt-ls-label: 0.12em;
+  --nmt-ls-heading: -0.02em;
+  --nmt-ls-statement: -0.035em;
+
+  --nmt-lh-tight: 0.95;
+  --nmt-lh-heading: 1.1;
+  --nmt-lh-body: 1.6;
+
+  /* Abstand */
+  --nmt-space-1: 0.25rem; --nmt-space-2: 0.5rem; --nmt-space-3: 0.75rem; --nmt-space-4: 1rem;
+  --nmt-space-6: 1.5rem;  --nmt-space-8: 2rem;   --nmt-space-12: 3rem;  --nmt-space-16: 4rem;
+  --nmt-space-24: 6rem;   --nmt-space-32: 8rem;
+
+  /* Form */
+  --nmt-radius: 0;
+  --nmt-border: 1px solid var(--nmt-ink);
+  --nmt-border-soft: 1px solid rgba(22, 21, 15, 0.15);
+
+  /* Bewegung */
+  --nmt-dur-fast: 150ms;
+  --nmt-dur-base: 300ms;
+  --nmt-dur-reveal: 700ms;
+  --nmt-ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* Layout */
+  --nmt-content-max: 1320px;
+  --nmt-prose-max: 46rem;
+}
+
+/* Basis-Stile, die überall gelten */
+.nmt-label     { font: 600 var(--nmt-fs-label)/1.2 var(--nmt-font-display); letter-spacing: var(--nmt-ls-label); text-transform: uppercase; }
+.nmt-heading   { font-family: var(--nmt-font-display); font-weight: 700; letter-spacing: var(--nmt-ls-heading); line-height: var(--nmt-lh-heading); }
+.nmt-statement { font-family: var(--nmt-font-display); font-weight: 800; font-size: var(--nmt-fs-statement); letter-spacing: var(--nmt-ls-statement); line-height: var(--nmt-lh-tight); }
+.nmt-vow       { color: var(--nmt-blue); }   /* "No matter what." */
+
+.nmt-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--nmt-space-2);
+  min-height: 48px; padding: 0 var(--nmt-space-6);
+  font: 600 var(--nmt-fs-small)/1 var(--nmt-font-display); letter-spacing: var(--nmt-ls-label); text-transform: uppercase;
+  background: var(--nmt-ink); color: var(--nmt-paper); border: var(--nmt-border); border-radius: var(--nmt-radius); text-decoration: none;
+  transition: background var(--nmt-dur-fast), color var(--nmt-dur-fast);
+}
+.nmt-button:hover { background: var(--nmt-blue); border-color: var(--nmt-blue); }
+.nmt-button--ghost { background: transparent; color: var(--nmt-ink); }
+.nmt-button--ghost:hover { background: var(--nmt-ink); color: var(--nmt-paper); border-color: var(--nmt-ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

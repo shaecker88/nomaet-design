@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nomaet. Brand</title>
+<link rel="icon" href="logo/png/favicon-32.png">
+<link rel="stylesheet" href="tokens/tokens.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--nmt-paper); color: var(--nmt-ink); font: 400 var(--nmt-fs-body)/var(--nmt-lh-body) var(--nmt-font-text); }
+  .wrap { max-width: var(--nmt-content-max); margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2.5rem); }
+  header { display: flex; justify-content: space-between; align-items: center; padding: var(--nmt-space-6) 0; border-bottom: var(--nmt-border); }
+  header img { height: 22px; }
+  section { padding: var(--nmt-space-24) 0; border-bottom: var(--nmt-border-soft); }
+  .row { display: grid; grid-template-columns: 12rem 1fr; gap: var(--nmt-space-8); }
+  @media (max-width: 760px) { .row { grid-template-columns: 1fr; gap: var(--nmt-space-4); } }
+  h2 { margin: 0 0 var(--nmt-space-6); font-size: var(--nmt-fs-h2); }
+  p { max-width: var(--nmt-prose-max); margin: 0 0 var(--nmt-space-4); }
+  .muted { color: var(--nmt-grey); }
+  .hero { padding: var(--nmt-space-32) 0 var(--nmt-space-24); }
+  .hero .nmt-statement { margin: var(--nmt-space-6) 0; }
+  .grid { display: grid; gap: var(--nmt-space-4); grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .tile { border: var(--nmt-border); display: flex; align-items: center; justify-content: center; aspect-ratio: 16/10; padding: var(--nmt-space-8); }
+  .tile img { max-width: 80%; max-height: 60%; }
+  .tile--ink { background: var(--nmt-ink); }
+  .tile--blue { background: var(--nmt-blue); }
+  .swatch { border: var(--nmt-border); }
+  .swatch div:first-child { height: 140px; }
+  .swatch div:last-child { padding: var(--nmt-space-4); font-size: var(--nmt-fs-small); }
+  .swatch b { display: block; font-family: var(--nmt-font-display); }
+  .type-row { display: grid; grid-template-columns: 10rem 1fr; gap: var(--nmt-space-6); padding: var(--nmt-space-6) 0; border-top: var(--nmt-border-soft); align-items: baseline; }
+  @media (max-width: 760px) { .type-row { grid-template-columns: 1fr; gap: var(--nmt-space-2); } }
+  .tag { display: inline-block; border: var(--nmt-border); padding: .35rem .6rem; }
+  .tag--sand { background: var(--nmt-sand); border-color: var(--nmt-sand); }
+  .stamp { display: inline-grid; place-items: center; width: 150px; height: 150px; border: 3px solid var(--nmt-blue); border-radius: 50%; color: var(--nmt-blue); transform: rotate(-8deg); text-align: center; }
+  .dodont { display: grid; gap: var(--nmt-space-4); grid-template-columns: 1fr 1fr; }
+  @media (max-width: 760px) { .dodont { grid-template-columns: 1fr; } }
+  .dodont > div { border: var(--nmt-border); padding: var(--nmt-space-6); }
+  .dodont ul { margin: 0; padding-left: 1.1rem; }
+  .bad { font-family: var(--nmt-font-logo); }
+  footer { padding: var(--nmt-space-12) 0; display: flex; justify-content: space-between; gap: var(--nmt-space-4); flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="logo/nomaet-wordmark-ink.svg" alt="nomaet.">
+    <span class="nmt-label">Brand · v1.0 · 22.10.2026</span>
+  </header>
+
+  <section class="hero">
+    <span class="nmt-label muted">chapter 01 · no 001</span>
+    <div class="nmt-statement">Made to stay.<br><span class="nmt-vow">No matter what.</span></div>
+    <p>Schmuck, der bleibt. Jede Kollektion ein Kapitel, jedes Stück nummeriert. Dieses Dokument zeigt, wie nomaet. aussieht und klingt.</p>
+  </section>
+
+  <section class="row">
+    <div class="nmt-label">01 · Logo</div>
+    <div>
+      <h2 class="nmt-heading">Ein Logo. Eine Schrift dafür.</h2>
+      <p>Die Wortmarke <b>nomaet.</b> in Boldonse und das Zeichen <b>n.</b> für kleine Flächen. Boldonse wird ausschließlich hier verwendet.</p>
+      <div class="grid">
+        <div class="tile"><img src="logo/nomaet-wordmark-ink.svg" alt="Wortmarke Tinte"></div>
+        <div class="tile tile--ink"><img src="logo/nomaet-wordmark-paper.svg" alt="Wortmarke Papier"></div>
+        <div class="tile tile--blue"><img src="logo/nomaet-wordmark-paper.svg" alt="Wortmarke auf Blau"></div>
+        <div class="tile"><img src="logo/nomaet-mark-n-ink.svg" alt="Zeichen n." style="max-height:70%"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="nmt-label">02 · Farbe</div>
+    <div>
+      <h2 class="nmt-heading">Papier, Tinte, ein blauer Stempel.</h2>
+      <p>60 % Papier, 30 % Tinte, höchstens 10 % Blau. Pro Screen gibt es eine blaue Stelle, die zählt.</p>
+      <div class="grid">
+        <div class="swatch"><div style="background:var(--nmt-paper)"></div><div><b>Papier</b>#EFEDE6 · Fläche</div></div>
+        <div class="swatch"><div style="background:var(--nmt-ink)"></div><div><b>Tinte</b>#16150F · Text 15,6:1</div></div>
+        <div class="swatch"><div style="background:var(--nmt-blue)"></div><div><b>Stempelblau</b>#2C3E8F · Akzent 8,2:1</div></div>
+        <div class="swatch"><div style="background:var(--nmt-grey)"></div><div><b>Grau</b>#6B6A62 · Nebentext 4,6:1</div></div>
+        <div class="swatch"><div style="background:var(--nmt-sand)"></div><div><b>Sand</b>#D8C9A0 · nur Flächen</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="nmt-label">03 · Schrift</div>
+    <div>
+      <h2 class="nmt-heading">Inter Tight spricht. Inter erzählt.</h2>
+      <div class="type-row"><span class="nmt-label muted">Statement 800</span><span class="nmt-statement" style="font-size:var(--nmt-fs-h1)">Made to stay.</span></div>
+      <div class="type-row"><span class="nmt-label muted">Überschrift 700</span><span class="nmt-heading" style="font-size:var(--nmt-fs-h2)">Two necklaces. Two locks.</span></div>
+      <div class="type-row"><span class="nmt-label muted">Etikett 600</span><span class="nmt-label">Limited to 60 · 50 / 55 / 60 cm</span></div>
+      <div class="type-row"><span class="nmt-label muted">Text 400</span><span>We met in 2017. Years later, our paths crossed again. This is Chapter 01, and the rest is still unwritten.</span></div>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="nmt-label">04 · Archiv</div>
+    <div>
+      <h2 class="nmt-heading">Ein Archiv-Element pro Screen.</h2>
+      <p>Nummern immer. Stempel, Polaroid, Etikett oder Klebeband gezielt und einzeln, nie alles zusammen.</p>
+      <div style="display:flex;gap:2rem;flex-wrap:wrap;align-items:center">
+        <span class="tag nmt-label">nomaet. · chapter 01 · no 001</span>
+        <span class="tag tag--sand nmt-label">Gold · 55 cm</span>
+        <span class="stamp nmt-label">Limited<br>· 60 ·</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="nmt-label">05 · Sprache</div>
+    <div>
+      <h2 class="nmt-heading">Wie eine Notiz, nicht wie Werbung.</h2>
+      <div class="dodont">
+        <div><span class="nmt-label">So</span><ul><li>60 pieces. 20 per length.</li><li>Made for every day.</li><li>Anahita &amp; Sascha</li></ul></div>
+        <div><span class="nmt-label muted">Nicht so</span><ul class="muted"><li>Exclusive luxury must-have!</li><li>Only today, last chance!!!</li><li class="bad">Headline in Boldonse</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="nmt-label">06 · Button</div>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a class="nmt-button" href="#">Shop chapter 01</a>
+      <a class="nmt-button nmt-button--ghost" href="#">Our story</a>
+    </div>
+  </section>
+
+  <footer class="muted">
+    <span>© NOMAETstudios</span>
+    <span>Volle Regeln: BRAND.md</span>
+  </footer>
+</div>
+</body>
+</html>
