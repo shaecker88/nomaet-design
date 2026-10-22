@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "nmt-collection",
+      "settings": {
+        "show_product_photos": false,
+        "show_next": true
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

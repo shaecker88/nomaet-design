@@ -105,6 +105,8 @@ Der Archiv-Look (Papier, Stempel, Nummern, Polaroids, Klebeband) ist unser Wiede
 | **Etikett** (Sand) | Produktdaten, Größen, Material | Produktseite, Verpackung |
 | **Klebeband** | Selten: max. einmal pro Seite | — |
 
+**Ausnahme Shop-Seite:** Die Produktkarten im Shop sind Polaroids mit Klebeband, Nummern-Sticker (`no 001`, Tinte) und blauem Stempel (`1st Edition`). Das ist dort gewollt, weil es das Archiv als Erlebnis zeigt. Keine Filter, keine Sortierung.
+
 Das **Nummernsystem** ist die stärkste Idee der Marke und wird überall genutzt: Shop, Verpackung, Zertifikat, Posts („no 014 / 060 ist unterwegs zu …“).
 
 ---

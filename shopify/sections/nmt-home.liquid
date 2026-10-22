@@ -26,8 +26,9 @@
       <div class="nh-hero__scrim"></div>
     </div>
     <div class="nh-hero__content">
-      <h1 id="NhHeading" class="nh-hero__title">Made to stay.</h1>
-      <p class="nh-hero__lead">{% if de %}Schmuck für jeden Tag, von Anahita &amp; Sascha. Chapter 01: die „Schloss“-Kette und der Pinky Promise Ring.{% else %}Everyday jewelry by Anahita &amp; Sascha. Chapter 01: the “Lock” Chain and the Pinky Promise Ring.{% endif %}</p>
+      <h1 id="NhHeading" class="nh-hero__title"><span>Made to stay.</span><span>No matter what.</span></h1>
+      <p class="nh-hero__chapter">Chapter 01</p>
+      <p class="nh-hero__lead">{% if de %}Die „Schloss“-Kette und der Pinky Promise Ring. Schmuck für jeden Tag, von Anahita &amp; Sascha.{% else %}The “Lock” Chain and the Pinky Promise Ring. Everyday jewelry by Anahita &amp; Sascha.{% endif %}</p>
       <div class="nh-hero__actions">
         <a class="nh-btn nh-btn--light" href="#chapter-01">{% if de %}Chapter 01 ansehen{% else %}Shop Chapter 01{% endif %}</a>
         <a class="nh-link nh-link--light" href="/pages/about">{% if de %}Unsere Geschichte{% else %}Our story{% endif %}</a>
@@ -216,7 +217,10 @@
   .nh-hero__media video, .nh-hero__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .nh-hero__scrim { position: absolute; inset: 0; background: linear-gradient(0deg, rgb(22 21 15 / .72) 0%, rgb(22 21 15 / .25) 40%, rgb(22 21 15 / 0) 65%); }
   .nh-hero__content { position: relative; width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 var(--nh-gutter) clamp(2rem, 7vh, 4.5rem); }
-  .nh-hero__title { margin: 0 0 1rem; font: 800 clamp(3.25rem, 1.5rem + 9vw, 9rem)/.92 var(--nh-display); letter-spacing: -.04em; color: var(--nh-paper); }
+  .nh-hero__title { margin: 0 0 1.25rem; font: 800 clamp(2.5rem, 11vw, 8.5rem)/.92 var(--nh-display); letter-spacing: -.04em; color: var(--nh-paper); }
+  .nh-hero__title span { display: block; white-space: nowrap; }
+  .nh-hero__chapter { display: flex; align-items: center; gap: .9rem; margin: 0 0 .9rem; font: 700 clamp(1rem, .9rem + .6vw, 1.4rem)/1 var(--nh-display); letter-spacing: .14em; text-transform: uppercase; color: var(--nh-paper); }
+  .nh-hero__chapter::before { content: ""; width: 2.5rem; height: 2px; background: currentColor; }
   .nh-hero__lead { max-width: 32rem; margin: 0 0 1.75rem; font-size: clamp(1rem, .95rem + .3vw, 1.2rem); line-height: 1.5; color: var(--nh-paper); }
   .nh-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; }
   .nh-hero__toggle { position: absolute; right: var(--nh-gutter); bottom: clamp(2rem, 7vh, 4.5rem); display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 1px solid rgb(239 237 230 / .6); border-radius: 50%; background: rgb(22 21 15 / .35); color: var(--nh-paper); cursor: pointer; }
