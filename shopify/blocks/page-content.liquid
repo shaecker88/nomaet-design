@@ -1,0 +1,125 @@
+
+
+<div
+  class="page-content"
+  style="
+    {% if block.settings.text_color != blank %}
+      --color: {{ block.settings.text_color }};
+      --color-rgb: {{ block.settings.text_color.rgb }};
+    {% endif %}
+  "
+>
+  <rte-formatter>
+    {%- if page.handle == 'about' -%}
+      {%- comment -%}
+        "Our story" liegt hier im Theme (Styling: snippets/nmw-story-effects.liquid + Overrides unten).
+        22.10.2026: gestrafft, Stockfotos entfernt (Hero = echtes Foto von Anahita & Sascha), deutsche Fassung ergänzt,
+        Shop-Button am Ende, Schrift durchgehend Inter Tight, nur eine blaue Stelle ("No matter what." im Finale).
+        Ring-Story ergänzt: Anahita hat den Ring selbst entworfen und Sascha zum Geburtstag geschenkt.
+        Nach dem Shooting: echtes Tattoo-Foto und Foto der zwei Schloss-Ketten ergänzen.
+      {%- endcomment -%}
+      {%- assign de = false -%}{%- if request.locale.iso_code == 'de' -%}{%- assign de = true -%}{%- endif -%}
+
+      <section class="story-hero">
+        <img class="story-hero__img" src="https://cdn.shopify.com/s/files/1/1034/0191/4751/files/f3169b88-0691-48fc-a457-aab2cb6466bb.jpg?v=1789917338&amp;width=1800" alt="{% if de %}Anahita und Sascha{% else %}Anahita and Sascha{% endif %}" loading="eager" style="object-position: 50% 25%;">
+        <div class="story-hero__content">
+          <p class="story-hero__kicker">{% if de %}Unsere Geschichte.{% else %}Our story.{% endif %}</p>
+          <p class="story-hero__heading">{% if de %}Angefangen hat es 2017 in der U-Bahn.{% else %}It started on a subway in 2017.{% endif %}</p>
+        </div>
+      </section>
+
+      <div class="story-statement">
+        <p>{% if de %}Zwei Menschen, drei Worte und eine Geschichte, die sich Zeit gelassen hat.{% else %}Two people, three words and a story that took its time.{% endif %}</p>
+      </div>
+
+      <div class="story-years">
+        <p class="story-years__title">{% if de %}Wie es kam.{% else %}How it happened.{% endif %}</p>
+        <div class="story-years__item">
+          <p class="story-years__num">2017.</p>
+          <p class="story-years__text">{% if de %}Wir lernen uns zufällig in der U-Bahn kennen. Sascha spricht Anahita an. Daraus wird erst mal nichts.{% else %}We meet by chance on the subway. Sascha starts a conversation. Nothing comes of it, yet.{% endif %}</p>
+        </div>
+        <div class="story-years__item story-years__item--right">
+          <p class="story-years__num">2024.</p>
+          <p class="story-years__text">{% if de %}Jahre später kreuzen sich unsere Wege wieder. Diesmal passt das Timing.{% else %}Years later, our paths cross again. This time the timing is right.{% endif %}</p>
+        </div>
+        <div class="story-years__item">
+          <p class="story-years__num">2025.</p>
+          <p class="story-years__text">{% if de %}Wir lassen uns dieselben drei Worte tätowieren.{% else %}We get the same three words tattooed.{% endif %}</p>
+        </div>
+        <div class="story-years__item story-years__item--right">
+          <p class="story-years__num">2026.</p>
+          <p class="story-years__text">{% if de %}Aus zwei Ketten mit kleinem Schloss wird NOMAETstudios.{% else %}Two necklaces with a small lock become NOMAETstudios.{% endif %}</p>
+        </div>
+      </div>
+
+      <div class="story-vow-text">
+        <p class="story-line story-line--ink">No matter what.</p>
+        <p>{% if de %}Ein kleiner Satz, der für uns viel trägt: uns füreinander entscheiden, neugierig bleiben und gemeinsam durch jedes Kapitel gehen, das noch kommt.{% else %}A small sentence that carries a lot for us: choosing each other, staying curious, and growing through whatever chapters come next.{% endif %}</p>
+      </div>
+
+      <div class="story-prose story-prose--necklaces">
+        <p class="story-subhead">{% if de %}Zwei Ketten.{% else %}Two necklaces.{% endif %}</p>
+        <p>{% if de %}Zu unserem ersten Jahrestag hat Sascha Anahita eine Kette mit einem kleinen Schloss geschenkt. Sie hat sie so geliebt, dass sie ihm später fast die gleiche geschenkt hat.{% else %}For our first anniversary, Sascha gave Anahita a necklace with a small lock. She loved it so much that, some time later, she gave him an almost identical one.{% endif %}</p>
+        <p class="story-line">{% if de %}Zwei Ketten. Zwei Schlösser. Eine Geschichte.{% else %}Two necklaces. Two locks. One story.{% endif %}</p>
+        <p class="story-subhead">{% if de %}Ein Ring.{% else %}One ring.{% endif %}</p>
+        <p>{% if de %}Zu Saschas Geburtstag hat Anahita einen Ring selbst entworfen und ihm geschenkt, als Versprechen, dass wir bleiben. Aus ihm wurde der Pinky Promise Ring.{% else %}For Sascha&#8217;s birthday, Anahita designed a ring herself and gave it to him, as a promise that we stay. It became the Pinky Promise Ring.{% endif %}</p>
+        <p>{% if de %}Nichts davon war für eine Marke gedacht. Wir haben die Stücke getragen, weil sie uns etwas bedeuten. Genau deshalb sind sie der Anfang von NOMAETstudios.{% else %}None of it was made for a brand. We wore these pieces because they meant something to us. That is exactly why they became the start of NOMAETstudios.{% endif %}</p>
+      </div>
+
+      <div class="story-chapter">
+        <p class="story-chapter__mark">Chapter 01.</p>
+        <p class="story-statement story-statement--tight">{% if de %}Chapter 01 ist Schmuck: unsere Version der Ketten, mit denen alles angefangen hat, und der Pinky Promise Ring dazu.{% else %}Chapter 01 is jewelry: our version of the necklaces that started it all, and the Pinky Promise Ring to go with them.{% endif %}</p>
+      </div>
+
+      <div class="story-prose">
+        <p>{% if de %}NOMAETstudios sollte nie nur eine Schmuckmarke sein. Wir wollten ein Studio, das mit uns wächst: für Ideen, Dinge und Geschichten, die uns wirklich wichtig sind.{% else %}NOMAETstudios was never meant to be only a jewelry brand. We wanted a studio that grows with us: a place for ideas, objects and stories we genuinely care about.{% endif %}</p>
+        <p>{% if de %}Deshalb denken wir in Kapiteln. Manche sind geplant, manche passieren zufällig, wie ein Gespräch in der U-Bahn. Wohin das alles führt, wissen wir noch nicht. Wir wollen Dinge machen, die uns etwas bedeuten, und die vielleicht auch Teil deiner Geschichte werden.{% else %}That&#8217;s why we think in chapters. Some are planned, some happen by accident, like a conversation on a subway. We don&#8217;t know yet where this will lead. We want to make things that mean something to us, and maybe become part of your story too.{% endif %}</p>
+      </div>
+
+      <div class="story-finale">
+        <p class="story-line story-finale__line">{% if de %}Das ist Chapter 01.<br>Der Rest ist noch ungeschrieben.{% else %}This is Chapter 01.<br>The rest is still unwritten.{% endif %}</p>
+        <p class="story-line story-vow story-finale__vow"><em>No matter what.</em></p>
+        <p class="story-finale__cta"><a class="story-cta" href="{{ routes.all_products_collection_url }}">{% if de %}Chapter 01 ansehen{% else %}Shop Chapter 01{% endif %}</a></p>
+      </div>
+    {%- else -%}
+      {{ page.content }}
+    {%- endif -%}
+  </rte-formatter>
+</div>
+
+{% stylesheet %}
+  .page-content {
+    color: var(--color, inherit);
+  }
+
+  .page-content a {
+    color: currentcolor;
+  }
+
+  /* 22.10.2026: Our-Story-Overrides nach BRAND.md (eine Schriftfamilie, eine blaue Stelle, keine Handschrift) */
+  .page-content .story-line, .page-content .story-line em, .page-content .story-finale__line { font-family: var(--nmw-sans-tight, 'Inter Tight', sans-serif) !important; font-weight: 800 !important; font-style: normal !important; letter-spacing: -.03em; line-height: 1.05; }
+  .page-content .story-line--ink { color: var(--nmw-ink, #16150F) !important; }
+  .page-content .story-years__title { color: var(--nmw-mute, #6B6A62) !important; }
+  .page-content .story-finale__vow, .page-content .story-finale__vow em { text-decoration: none !important; }
+  .page-content .story-finale__cta { margin-top: 2.5rem; text-align: center; }
+  .page-content a.story-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 1.75rem; background: var(--nmw-ink, #16150F); color: var(--nmw-paper, #EFEDE6); border: 1px solid var(--nmw-ink, #16150F); font: 600 .8125rem/1 var(--nmw-sans-tight, 'Inter Tight', sans-serif); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: background .15s, border-color .15s; }
+  .page-content a.story-cta:hover, .page-content a.story-cta:focus-visible { background: var(--nmw-blue, #2C3E8F); border-color: var(--nmw-blue, #2C3E8F); color: #fff; }
+  .page-content .story-prose--necklaces { margin-top: clamp(3rem, 8vw, 6rem); }
+  .page-content .story-prose--necklaces .story-subhead + p { margin-top: .4rem; }
+  .page-content .story-prose--necklaces .story-line + .story-subhead { margin-top: clamp(2rem, 5vw, 3.5rem); }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.page_content",
+  "class": "rte",
+  "settings": [
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:settings.text_color",
+      "placeholder": "t:settings.default"
+    }
+  ]
+}
+{% endschema %}

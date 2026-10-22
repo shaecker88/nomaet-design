@@ -1,6 +1,6 @@
 # Product Marketing Context: NOMAETstudios
 
-Document version: 1.2
+Document version: 1.3
 Last updated: 2026-10-22
 Note: Shared context for the marketing skills in `marketing/skills/` (coreyhaines31/marketingskills). Facts marked **[open]** are not decided yet; do not invent them. Visual rules live in `BRAND.md`.
 
@@ -9,8 +9,8 @@ Note: Shared context for the marketing skills in `marketing/skills/` (coreyhaine
 - **What it is:** NOMAETstudios is a jewelry label (later also apparel) founded by Anahita Rehbein and Sascha Häcker. Each collection is a "chapter"; each piece is numbered. Chapter 01 tells their own story: two necklaces, two locks, one story.
 - **Category / shelf:** Gold and silver everyday jewelry, small independent DTC label, Germany/EU.
 - **Products (Chapter 01):**
-  - **The “Lock” Chain** (DE: Die „Schloss“-Kette): 259–399 € (sterling silver / gold-plated / gold 585 on request; lengths 36/38, 50, 55, 60 cm). First edition; edition size **[open]**, never state a number until it is decided. What "36/38 cm" means (extender?) **[open, jeweler]**.
-  - **Pinky Promise Ring** (formerly "Key" Ring): 129–229 €, sizes 42–60, same three materials, small key engraved inside. Prices are placeholders **[open]**. The ring's own story **[open, ask Anahita & Sascha]**.
+  - **The “Lock” Chain** (DE: Die „Schloss“-Kette): 259–399 € (sterling silver / gold-plated / gold 585 on request; lengths 36/38, 50, 55, 60 cm). First edition; edition size **[open]**, never state a number until it is decided. "36/38 cm" = 36 cm chain with an extender to 38 cm.
+  - **Pinky Promise Ring** (formerly "Key" Ring): 129–229 €, sizes 42–60, same three materials, small key engraved inside. Prices are placeholders **[open]**. Story: Anahita designed the ring herself and gave it to Sascha for his birthday, as a promise for good (EN line: "Anahita designed this ring herself and gave it to Sascha for his birthday, as a promise that lasts.").
   - Materials, finish, clasp, weights: **[open, waiting on jeweler]**.
 - **Pricing model:** one-time purchase. No free shipping, no free returns. No welcome discount at launch.
 - **Shipping:** DE 5.99 € (express 9.99 €), EU 13.99 €, international 19.99 €. Delivery DE 2–4, EU 4–8, intl 7–14 working days.
@@ -67,6 +67,7 @@ B2C, not applicable.
 - Customers will mostly buy on mobile: mobile first for every page and creative.
 
 ## Changelog
+- 2026-10-22 · v1.3 · 36/38 = extender confirmed, ring story added, "designed in Stuttgart" confirmed.
 - 2026-10-22 · v1.2 · Removed 60-piece claim, no handmade claim, product names, design location.
 - 2026-10-22 · v1.1 · Launch moved to ~January 2027, current product data, brand beyond jewelry.
 - 2026-10-22 · v1.0 · Initial draft from existing shop, brand decisions and story.
