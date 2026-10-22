@@ -1,0 +1,44 @@
+{%- comment -%}
+  Etikett über dem Produkttitel: Zurück-Link zum Shop + "nomaet. · chapter 01 · no 00X" + "First edition".
+  22.10.2026: interne Artikelnummer (SKU) nicht mehr sichtbar, Schrift Inter Tight statt Monospace, Farbe Grau statt Blau (BRAND.md: eine blaue Stelle pro Seite).
+  Feinschliff: Brotkrumen "← Shop / Chapter 01", damit man auf der Produktseite immer weiß, wo man ist und wie man zurückkommt.
+{%- endcomment -%}
+{%- assign p = closest.product -%}
+{%- unless p == blank -%}
+  {%- assign de = false -%}{%- if request.locale.iso_code == 'de' -%}{%- assign de = true -%}{%- endif -%}
+  {%- assign product_no = '' -%}
+  {%- if p.handle == 'die-goldkette' -%}
+    {%- assign product_no = '001' -%}
+  {%- elsif p.handle == 'the-ring' -%}
+    {%- assign product_no = '002' -%}
+  {%- endif -%}
+  <nav class="nmw-crumb" aria-label="{% if de %}Brotkrumen{% else %}Breadcrumb{% endif %}">
+    <a href="{{ routes.all_products_collection_url }}"><span aria-hidden="true">&larr;</span> Shop</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">Chapter 01</span>
+  </nav>
+  {%- if p.tags contains 'Chapter 01' -%}
+    <p class="nmw-eyebrow">
+      <span>nomaet. &middot; chapter 01{% unless product_no == '' %} &middot; no {{ product_no }}{% endunless %}</span>
+      <span>{% if de %}Erste Auflage{% else %}First edition{% endif %}</span>
+    </p>
+  {%- endif -%}
+  <style>
+    .nmw-crumb { display: flex; align-items: center; gap: .6rem; margin: 0 0 .9rem; font-family: var(--nmw-sans-tight, 'Inter Tight', sans-serif); font-weight: 600; font-size: .8rem; letter-spacing: .02em; color: var(--nmw-mute, #6B6A62); }
+    .nmw-crumb a { color: var(--nmw-ink, #16150F); text-decoration: none; }
+    .nmw-crumb a:hover, .nmw-crumb a:focus-visible { text-decoration: underline; text-underline-offset: .3em; }
+    .nmw-crumb a span { display: inline-block; transition: transform .2s ease; }
+    .nmw-crumb a:hover span { transform: translateX(-3px); }
+    .nmw-eyebrow { display: flex; flex-wrap: wrap; gap: .3rem 0; margin: 0; font-family: var(--nmw-sans-tight, 'Inter Tight', sans-serif); font-weight: 600; font-size: .72rem; letter-spacing: .12em; color: var(--nmw-mute, #6B6A62); }
+    .nmw-eyebrow span + span::before { content: "/"; margin-inline: .7rem; }
+  </style>
+{%- endunless -%}
+
+{% schema %}
+{
+  "name": "NMW Etikett",
+  "tag": null,
+  "settings": [],
+  "presets": [ { "name": "NMW Etikett", "category": "t:categories.product" } ]
+}
+{% endschema %}

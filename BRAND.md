@@ -3,7 +3,7 @@
 Stand: 22.10.2026 · Version 1.0
 Gilt für Shop, Instagram/TikTok, Verpackung, Ads, Mails, Präsentationen. Bei Zweifel gilt dieses Dokument.
 
-> **Made to stay. No matter what.**
+> **made to stay. no matter what.**
 
 ---
 
@@ -135,7 +135,7 @@ Das **Nummernsystem** ist die stärkste Idee der Marke und wird überall genutzt
 - Konkrete Zahlen statt Adjektive, aber nur Zahlen, die stimmen. Keine Auflagengröße nennen, solange sie nicht feststeht.
 - Keine unbelegten Herstellungs-Claims („handmade“, „recycelt“ …), bevor der Juwelier sie schriftlich bestätigt.
 - Englisch ist die Markensprache (Shop .com, Social); Deutsch für .de, Service und Rechtliches.
-- „No matter what.“ ist der Schwur der Marke: immer in Blau, sparsam, nie als Rabattclaim.
+- „no matter what.“ ist der Schwur der Marke: sparsam, nie als Rabattclaim, auf einer Seite nur einmal. Als Headline zusammen mit „made to stay.“ immer kleingeschrieben, wie das Logo.
 
 **Wortschatz**
 | Ja | Nein |

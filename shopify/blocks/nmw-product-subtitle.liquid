@@ -1,0 +1,26 @@
+{%- comment -%} Untertitel unter dem Produkttitel: pro Produkt ein eigener Satz (22.10.2026). {%- endcomment -%}
+{%- liquid
+  assign p = closest.product
+  assign de = false
+  if request.locale.iso_code == 'de'
+    assign de = true
+  endif
+-%}
+{%- unless p == blank -%}
+  <p class="nmw-sub">
+    {%- if p.handle == 'die-goldkette' -%}{% if de %}Ein kleines Schloss, gemacht, um jeden Tag getragen zu werden.{% else %}A small lock, made to be worn every day.{% endif %}
+    {%- elsif p.handle == 'the-ring' -%}{% if de %}Ein schmaler Ring mit einem kleinen Schlüssel innen.{% else %}A slim band with a tiny key on the inside.{% endif %}
+    {%- else -%}{% if de %}Gemacht für jeden Tag.{% else %}Made for every day.{% endif %}
+    {%- endif -%}
+  </p>
+  <style>.nmw-sub { margin: 0; font-size: 1.0625rem; line-height: 1.5; color: var(--nmw-mute, #6B6A62); max-width: 30rem; }</style>
+{%- endunless -%}
+
+{% schema %}
+{
+  "name": "NMW Untertitel",
+  "tag": null,
+  "settings": [],
+  "presets": [ { "name": "NMW Untertitel", "category": "t:categories.product" } ]
+}
+{% endschema %}

@@ -1,0 +1,156 @@
+{%- comment -%} NMW Brand "Archiv": Farben, Schrift, Wortmarke. Regeln: BRAND.md im Repo nomaet-design.
+Wortmarke "nomaet." (Boldonse) nur im Logo. Rest: Inter Tight (Überschriften, Menü, Buttons, Etiketten) und Inter (Text).
+22.10.2026: --nmw-mono und --nmw-hand zeigen jetzt auf Inter Tight. Damit gibt es shopweit keine Monospace- und keine Handschrift-Schrift mehr (Footer, Etiketten, mobile Shop-Leiste, Polaroid-Unterschriften), ohne jede Stelle einzeln anzufassen.
+22.10.2026 (Feinschliff): Footer-Reveal repariert (der Footer lag dauerhaft unter dem Inhalt, Impressum war unerreichbar).
+Aktiver Menüpunkt wird markiert (Produktseiten zählen zu "Shop"), damit man immer weiß, wo man ist.
+Alle Schriften self-hosted (assets/nmw-*.woff2). {%- endcomment -%}
+<style>
+@font-face {
+  font-family: 'Boldonse';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url({{ 'nmw-boldonse.woff2' | asset_url }}) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url({{ 'nmw-inter-variable.woff2' | asset_url }}) format('woff2');
+}
+@font-face {
+  font-family: 'Inter Tight';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url({{ 'nmw-inter-tight-variable.woff2' | asset_url }}) format('woff2');
+}
+
+:root {
+  --nmw-paper: #EFEDE6; --nmw-ink: #16150F; --nmw-mute: #6B6A62; --nmw-sand: #D8C9A0; --nmw-blue: #2C3E8F;
+  --nmw-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --nmw-sans-tight: 'Inter Tight', 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --nmw-mono: var(--nmw-sans-tight);
+  --nmw-hand: var(--nmw-sans-tight);
+  --nmw-wm-bold-family: var(--font-heading--family, 'Inter'), system-ui, sans-serif;
+  --nmw-display: 'Boldonse', var(--nmw-wm-bold-family);
+
+  --font-body--family: var(--nmw-sans) !important;
+  --font-heading--family: var(--nmw-sans-tight) !important;
+  --font-subheading--family: var(--nmw-sans-tight) !important;
+  --font-accent--family: var(--nmw-sans-tight) !important;
+  --button-font-family-primary: var(--nmw-sans-tight) !important;
+  --button-font-family-secondary: var(--nmw-sans-tight) !important;
+
+  /* Eckig wie die Marke: Eingabefelder, Popover (Sprache/Land), Checkboxen */
+  --style-border-radius-inputs: 0px !important;
+  --style-border-radius-popover: 0px !important;
+  --checkbox-border-radius: 0px !important;
+}
+
+/* Wortmarke "nomaet." (Boldonse) */
+.header-logo [data-testid="header-logo"], .header-logo [data-testid="header-logo-inverse"] {
+  display: inline-flex; flex-direction: column; align-items: center; font-size: 0; color: inherit; white-space: nowrap; line-height: 1;
+}
+.header-logo [data-testid="header-logo"]::before, .header-logo [data-testid="header-logo-inverse"]::before,
+.logo-section::before, .logo-block::before {
+  content: "nomaet."; content: "nomaet." / "";
+  font-family: var(--nmw-display); font-weight: 400; letter-spacing: -.02em; line-height: .9;
+}
+.header-logo [data-testid="header-logo"]::before, .header-logo [data-testid="header-logo-inverse"]::before { font-size: 1.7rem; }
+@media screen and (max-width: 749px) {
+  .header-logo [data-testid="header-logo"]::before, .header-logo [data-testid="header-logo-inverse"]::before { font-size: 1.3rem; }
+}
+.logo-section, .logo-block { display: flex; flex-direction: column; align-items: center; flex-wrap: nowrap; white-space: nowrap; max-height: none !important; font-size: clamp(1.5rem, 4.6vw, 2.3rem); width: auto; }
+.logo-section { justify-content: var(--logo-justify, center); margin-inline: auto; }
+.logo-section jumbo-text, .logo-block jumbo-text {
+  position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip-path: inset(50%); opacity: 0 !important;
+}
+
+/* Aktiver Menüpunkt (gesetzt per Script unten): dezente Unterstreichung */
+#header-component a.nmw-current { text-decoration: underline; text-underline-offset: .45em; text-decoration-thickness: 1.5px; }
+
+.gold-home, .gold-home.gold-home--v2 { --gold: var(--nmw-blue); --ink: var(--nmw-ink); --paper: var(--nmw-paper); --serif: var(--nmw-sans); }
+.about-story { --about-gold: var(--nmw-blue); --about-ink: var(--nmw-ink); --about-paper: var(--nmw-paper); }
+.cx.cx { --cx-ink: var(--nmw-ink); --cx-gold: var(--nmw-blue); --cx-serif: var(--nmw-sans); --cx-hand: var(--nmw-hand); background-color: var(--nmw-paper); }
+.trust-strip { background: var(--nmw-paper); }
+.mobile-shop-bar { background: var(--nmw-ink); color: var(--nmw-paper); font-family: var(--nmw-sans-tight); font-weight: 600; }
+.gold-home.gold-home--v2 .gold-home__hero .gold-home__eyebrow { color: var(--nmw-sand); }
+.chapters__card--live { background: #E3DBC0; }
+.gold-home__hero, .about-story__hero, .about-story__story-media, .about-story__tattoo-media, .about-story__first-piece-media, .cx__media { background-color: #E3DBC0; }
+.cx__card--soon { background: #E3DBC0; }
+
+.gold-home__eyebrow, .chapters__num, .about-story__eyebrow, .cx__badge, .cx__soon-text, .cx__cta, .gold-home__label { font-family: var(--nmw-sans-tight); font-weight: 600; }
+.gold-home__eyebrow, .chapters__num, .about-story__eyebrow { letter-spacing: .12em; }
+.cx__eyebrow span { background: rgb(216 201 160 / .9); }
+
+.gold-home.gold-home--v2 .gold-home__hero h1,
+.gold-home.gold-home--v2 .gold-home__statement p, .gold-home.gold-home--v2 .gold-home__story h2, .gold-home.gold-home--v2 .chapters__head h2,
+.gold-home.gold-home--v2 .values__head h2, .gold-home.gold-home--v2 .chapters__card h3, .gold-home.gold-home--v2 .gold-home__faq h2,
+.gold-home.gold-home--v2 .gold-home__newsletter h2 { font-family: var(--nmw-sans-tight); font-style: normal; font-weight: 600; letter-spacing: -.01em; }
+.cx__title, .cx__soon-num, .cx__soon-sub, .cx__num, .cx__name { font-style: normal; }
+.cx__title, .cx__soon-num { font-family: var(--nmw-sans-tight); font-weight: 600; letter-spacing: -.01em; }
+.story-lead, .story-line { font-family: var(--nmw-sans-tight); font-weight: 600; letter-spacing: -.01em; }
+.story-line em, .story-lead em { font-style: normal; color: var(--nmw-blue); }
+
+.polaroid figcaption { font-family: var(--nmw-sans-tight); font-size: .875rem; font-weight: 600; color: var(--nmw-ink); }
+.cx__price, .cx__soon-hint { color: var(--nmw-blue); }
+
+.gold-home.gold-home--v2 .gold-home__button, .gold-home.gold-home--v2 .gold-home__select, .gold-home.gold-home--v2 .gold-home__newsletter-form input { border-radius: 0; }
+
+main[data-template^="product"] .text-block p > strong:only-child {
+  display: block; margin-top: 1.4em; font-family: var(--nmw-sans-tight); font-size: .72rem; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--nmw-mute);
+}
+main[data-template^="product"] .text-block ul { margin-block: .4em 0; padding-inline-start: 1.1em; }
+main[data-template^="product"] .text-block li { margin-block: .25em; }
+main[data-template^="product"] .text-block a { color: var(--nmw-blue); text-underline-offset: .18em; }
+main[data-template^="product"] .text-block em { font-style: normal; color: var(--nmw-mute); }
+main[data-template^="product"] .text-block em a { color: var(--nmw-blue); }
+
+/* Seitentitel (FAQ, Größen, Versand, Rechtliches): Inter Tight 800, ruhige Hierarchie */
+main[data-template^="page"] .text-block h1 { font-family: var(--nmw-sans-tight); font-weight: 800; letter-spacing: -.035em; }
+
+.page-wrapper > footer, .page-wrapper > footer * {
+  font-family: var(--nmw-sans) !important;
+}
+
+/* Footer-Reveal: Der Inhalt liegt über dem Footer und gibt ihn beim Scrollen am Ende frei.
+   Früher saß der Footer mit negativem Margin dauerhaft unter dem Inhalt und war nie sichtbar. */
+#MainContent.content-for-layout {
+  position: relative;
+  z-index: 1;
+  background: var(--nmw-paper);
+  flex: none;
+  box-shadow: 0 1px 0 rgb(22 21 15 / .16), 0 18px 30px -18px rgb(22 21 15 / .25);
+}
+.page-wrapper > footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 0;
+}
+/* Auf dem Handy ist der Footer höher als der Bildschirm; dort normal im Fluss, damit kein Link verdeckt bleibt. */
+@media screen and (max-width: 989px), (max-height: 760px) {
+  .page-wrapper > footer { position: static; }
+  #MainContent.content-for-layout { box-shadow: none; }
+}
+</style>
+<script>
+  (function () {
+    function markCurrent() {
+      var path = location.pathname.replace(/^\/(de|en)(?=\/|$)/, '') || '/';
+      var isShop = path.indexOf('/collections') === 0 || path.indexOf('/products') === 0;
+      document.querySelectorAll('#header-component a[href], .menu-drawer a[href], header-drawer a[href]').forEach(function (a) {
+        var href;
+        try { href = new URL(a.getAttribute('href'), location.origin).pathname.replace(/^\/(de|en)(?=\/|$)/, '') || '/'; } catch (e) { return; }
+        if (href === '/') return;
+        var hit = href === path || (isShop && href.indexOf('/collections') === 0);
+        a.classList.toggle('nmw-current', hit);
+        if (hit) a.setAttribute('aria-current', 'page');
+      });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', markCurrent); else markCurrent();
+  })();
+</script>

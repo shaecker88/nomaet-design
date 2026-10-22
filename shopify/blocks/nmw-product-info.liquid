@@ -1,0 +1,78 @@
+{%- liquid
+  assign p = closest.product
+  assign is_com = true
+  if request.locale.iso_code == 'de'
+    assign is_com = false
+  endif
+-%}
+{%- unless p == blank -%}
+  {%- assign parts = p.description | split: '<p><strong>' -%}
+  <div class="nmw-pi">
+    <ul class="nmw-pi__trust" role="list">
+      <li>{% if is_com %}Ships in 1&ndash;3 business days{% else %}Versand in 1&ndash;3 Werktagen{% endif %}</li>
+      <li><a href="/pages/shipping-returns">{% if is_com %}30-day returns{% else %}30 Tage R&uuml;ckgabe{% endif %}</a></li>
+      <li>{% if is_com %}Designed in Stuttgart{% else %}Design aus Stuttgart{% endif %}</li>
+    </ul>
+
+    <div class="nmw-pi__intro rte">{{ parts.first }}</div>
+
+    {%- if p.handle == 'die-goldkette' -%}
+      <figure class="nmw-pi__note">
+        <span class="nmw-pi__tape" aria-hidden="true"></span>
+        <blockquote>{% if is_com %}made to be worn every day. no matter what.{% else %}gemacht f&uuml;r jeden tag. no matter what.{% endif %}</blockquote>
+        <figcaption>Anahita &amp; Sascha</figcaption>
+      </figure>
+    {%- endif -%}
+
+    {%- if parts.size > 1 -%}
+      <div class="nmw-pi__acc">
+        {%- for part in parts offset: 1 -%}
+          {%- assign bits = part | split: '</strong></p>' -%}
+          {%- assign label = bits.first -%}
+          {%- assign body = part | remove_first: label | remove_first: '</strong></p>' -%}
+          <details{% if forloop.first %} open{% endif %}>
+            <summary>{{ label }}</summary>
+            <div class="nmw-pi__body rte">{{ body }}</div>
+          </details>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+  <style>
+    .nmw-pi { --pi-ink: var(--nmw-ink, #16150F); --pi-blue: var(--nmw-blue, #2C3E8F); --pi-mute: var(--nmw-mute, #6B6A62); --pi-tight: var(--nmw-sans-tight, 'Inter Tight', sans-serif); width: 100%; }
+    .nmw-pi__trust { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0 0 1.6rem; padding: 0; list-style: none; border-block: 1px solid rgb(22 21 15 / .18); }
+    .nmw-pi__trust li { padding: .8rem .6rem; font-family: var(--pi-tight); font-weight: 600; font-size: .62rem; line-height: 1.45; letter-spacing: .12em; text-transform: uppercase; color: var(--pi-ink); }
+    .nmw-pi__trust li + li { border-inline-start: 1px solid rgb(22 21 15 / .18); }
+    .nmw-pi__trust a { color: inherit; text-decoration: underline; text-underline-offset: .3em; text-decoration-color: rgb(22 21 15 / .35); }
+    .nmw-pi__intro p { margin: 0 0 .8em; }
+    .nmw-pi__intro em { font-style: normal; color: var(--pi-mute); }
+    .nmw-pi__intro a { color: var(--pi-blue); text-underline-offset: .18em; }
+    .nmw-pi__note { position: relative; margin: 1.6rem 0 1.8rem; padding: 1.3rem 1.2rem 1rem; background: #E9E1C8; box-shadow: 0 1px 2px rgb(0 0 0 / .1), 0 8px 18px rgb(22 21 15 / .12); transform: rotate(-1.2deg); max-width: 22rem; }
+    .nmw-pi__tape { position: absolute; top: -.7rem; left: 50%; width: 4.5rem; height: 1.3rem; background: rgb(216 201 160 / .8); box-shadow: 0 1px 2px rgb(0 0 0 / .14); transform: translateX(-50%) rotate(2deg); }
+    .nmw-pi__note blockquote { margin: 0; font-family: var(--pi-tight); font-weight: 700; font-size: 1.25rem; line-height: 1.25; letter-spacing: -.02em; color: var(--pi-blue); }
+    .nmw-pi__note figcaption { margin-top: .7rem; font-family: var(--pi-tight); font-weight: 600; font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--pi-mute); }
+    .nmw-pi__acc { margin-top: 1.4rem; border-bottom: 1px solid rgb(22 21 15 / .18); }
+    .nmw-pi__acc details { border-top: 1px solid rgb(22 21 15 / .18); }
+    .nmw-pi__acc summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 0; cursor: pointer; list-style: none; font-family: var(--pi-tight); font-weight: 600; font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; }
+    .nmw-pi__acc summary::-webkit-details-marker { display: none; }
+    .nmw-pi__acc summary::after { content: "+"; font-size: 1.1rem; line-height: 1; color: var(--pi-ink); }
+    .nmw-pi__acc details[open] summary::after { content: "\2212"; }
+    .nmw-pi__acc summary:focus-visible { outline: 2px solid var(--pi-blue); outline-offset: 2px; }
+    .nmw-pi__body { padding: 0 0 1.2rem; font-size: .95rem; line-height: 1.6; }
+    .nmw-pi__body p { margin: 0 0 .7em; }
+    .nmw-pi__body ul { margin: 0; padding-inline-start: 1.1em; }
+    .nmw-pi__body li { margin-block: .25em; }
+    .nmw-pi__body em { font-style: normal; color: var(--pi-mute); }
+    .nmw-pi__body a { color: var(--pi-blue); text-underline-offset: .18em; }
+    @media screen and (max-width: 749px) { .nmw-pi__trust li { padding: .7rem .4rem; letter-spacing: .08em; } }
+  </style>
+{%- endunless -%}
+
+{% schema %}
+{
+  "name": "NMW Produktinfo",
+  "tag": null,
+  "settings": [],
+  "presets": [ { "name": "NMW Produktinfo", "category": "t:categories.product" } ]
+}
+{% endschema %}

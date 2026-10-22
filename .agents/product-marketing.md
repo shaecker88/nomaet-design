@@ -50,7 +50,7 @@ B2C, not applicable.
 - Personal ("we", Anahita & Sascha, always Anahita first), calm, short sentences, full stops even in headlines.
 - Concrete numbers over adjectives ("60 pieces. 20 per length.").
 - Brand language English; German for .de, service and legal.
-- Signature lines: "Made to stay." / "No matter what." (the vow; never used as a discount claim).
+- Signature lines: "made to stay." / "no matter what." (lowercase like the logo; the vow appears once per page; never used as a discount claim).
 - Avoid: luxury, premium, must-have, exclusive, fake urgency.
 
 ## Proof Points

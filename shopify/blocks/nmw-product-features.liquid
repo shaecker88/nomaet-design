@@ -2,6 +2,7 @@
   Merkmale unter dem Produkttitel. 22.10.2026: keine feste Stückzahl (Auflage noch offen), kein "handmade" (erst nach schriftlicher Bestätigung des Juweliers),
   Längen 36/38–60 cm (36/38 = 36 cm mit Verlängerung), Ringgrößen 42–60, Inter Tight statt Monospace, Spiegelstriche grau.
   Ring-Story: Anahita hat den Ring selbst entworfen und Sascha zum Geburtstag geschenkt.
+  Feinschliff: Längen-/Größenzeile entfernt (steht direkt darunter in der Auswahl), Material statt doppeltem "jeden Tag".
 {%- endcomment -%}
 {%- liquid
   assign p = closest.product
@@ -13,8 +14,8 @@
 {%- unless p == blank -%}
   {%- if p.handle == 'die-goldkette' -%}
     <ul class="nmw-feat__list" role="list">
-      <li>{% if is_com %}Made to be worn every day{% else %}Gemacht, um jeden Tag getragen zu werden{% endif %}</li>
       <li>{% if is_com %}The &ldquo;Lock&rdquo; pendant, small and understated{% else %}&bdquo;Schloss&ldquo;-Anh&auml;nger, klein und dezent{% endif %}</li>
+      <li>{% if is_com %}Sterling silver or gold-plated, gold 585 on request{% else %}Sterlingsilber oder vergoldet, Gold 585 auf Anfrage{% endif %}</li>
       <li>{% if is_com %}First edition of Chapter 01{% else %}Erste Auflage von Chapter 01{% endif %}</li>
     </ul>
     <p class="nmw-feat__story">
@@ -24,12 +25,10 @@
         Die Geschichte hinter dem Schloss: Sie begann mit zwei Ketten, die wir uns gegenseitig geschenkt haben. <a href="/pages/about">Unsere Story lesen</a>
       {%- endif -%}
     </p>
-    <hr class="nmw-feat__rule">
-    <p class="nmw-feat__meta">36/38 &middot; 50 &middot; 55 &middot; 60 cm</p>
   {%- elsif p.handle == 'the-ring' -%}
     <ul class="nmw-feat__list" role="list">
-      <li>{% if is_com %}Slim, polished band{% else %}Schmaler, polierter Ring{% endif %}</li>
-      <li>{% if is_com %}Small key engraved on the inside{% else %}Kleiner Schl&uuml;ssel im Inneren eingraviert{% endif %}</li>
+      <li>{% if is_com %}Polished, made to be worn every day{% else %}Poliert, gemacht für jeden Tag{% endif %}</li>
+      <li>{% if is_com %}Sterling silver or gold-plated, gold 585 on request{% else %}Sterlingsilber oder vergoldet, Gold 585 auf Anfrage{% endif %}</li>
       <li>{% if is_com %}The second piece of Chapter 01{% else %}Das zweite St&uuml;ck aus Chapter 01{% endif %}</li>
     </ul>
     <p class="nmw-feat__story">
@@ -39,17 +38,13 @@
         Anahita hat diesen Ring selbst entworfen und Sascha zum Geburtstag geschenkt, als Versprechen, das bleibt. <a href="/pages/about">Unsere Story lesen</a>
       {%- endif -%}
     </p>
-    <hr class="nmw-feat__rule">
-    <p class="nmw-feat__meta">{% if is_com %}Ring sizes 42 to 60{% else %}Ringgr&ouml;&szlig;en 42 bis 60{% endif %}</p>
   {%- endif -%}
   <style>
     .nmw-feat__list { margin: 0 0 1rem; padding: 0; list-style: none; display: flex; flex-direction: column; gap: .5rem; }
     .nmw-feat__list li { position: relative; padding-inline-start: 1.1em; font-size: .95rem; line-height: 1.5; color: var(--nmw-ink, #16150F); }
     .nmw-feat__list li::before { content: "\2014"; position: absolute; left: 0; color: var(--nmw-mute, #6B6A62); }
-    .nmw-feat__story { margin: 0 0 1.2rem; font-size: .95rem; line-height: 1.6; color: var(--nmw-mute, #6B6A62); }
+    .nmw-feat__story { margin: 0; font-size: .95rem; line-height: 1.6; color: var(--nmw-mute, #6B6A62); }
     .nmw-feat__story a { color: var(--nmw-blue, #2C3E8F); text-underline-offset: .18em; }
-    .nmw-feat__rule { margin: 0 0 .9rem; border: none; border-top: 1px solid rgb(22 21 15 / .18); }
-    .nmw-feat__meta { margin: 0 0 1.4rem; font-family: var(--nmw-sans-tight, 'Inter Tight', sans-serif); font-weight: 600; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--nmw-mute, #6B6A62); }
   </style>
 {%- endunless -%}
 

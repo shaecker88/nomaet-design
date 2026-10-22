@@ -81,6 +81,39 @@
         <p class="story-line story-vow story-finale__vow"><em>No matter what.</em></p>
         <p class="story-finale__cta"><a class="story-cta" href="{{ routes.all_products_collection_url }}">{% if de %}Chapter 01 ansehen{% else %}Shop Chapter 01{% endif %}</a></p>
       </div>
+    {%- elsif page.handle == 'faq' -%}
+      {%- comment -%} FAQ als aufklappbare Fragen mit Sprungmarken (Feinschliff 22.10.2026). Quelle bleibt der Seiteninhalt: <h2> = Thema, <p><strong>Frage</strong><br>Antwort</p>. {%- endcomment -%}
+      {%- assign faq_parts = page.content | split: '<h2>' -%}
+      <div class="nmw-faq">
+        <nav class="nmw-faq__jump" aria-label="{% if request.locale.iso_code == 'de' %}Themen{% else %}Topics{% endif %}">
+          {%- for sec in faq_parts -%}
+            {%- assign t = sec | split: '</h2>' | first | strip -%}
+            {%- if sec contains '</h2>' and t != blank -%}<a href="#faq-{{ t | handleize }}">{{ t }}</a>{%- endif -%}
+          {%- endfor -%}
+        </nav>
+        {%- for sec in faq_parts -%}
+          {%- unless sec contains '</h2>' -%}{%- if sec != blank -%}{{ sec }}{%- endif -%}{%- continue -%}{%- endunless -%}
+          {%- assign t = sec | split: '</h2>' | first | strip -%}
+          {%- assign rest = sec | remove_first: t | remove_first: '</h2>' -%}
+          {%- assign items = rest | split: '<p><strong>' -%}
+          <section class="nmw-faq__sec" id="faq-{{ t | handleize }}">
+            <h2>{{ t }}</h2>
+            {%- for item in items -%}
+              {%- if forloop.first -%}
+                {%- assign lead = item | strip -%}
+                {%- if lead != blank -%}<div class="nmw-faq__note">{{ lead }}</div>{%- endif -%}
+                {%- continue -%}
+              {%- endif -%}
+              {%- assign q = item | split: '</strong>' | first -%}
+              {%- assign ans = item | remove_first: q | remove_first: '</strong>' | remove_first: '<br>' | strip -%}
+              <details>
+                <summary>{{ q }}</summary>
+                <div class="nmw-faq__a"><p>{{ ans }}</div>
+              </details>
+            {%- endfor -%}
+          </section>
+        {%- endfor -%}
+      </div>
     {%- else -%}
       {{ page.content }}
     {%- endif -%}
@@ -107,6 +140,25 @@
   .page-content .story-prose--necklaces { margin-top: clamp(3rem, 8vw, 6rem); }
   .page-content .story-prose--necklaces .story-subhead + p { margin-top: .4rem; }
   .page-content .story-prose--necklaces .story-line + .story-subhead { margin-top: clamp(2rem, 5vw, 3.5rem); }
+
+  /* FAQ (Feinschliff) */
+  .nmw-faq { max-width: 46rem; }
+  .nmw-faq__jump { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 clamp(2rem, 5vw, 3rem); }
+  .page-content .nmw-faq__jump a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 1rem; border: 1px solid var(--nmw-ink, #16150F); font: 600 .78rem/1 var(--nmw-sans-tight, 'Inter Tight', sans-serif); letter-spacing: .06em; text-decoration: none; transition: background .15s, color .15s; }
+  .page-content .nmw-faq__jump a:hover, .page-content .nmw-faq__jump a:focus-visible { background: var(--nmw-ink, #16150F); color: var(--nmw-paper, #EFEDE6); }
+  .nmw-faq__sec { scroll-margin-top: calc(var(--header-height, 60px) + 1.5rem); margin: 0 0 clamp(2.5rem, 6vw, 3.5rem); }
+  .nmw-faq__sec h2 { margin: 0 0 .75rem; font: 800 clamp(1.5rem, 1.2rem + 1.2vw, 2rem)/1.1 var(--nmw-sans-tight, 'Inter Tight', sans-serif); letter-spacing: -.03em; }
+  .nmw-faq details { border-bottom: 1px solid rgb(22 21 15 / .15); }
+  .nmw-faq details:first-of-type { border-top: 1px solid rgb(22 21 15 / .15); }
+  .nmw-faq summary { position: relative; padding: 1.1rem 2.5rem 1.1rem 0; font: 700 clamp(1rem, .95rem + .25vw, 1.125rem)/1.4 var(--nmw-sans-tight, 'Inter Tight', sans-serif); letter-spacing: -.01em; list-style: none; cursor: pointer; }
+  .nmw-faq summary::-webkit-details-marker { display: none; }
+  .nmw-faq summary::after { content: "+"; position: absolute; right: .25rem; top: 50%; transform: translateY(-50%); font: 400 1.5rem/1 var(--nmw-sans-tight, 'Inter Tight', sans-serif); }
+  .nmw-faq details[open] summary::after { content: "\2013"; }
+  .nmw-faq summary:focus-visible { outline: 2px solid var(--nmw-blue, #2C3E8F); outline-offset: 2px; }
+  .nmw-faq__a { padding: 0 0 1.25rem; color: var(--nmw-mute, #6B6A62); }
+  .nmw-faq__a p { margin: 0; }
+  .page-content .nmw-faq__a a, .page-content .nmw-faq__note a { color: var(--nmw-blue, #2C3E8F); text-underline-offset: .18em; }
+  .nmw-faq__note p { margin: 0; font-size: 1.0625rem; }
 {% endstylesheet %}
 
 {% schema %}
