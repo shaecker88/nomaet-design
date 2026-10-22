@@ -1,7 +1,7 @@
 {%- comment -%}
   nomaet. Pre-Launch-Seite (Passwortseite), Stand 22.10.2026.
-  Markenregeln: BRAND.md im Repo nomaet-design. Boldonse nur im Logo (als Vektor eingebettet),
-  Inter Tight für Überschriften/Etiketten, Inter für Text. Ein Archiv-Element: die Kapitel-Nummern.
+  Markenregeln: BRAND.md im Repo nomaet-design. Boldonse nur im Logo (als Vektor eingebettet, snippets/nmt-logo),
+  Inter Tight für Überschriften/Etiketten, Inter für Text. Ein Archiv-Element: die Kapitel-Nummern. Eine blaue Stelle: "No matter what."
   Sprache: .com = Englisch, sonst Deutsch.
 {%- endcomment -%}
 {%- assign is_com = false -%}{%- if request.host contains '.com' -%}{%- assign is_com = true -%}{%- endif -%}
@@ -20,10 +20,10 @@
 
     {%- form 'customer', class: 'pl-form', id: 'PlSignupForm' -%}
       {%- if form.posted_successfully? -%}
-        <p class="pl-form__success" role="status">{% if is_com %}You're on the list. We'll write to you when chapter 01 opens.{% else %}Du bist auf der Liste. Wir schreiben dir, sobald chapter 01 öffnet.{% endif %}</p>
+        <p class="pl-form__success" role="status">{% if is_com %}You're on the list. We'll write to you when Chapter 01 goes live.{% else %}Du bist auf der Liste. Wir schreiben dir, sobald Chapter 01 online ist.{% endif %}</p>
       {%- else -%}
         <input type="hidden" name="contact[tags]" value="newsletter, prelaunch">
-        <label class="pl-label pl-form__label" for="PlEmail">{% if is_com %}Be first when chapter 01 opens{% else %}Als Erste:r dabei, wenn chapter 01 öffnet{% endif %}</label>
+        <label class="pl-label pl-form__label" for="PlEmail">{% if is_com %}Be first when Chapter 01 goes live{% else %}Sei dabei, wenn Chapter 01 erscheint{% endif %}</label>
         <div class="pl-form__row">
           <input id="PlEmail" class="pl-form__input" type="email" name="contact[email]" autocomplete="email" required placeholder="{% if is_com %}Your email address{% else %}Deine E-Mail-Adresse{% endif %}"{% if form.errors %} aria-invalid="true" aria-describedby="PlError"{% endif %}>
           <button class="pl-button" type="submit">{% if is_com %}Join the list{% else %}Eintragen{% endif %}</button>
@@ -36,9 +36,9 @@
 
   <section class="pl-story" aria-labelledby="PlStoryHeading">
     <div class="pl-story__inner">
-      <p class="pl-label pl-story__label">{% if is_com %}behind nomaet.{% else %}hinter nomaet.{% endif %}</p>
+      <p class="pl-label pl-story__label">{% if is_com %}behind NOMAETstudios{% else %}hinter NOMAETstudios{% endif %}</p>
       <h2 id="PlStoryHeading" class="pl-heading">{% if is_com %}We're Anahita and Sascha.{% else %}Wir sind Anahita und Sascha.{% endif %}</h2>
-      <p class="pl-story__text">{% if is_com %}We met by chance in 2017. Years later, our paths crossed again. Today we carry three words on our skin and two necklaces, each with a little lock. NOMAETstudios is where we turn that into things you can keep, one chapter at a time.{% else %}Wir haben uns 2017 durch Zufall kennengelernt. Jahre später haben sich unsere Wege wieder gekreuzt. Heute tragen wir drei Worte auf der Haut und zwei Ketten mit je einem kleinen Schloss. NOMAETstudios ist der Ort, an dem daraus Dinge werden, die bleiben, Kapitel für Kapitel.{% endif %}</p>
+      <p class="pl-story__text">{% if is_com %}We met by chance in 2017. Years later, our paths crossed again. Today we share three tattooed words and two necklaces, each with a small lock. NOMAETstudios is where we turn that into things you can keep, one chapter at a time.{% else %}Wir haben uns 2017 durch Zufall kennengelernt. Jahre später haben sich unsere Wege wieder gekreuzt. Heute tragen wir drei Worte auf der Haut und zwei Ketten mit je einem kleinen Schloss. NOMAETstudios ist der Ort, an dem daraus Dinge werden, die bleiben, Kapitel für Kapitel.{% endif %}</p>
       <p class="pl-sign">Anahita &amp; Sascha</p>
     </div>
   </section>
@@ -46,7 +46,7 @@
   <section class="pl-chapters" aria-labelledby="PlChaptersHeading">
     <h2 id="PlChaptersHeading" class="pl-label pl-muted">{% if is_com %}the chapters{% else %}die kapitel{% endif %}</h2>
     <ol class="pl-chapters__list">
-      <li><span class="pl-chapters__num">01</span><span class="pl-chapters__name">{% if is_com %}Jewelry{% else %}Schmuck{% endif %}</span><span class="pl-label pl-chapters__state pl-chapters__state--next">{% if is_com %}early 2027{% else %}Anfang 2027{% endif %}</span></li>
+      <li><span class="pl-chapters__num">01</span><span class="pl-chapters__name">{% if is_com %}Jewelry{% else %}Schmuck{% endif %}</span><span class="pl-label pl-chapters__state">{% if is_com %}early 2027{% else %}Anfang 2027{% endif %}</span></li>
       <li><span class="pl-chapters__num">02</span><span class="pl-chapters__name pl-muted">{% if is_com %}In the works{% else %}In Arbeit{% endif %}</span></li>
       <li><span class="pl-chapters__num">03</span><span class="pl-chapters__name pl-muted">{% if is_com %}Still unwritten{% else %}Noch ungeschrieben{% endif %}</span></li>
     </ol>

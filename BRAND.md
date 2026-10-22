@@ -16,7 +16,7 @@ Schmuck, der bleibt: entstanden aus der Geschichte von Anahita & Sascha, getrage
 | Wert | Heißt konkret | Heißt nicht |
 |---|---|---|
 | **Bleiben** | Wenige Stücke, lange getragen. Ruhige, zeitlose Gestaltung. | Trends hinterherlaufen, Sale-Druck, laute Rabatte. |
-| **Echt** | Unsere echte Geschichte, echte Fotos, echte Zahlen (60 Stück). | Gestellte Glamour-Welt, erfundene Knappheit, Stock-Fotos im Live-Shop. |
+| **Echt** | Unsere echte Geschichte, echte Fotos, nur Zahlen, die stimmen. | Gestellte Glamour-Welt, erfundene Knappheit, Stock-Fotos im Live-Shop. |
 | **Gesammelt** | Kapitel, Nummern, Archiv: Jedes Stück hat einen Platz in der Geschichte. | Beliebiges Sortiment ohne Zusammenhang. |
 
 ---
@@ -100,7 +100,7 @@ Der Archiv-Look (Papier, Stempel, Nummern, Polaroids, Klebeband) ist unser Wiede
 | Element | Wann | Beispiel |
 |---|---|---|
 | **Nummer** (immer) | Jedes Produkt, jede Kollektion, jeder Drop | `nomaet. · chapter 01 · no 001` |
-| **Stempel** (blau) | Ein Moment mit Gewicht: Limitierung, Launch, Ausverkauft | `LIMITED · 60` |
+| **Stempel** (blau) | Ein Moment mit Gewicht: Launch, Ausverkauft, echte Limitierung (erst wenn die Zahl feststeht) | `FIRST EDITION` |
 | **Polaroid** | Nur echte Momente von Anahita & Sascha | Story-Seite, Instagram-Story |
 | **Etikett** (Sand) | Produktdaten, Größen, Material | Produktseite, Verpackung |
 | **Klebeband** | Selten: max. einmal pro Seite | — |
@@ -130,7 +130,8 @@ Das **Nummernsystem** ist die stärkste Idee der Marke und wird überall genutzt
 **Ton:** persönlich („wir“), ruhig, kurz. Wie eine Notiz, nicht wie eine Werbung.
 
 - Kurze Sätze. Punkt am Ende, auch bei Headlines: „Made to stay.“
-- Konkrete Zahlen statt Adjektive: „60 Stück. 20 pro Länge.“ statt „exklusiv limitiert“.
+- Konkrete Zahlen statt Adjektive, aber nur Zahlen, die stimmen. Keine Auflagengröße nennen, solange sie nicht feststeht.
+- Keine unbelegten Herstellungs-Claims („handmade“, „recycelt“ …), bevor der Juwelier sie schriftlich bestätigt.
 - Englisch ist die Markensprache (Shop .com, Social); Deutsch für .de, Service und Rechtliches.
 - „No matter what.“ ist der Schwur der Marke: immer in Blau, sparsam, nie als Rabattclaim.
 
@@ -138,7 +139,7 @@ Das **Nummernsystem** ist die stärkste Idee der Marke und wird überall genutzt
 | Ja | Nein |
 |---|---|
 | chapter, no, made to stay, every day, kept | luxury, premium, must-have, exklusiv, Schnapper |
-| limited to 60 | only today!, last chance!!! (wenn nicht wahr) |
+| first edition | only today!, last chance!!!, limited to … (solange nicht belegt) |
 | we, us, Anahita & Sascha | the brand, our team |
 
 ---

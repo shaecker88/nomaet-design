@@ -27,9 +27,9 @@
     </div>
     <div class="nh-hero__content">
       <h1 id="NhHeading" class="nh-hero__title">Made to stay.</h1>
-      <p class="nh-hero__lead">{% if de %}Schmuck für jeden Tag, von Anahita &amp; Sascha. Chapter 01: die „Schloss“ Kette und der Pinky Promise Ring.{% else %}Everyday jewelry by Anahita &amp; Sascha. Chapter 01: the “Lock” chain and the Pinky Promise ring.{% endif %}</p>
+      <p class="nh-hero__lead">{% if de %}Schmuck für jeden Tag, von Anahita &amp; Sascha. Chapter 01: die „Schloss“-Kette und der Pinky Promise Ring.{% else %}Everyday jewelry by Anahita &amp; Sascha. Chapter 01: the “Lock” Chain and the Pinky Promise Ring.{% endif %}</p>
       <div class="nh-hero__actions">
-        <a class="nh-btn nh-btn--light" href="#chapter-01">{% if de %}Chapter 01 ansehen{% else %}Shop chapter 01{% endif %}</a>
+        <a class="nh-btn nh-btn--light" href="#chapter-01">{% if de %}Chapter 01 ansehen{% else %}Shop Chapter 01{% endif %}</a>
         <a class="nh-link nh-link--light" href="/pages/about">{% if de %}Unsere Geschichte{% else %}Our story{% endif %}</a>
       </div>
     </div>
@@ -45,7 +45,7 @@
   <section class="nh-wrap nh-ch1" id="chapter-01" aria-labelledby="NhCh1">
     <header class="nh-head">
       <h2 id="NhCh1" class="nh-h2">Chapter 01</h2>
-      <p class="nh-head__text">{% if de %}Zwei Stücke aus unserer eigenen Geschichte, gemacht für jeden Tag. In Sterling Silber oder vergoldet, Gold 585 auf Anfrage.{% else %}Two pieces from our own story, made to be worn every day. In sterling silver or gold-plated, with gold 585 on request.{% endif %}</p>
+      <p class="nh-head__text">{% if de %}Zwei Stücke aus unserer eigenen Geschichte, gemacht für jeden Tag. In Sterlingsilber oder vergoldet, Gold 585 auf Anfrage.{% else %}Two pieces from our own story, made to be worn every day. In sterling silver or gold-plated, with gold 585 on request.{% endif %}</p>
     </header>
     <ul class="nh-pieces" role="list">
       {%- for h in handles -%}
@@ -86,7 +86,7 @@
           {{ section.settings.story_image | image_url: width: 900 | image_tag: loading: 'lazy', class: 'nh-vow__img', alt: section.settings.story_image.alt | default: 'Anahita & Sascha', sizes: '(min-width: 750px) 30vw, 70vw' }}
         {%- endif -%}
         <div class="nh-vow__text">
-          <p>{% if de %}Drei Worte, die wir beide auf der Haut tragen. Angefangen hat es mit zwei Ketten mit je einem kleinen Schloss, die wir uns geschenkt haben. Chapter 01 ist unsere Version davon, für euch.{% else %}Three words we both carry on our skin. It started with two necklaces, each with a small lock, that we gave each other. Chapter 01 is our version of them, made for you.{% endif %}</p>
+          <p>{% if de %}Drei Worte, die wir beide auf der Haut tragen. Angefangen hat es mit zwei Ketten, jede mit einem kleinen Schloss, die wir uns gegenseitig geschenkt haben. Chapter 01 ist unsere Version davon, für dich.{% else %}Three words we both carry on our skin. It started with two necklaces, each with a small lock, that we gave each other. Chapter 01 is our version of them, made for you.{% endif %}</p>
           <p class="nh-sign">Anahita &amp; Sascha</p>
           <a class="nh-link" href="/pages/about">{% if de %}Die ganze Geschichte lesen{% else %}Read the whole story{% endif %}</a>
         </div>
@@ -101,7 +101,7 @@
       <li>
         <span class="nh-chapters__num">01</span>
         <span class="nh-chapters__name">{% if de %}Schmuck{% else %}Jewelry{% endif %}</span>
-        <span class="nh-chapters__text">{% if de %}Die „Schloss“ Kette und der Pinky Promise Ring.{% else %}The “Lock” chain and the Pinky Promise ring.{% endif %}</span>
+        <span class="nh-chapters__text">{% if de %}Die „Schloss“-Kette und der Pinky Promise Ring.{% else %}The “Lock” Chain and the Pinky Promise Ring.{% endif %}</span>
       </li>
       <li class="is-next">
         <span class="nh-chapters__num">02</span>
@@ -120,8 +120,8 @@
   <section class="nh-wrap nh-facts" aria-label="{% if de %}Gut zu wissen{% else %}Good to know{% endif %}">
     <dl class="nh-facts__list">
       <div><dt>{% if de %}Versand{% else %}Shipping{% endif %}</dt><dd>{% if de %}Aus Deutschland, innerhalb von 1–3 Werktagen.{% else %}From Germany, within 1–3 business days.{% endif %}</dd></div>
-      <div><dt>{% if de %}Rückgabe{% else %}Returns{% endif %}</dt><dd>{% if de %}30 Tage. Ungetragen und in der Originalverpackung.{% else %}30 days. Unworn and in the original packaging.{% endif %}</dd></div>
-      <div><dt>{% if de %}Material{% else %}Material{% endif %}</dt><dd>{% if de %}Sterling Silber oder vergoldet. Gold 585 auf Anfrage.{% else %}Sterling silver or gold-plated. Gold 585 on request.{% endif %}</dd></div>
+      <div><dt>{% if de %}Rückgabe{% else %}Returns{% endif %}</dt><dd>{% if de %}30 Tage freiwillige Rückgabe, ungetragen und in der Originalverpackung. Dein gesetzliches 14-tägiges Widerrufsrecht bleibt unberührt.{% else %}30-day voluntary returns, unworn and in the original packaging. Your statutory 14-day right of withdrawal is not affected.{% endif %}</dd></div>
+      <div><dt>{% if de %}Material{% else %}Material{% endif %}</dt><dd>{% if de %}Sterlingsilber oder vergoldet. Gold 585 auf Anfrage.{% else %}Sterling silver or gold-plated. Gold 585 on request.{% endif %}</dd></div>
     </dl>
   </section>
 
@@ -131,7 +131,7 @@
     <div class="nh-faq__list">
       <details>
         <summary>{% if de %}Was bedeutet Chapter 01?{% else %}What does Chapter 01 mean?{% endif %}</summary>
-        <p>{% if de %}Jede Kollektion ist bei uns ein Kapitel. Chapter 01 ist Schmuck: die „Schloss“ Kette und der Pinky Promise Ring. Die nächsten Kapitel müssen kein Schmuck sein.{% else %}Every collection is a chapter. Chapter 01 is jewelry: the “Lock” chain and the Pinky Promise ring. The next chapters don’t have to be jewelry.{% endif %}</p>
+        <p>{% if de %}Jede Kollektion ist bei uns ein Kapitel. Chapter 01 ist Schmuck: die „Schloss“-Kette und der Pinky Promise Ring. Die nächsten Kapitel müssen kein Schmuck sein.{% else %}Every collection is a chapter. Chapter 01 is jewelry: the “Lock” Chain and the Pinky Promise Ring. The next chapters don’t have to be jewelry.{% endif %}</p>
       </details>
       <details>
         <summary>{% if de %}Welche Größe brauche ich?{% else %}Which size do I need?{% endif %}</summary>
@@ -143,7 +143,7 @@
       </details>
       <details>
         <summary>{% if de %}Kann ich zurückgeben?{% else %}Can I return my order?{% endif %}</summary>
-        <p>{% if de %}Ja, innerhalb von 30 Tagen nach Erhalt, ungetragen und in der Originalverpackung. Die Rücksendung zahlst du. Alles Weitere unter <a href="/pages/shipping-returns">Versand &amp; Rückgabe</a>.{% else %}Yes, within 30 days of delivery, unworn and in the original packaging. Return shipping is on you. Details under <a href="/pages/shipping-returns">Shipping &amp; Returns</a>.{% endif %}</p>
+        <p>{% if de %}Ja, innerhalb von 30 Tagen nach Erhalt, ungetragen und in der Originalverpackung. Die Rücksendung zahlst du. Dein gesetzliches Widerrufsrecht bleibt unberührt. Alles Weitere unter <a href="/pages/shipping-returns">Versand &amp; Rückgabe</a>.{% else %}Yes, within 30 days of delivery, unworn and in the original packaging. Return shipping is on you. Your statutory right of withdrawal is not affected. Details under <a href="/pages/shipping-returns">Shipping &amp; Returns</a>.{% endif %}</p>
       </details>
     </div>
     <a class="nh-link" href="/pages/faq">{% if de %}Alle Fragen{% else %}All questions{% endif %}</a>
